@@ -3,17 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to TIL's documentation!
+TIL - Today I Learned
 ===============================
 
+日々の学んだことを書き込んでいくページ
+
+目次
+--------
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
 
-
-
-Indices and tables
-==================
+    development/index.rst
 
 * :ref:`genindex`
 * :ref:`modindex`
