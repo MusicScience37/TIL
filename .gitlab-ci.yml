@@ -1,9 +1,25 @@
 image: musicscience37/sphinx:latest
 
+stages:
+  - build
+  - deploy
+
 build:
+  stage: build
   script:
     - make html
   artifacts:
     paths:
       - build
     expire_in: '1 week'
+
+pages:
+  image: ubuntu:18.04
+  stage: deploy
+  script:
+    - mv build/html public
+  artifacts:
+    paths:
+    - public
+  only:
+    - master
