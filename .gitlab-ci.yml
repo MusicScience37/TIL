@@ -1,4 +1,4 @@
-image: registry.gitlab.com/musicscience37/sphinx-docker:feat-first-dockerfile
+image: musicscience37/sphinx:latest
 
 build:
   script:
