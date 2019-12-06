@@ -1,6 +1,11 @@
-# TIL
+# TIL - Today I Learned
 
 日々の学んだことを書き込んでいくページ
+
+## 運用
+
+- ビルド：[Sphinx の Docker コンテナ](https://hub.docker.com/r/musicscience37/sphinx)
+- 公開：[Gitlab Pages](https://musicscience37.gitlab.io/til/)
 
 ## ルール
 
