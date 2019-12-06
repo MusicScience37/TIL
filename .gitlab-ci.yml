@@ -1,9 +1,9 @@
-image: sphinxdoc/docker-ci
+image: registry.gitlab.com/musicscience37/sphinx-docker:feat-first-dockerfile
 
 build:
   script:
-    - pip3 install sphinx
     - make html
   artifacts:
     paths:
       - build
+    expire_in: '1 week'
