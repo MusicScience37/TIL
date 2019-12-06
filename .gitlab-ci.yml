@@ -3,7 +3,7 @@ image: sphinxdoc/docker-ci
 build:
   script:
     - pip3 install sphinx
-    - make
+    - make html
   artifacts:
     paths:
       - build
