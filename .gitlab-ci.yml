@@ -1,9 +1,9 @@
-image: sphinxdoc/docker-ci
+image: musicscience37/sphinx:latest
 
 build:
   script:
-    - pip3 install sphinx
     - make html
   artifacts:
     paths:
       - build
+    expire_in: '1 week'
