@@ -15,5 +15,6 @@ TIL - Today I Learned
     :maxdepth: 2
 
     development/index.rst
+    license
 
 * :ref:`search`
