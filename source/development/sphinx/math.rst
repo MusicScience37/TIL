@@ -27,7 +27,8 @@ conf.py に次の設定をしている。
 ``mathjax_config`` で
 `MathJax 公式ドキュメント <https://docs.mathjax.org/en/latest/options/input/tex.html>`_
 にて示されているような設定を追加する。
-ただし、公式ドキュメントの通りに全て小文字で記載すると正しく処理されないため注意が必要。
+ただし、公式ドキュメントの通りに全て小文字で記載すると正しく処理されないため注意が必要
+（`役に立った Stack Overflow <https://stackoverflow.com/questions/9728292/creating-latex-math-macros-within-sphinx>`_）。
 
 rst ファイル
 ------------------
