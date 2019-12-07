@@ -5,3 +5,4 @@ Sphinx
     :maxdepth: 2
 
     environment
+    code
