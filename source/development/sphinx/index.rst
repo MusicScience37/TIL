@@ -1,8 +1,7 @@
-開発
+Sphinx
 ===============================
 
 .. toctree::
     :maxdepth: 2
 
-    docker/index
-    sphinx/index
+    environment
