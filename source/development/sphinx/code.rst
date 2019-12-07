@@ -13,6 +13,10 @@ rst ファイル
             return 0;
         }
 
+使える言語は
+`Pygments の Supported languages <https://pygments.org/languages/>`_
+を参照。
+
 出力
 ------------------
 
