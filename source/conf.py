@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'TIL'
-copyright = '2019, MusicScience37'
+copyright = '2019, MusicScience37. Licensed under the CC BY-SA 4.0'
 author = 'MusicScience37'
 
 
