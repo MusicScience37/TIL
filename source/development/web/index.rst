@@ -1,9 +1,7 @@
-開発
+Web 関係
 ===============================
 
 .. toctree::
     :maxdepth: 2
 
-    docker/index
-    sphinx/index
-    web/index
+    jinja
