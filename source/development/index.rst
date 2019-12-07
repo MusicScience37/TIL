@@ -6,4 +6,4 @@
 
     docker/index
     sphinx/index
-    web/index
+    python/index
