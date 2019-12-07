@@ -28,10 +28,21 @@ author = 'MusicScience37'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.todo'
+    'sphinx.ext.todo',
+    'sphinx.ext.mathjax'
 ]
 
+# setting of todo
 todo_include_todos = True
+
+# setting of mathjax
+mathjax_config = {
+    'TeX' : {
+        'Macros': {
+            'bm': ['{\\boldsymbol{#1}}',1],
+        },
+    },
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
