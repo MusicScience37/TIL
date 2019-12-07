@@ -6,3 +6,4 @@ Sphinx
 
     environment
     code
+    math
