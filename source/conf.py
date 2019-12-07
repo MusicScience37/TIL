@@ -43,7 +43,9 @@ language = 'ja'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = [
+    'KIcon/*'
+]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -57,3 +59,8 @@ html_theme = 'alabaster'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_title = 'MusicScience37\'s TIL'
+
+html_logo = 'KIcon/KIcon64.png'
+html_favicon = 'KIcon/KIcon.ico'
