@@ -16,6 +16,4 @@ TIL - Today I Learned
 
     development/index.rst
 
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
