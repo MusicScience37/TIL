@@ -5,6 +5,7 @@
     :maxdepth: 1
 
     cpp/index
+    git/index
     docker/index
     sphinx/index
     python/index
