@@ -6,3 +6,4 @@ Docker
 
     apt_repository
     hadolint
+    docker_hub_testing
