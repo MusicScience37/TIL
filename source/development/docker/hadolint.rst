@@ -1,3 +1,5 @@
+.. _docker/hadolint:
+
 hadolint
 ================
 
