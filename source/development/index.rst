@@ -9,3 +9,4 @@
     docker/index
     sphinx/index
     python/index
+    tex/index
