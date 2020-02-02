@@ -10,7 +10,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -28,14 +28,14 @@ author = 'MusicScience37'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.todo',
-    'sphinx.ext.mathjax'
 ]
 
 # setting of todo
+extensions += [ 'sphinx.ext.todo' ]
 todo_include_todos = True
 
 # setting of mathjax
+extensions += [ 'sphinx.ext.mathjax' ]
 mathjax_config = {
     'TeX' : {
         'Macros': {
@@ -43,6 +43,13 @@ mathjax_config = {
         },
     },
 }
+
+# setting of PlantUML
+extensions += ['sphinxcontrib.plantuml']
+plantuml_jar_path = os.getenv("PLANTUML_JAR_PATH")
+plantuml='java -jar ' + plantuml_jar_path
+plantuml_output_format = 'svg'
+plantuml_syntax_error_image = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
