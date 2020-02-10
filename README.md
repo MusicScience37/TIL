@@ -4,7 +4,7 @@
 
 ## 運用
 
-- ビルド：[Sphinx の Docker コンテナ](https://hub.docker.com/r/musicscience37/sphinx)
+- ビルド：[Sphinx と Doxygen の Docker コンテナ](https://hub.docker.com/r/musicscience37/sphinx-doxygen)
 - 公開：[Gitlab Pages](https://musicscience37.gitlab.io/til/)
 
 ## ルール
