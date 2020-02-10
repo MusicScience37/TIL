@@ -4,7 +4,7 @@ stages:
 
 build:
   stage: build
-  image: registry.gitlab.com/musicscience37_ci/sphinx-doxygen-docker:v0-1
+  image: registry.gitlab.com/musicscience37_ci/sphinx-doxygen-docker:v1-1
   script:
     - pip3 install -r requirements.txt
     - make html
