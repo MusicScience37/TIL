@@ -1,11 +1,10 @@
-image: musicscience37/sphinx:version-2.0
-
 stages:
   - build
   - deploy
 
 build:
   stage: build
+  image: registry.gitlab.com/musicscience37_ci/sphinx-doxygen-docker:v1-1
   script:
     - make html
   artifacts:
@@ -15,6 +14,7 @@ build:
 
 pages:
   stage: deploy
+  image: ubuntu
   script:
     - mv build/html public
   artifacts:

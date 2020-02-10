@@ -7,3 +7,4 @@ Sphinx
     environment
     code
     math
+    plantuml
