@@ -10,3 +10,4 @@
     sphinx/index
     python/index
     tex/index
+    vscode/index
