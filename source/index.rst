@@ -14,7 +14,8 @@ TIL - Today I Learned
 .. toctree::
     :maxdepth: 2
 
-    development/index.rst
+    development/index
+    security/index
     license
 
 * :ref:`search`
