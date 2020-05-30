@@ -4,7 +4,7 @@ stages:
 
 build:
   stage: build
-  image: registry.gitlab.com/musicscience37_ci/sphinx-doxygen-docker:v1-1
+  image: musicscience37/sphinx-doxygen:v-2.0
   script:
     - make html
   artifacts:
