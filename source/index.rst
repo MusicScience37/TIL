@@ -15,7 +15,7 @@ TIL - Today I Learned
     :maxdepth: 2
 
     development/index
-    security/index
+    security_network/index
     license
 
 * :ref:`search`
