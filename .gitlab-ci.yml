@@ -4,7 +4,7 @@ stages:
 
 build:
   stage: build
-  image: musicscience37/sphinx-doxygen:v-2.0
+  image: musicscience37/sphinx-doxygen:v-2.1
   script:
     - make html
   artifacts:
