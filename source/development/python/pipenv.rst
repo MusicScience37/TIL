@@ -107,3 +107,8 @@ Python のバージョンを選択したい場合、pyenv をインストール�
 .. code:: console
 
     $ pipenv shell
+
+参考
+-------
+
+`Pipenv: Python Dev Workflow for Humans — pipenv 2020.8.13.dev0 documentation <https://pipenv.pypa.io/en/latest/>`_
