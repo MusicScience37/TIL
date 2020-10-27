@@ -4,9 +4,9 @@ stages:
 
 build:
   stage: build
-  image: musicscience37/sphinx-doxygen:v-2.1
+  image: musicscience37/sphinx-doxygen:v-3.0
   script:
-    - make html
+    - pipenv run make html
   artifacts:
     paths:
       - build
