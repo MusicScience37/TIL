@@ -29,3 +29,4 @@ openssl コマンドを使用すると以下のように生成できる。
 - `Diffie-Hellman parameters - OpenSSLWiki <https://wiki.openssl.org/index.php/Diffie-Hellman_parameters>`_
 - `Ivan Ristić: Deploying Forward Secrecy <https://blog.ivanristic.com/2013/06/ssl-labs-deploying-forward-secrecy.html>`_
 - `RFC 8270 - Increase the Secure Shell Minimum Recommended Diffie-Hellman Modulus Size to 2048 Bits <https://tools.ietf.org/html/rfc8270>`_
+- `/docs/man1.1.1/man1/dhparam.html <https://www.openssl.org/docs/man1.1.1/man1/dhparam.html>`_
