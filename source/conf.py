@@ -31,15 +31,15 @@ extensions = [
 ]
 
 # setting of todo
-extensions += [ 'sphinx.ext.todo' ]
+extensions += ['sphinx.ext.todo']
 todo_include_todos = True
 
 # setting of mathjax
-extensions += [ 'sphinx.ext.mathjax' ]
+extensions += ['sphinx.ext.mathjax']
 mathjax_config = {
-    'TeX' : {
+    'TeX': {
         'Macros': {
-            'bm': ['{\\boldsymbol{#1}}',1],
+            'bm': ['{\\boldsymbol{#1}}', 1],
         },
     },
 }
@@ -47,7 +47,7 @@ mathjax_config = {
 # setting of PlantUML
 extensions += ['sphinxcontrib.plantuml']
 plantuml_jar_path = os.getenv("PLANTUML_JAR_PATH")
-plantuml='java -jar ' + plantuml_jar_path
+plantuml = 'java -jar ' + plantuml_jar_path
 plantuml_output_format = 'svg'
 plantuml_syntax_error_image = True
 
