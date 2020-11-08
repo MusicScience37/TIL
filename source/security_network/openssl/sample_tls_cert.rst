@@ -65,7 +65,7 @@ openssl コマンドによる証明書作成
     認証局の証明書の発行に使用する設定ファイルを作成する。
     ここでは、以下のような内容の openssl-ca.cnf ファイルを作成する。
 
-    .. code:: none
+    .. code:: ini
 
         [ req ]
         default_bits           = 4096
@@ -123,7 +123,7 @@ openssl コマンドによる証明書作成
     ユーザの証明書署名要求の生成に使用する設定ファイルを作成する。
     ここでは、以下のような内容の openssl-server.cnf ファイルを作成する。
 
-    .. code:: none
+    .. code:: ini
 
         [ req ]
         default_bits           = 4096
