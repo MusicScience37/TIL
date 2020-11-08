@@ -1,0 +1,17 @@
+名称,対象言語,用途,ライセンス,メモ
+`Boost <https://www.boost.org/>`_,C++,C++ の補助的なライブラリ,Boost 1.0,別途ビルドして使用する必要がある。
+`Catch2 <https://github.com/catchorg/Catch2>`_,C++11,ユニットテスト,Boost 1.0,アサートが書きやすい。ベンチマークもできる。
+`CMake <https://cmake.org/>`_,"C, C++, ...",ビルドツール,BSD 3 clause,
+`clang <http://clang.llvm.org/>`_,"C, C++, ...",コンパイラ,`LLVM <http://releases.llvm.org/8.0.0/LICENSE.TXT>`_,
+`Doxygen <http://www.doxygen.nl/>`_,"C, C++, ...",ドキュメンテーションの作成,GPL,
+`Eigen <http://eigen.tuxfamily.org/>`_,C++98,行列演算,MPL2 (+ LGPL),
+`fmt <https://github.com/fmtlib/fmt>`_,C++11,文字列のフォーマッティング,MIT (with exception),fmt/format.h ヘッダを読み込むとコンパイルが重い。
+`GCC <https://gcc.gnu.org/>`_,C++,コンパイラ,GPL / LGPL,
+`lcov <https://github.com/linux-test-project/lcov>`_,C++,GCC のカバレッジの HTML 化,GPL,
+`llvm-cov <https://llvm.org/docs/CommandGuide/llvm-cov.html>`_,C++,Clang のカバレッジの集計・出力,`LLVM <http://releases.llvm.org/8.0.0/LICENSE.TXT>`_,
+`msgpack-c <https://github.com/msgpack/msgpack-c/tree/cpp_master>`_,C++11,`MessagePack <https://msgpack.org/>`_ の読み書き,Boost 1.0,JSON よりも速い。
+`nlohmann/json <https://github.com/nlohmann/json>`_,C++11,`JSON <https://www.json.org/json-ja.html>`_ の読み書き,MIT,リポジトリが重い。
+`POCO C++ Libraries <https://pocoproject.org/>`_,C++,C++ の補助的なライブラリ,Boost 1.0,未使用。別途ビルドして使用する必要がある。
+`toml11 <https://github.com/ToruNiina/toml11>`_,C++11,`TOML <https://github.com/toml-lang/toml>`_ の読み書き,MIT,未使用。
+`VTK <https://vtk.org/>`_,"C++, Python",3 次元のコンピュータグラフィックス,BSD 3 clause,別途ビルドして使用する必要がある。
+`yaml-cpp <https://github.com/jbeder/yaml-cpp>`_,C++11,`YAML <https://yaml.org/>`_ の読み書き,MIT,
