@@ -10,6 +10,5 @@ autopep8 = "*"
 
 [packages]
 sphinx = "*"
-breathe = "*"
 sphinx-rtd-theme = "*"
 sphinxcontrib-plantuml = "*"
