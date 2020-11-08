@@ -18,7 +18,7 @@ import os
 # -- Project information -----------------------------------------------------
 
 project = 'TIL'
-copyright = '2019 - 2020, MusicScience37 (Kenta Kabashima). Licensed under the CC BY-SA 4.0'
+copyright = '2019 - 2020, MusicScience37 (Kenta Kabashima). Licensed under the CC BY 4.0'
 author = 'MusicScience37'
 
 
