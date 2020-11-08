@@ -12,12 +12,6 @@ build:
     paths:
       - build
     expire_in: '1 week'
-  cache:
-    key:
-      files:
-        - Pipfile.lock
-    paths:
-      - .venv/
 
 pages:
   stage: deploy
