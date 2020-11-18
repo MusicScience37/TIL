@@ -1,3 +1,5 @@
+.. _development-cpp-clangd:
+
 Clangd の利用
 ================
 

@@ -3,26 +3,27 @@
 `Boost <https://www.boost.org/>`_,C++,C++ の補助的なライブラリ,Boost 1.0,別途ビルドして使用する必要がある。
 `Catch2 <https://github.com/catchorg/Catch2>`_,C++11,ユニットテスト,Boost 1.0,アサートが書きやすい。ベンチマークもできる。
 `CMake <https://cmake.org/>`_,"C, C++, ...",ビルドツール,BSD 3 clause,
-`clang <http://clang.llvm.org/>`_,"C, C++, ...",コンパイラ,`LLVM <http://releases.llvm.org/8.0.0/LICENSE.TXT>`_,
+`clang <http://clang.llvm.org/>`_,"C, C++, ...",コンパイラ,Apache 2.0 (with exception),
+`clangd <https://clangd.llvm.org/>`_,C++,C++ のエディタ向けの言語サーバ,Apache 2.0 (with exception),:ref:`development-cpp-clangd`
 `Doxygen <http://www.doxygen.nl/>`_,"C, C++, ...",ドキュメンテーションの作成,GPL,
 `Eigen <http://eigen.tuxfamily.org/>`_,C++98,行列演算,MPL2 (+ LGPL),
 `flask <https://flask.palletsprojects.com/en/1.1.x/>`_,Python,Web サーバ用フレームワーク,BSD 3 clause,軽量な Web フレームワーク。
 `fmt <https://github.com/fmtlib/fmt>`_,C++11,文字列のフォーマッティング,MIT (with exception),fmt/format.h ヘッダを読み込むとコンパイルが重い。
 `GCC <https://gcc.gnu.org/>`_,C++,コンパイラ,GPL / LGPL,
-`Jinja <https://jinja.palletsprojects.com/en/2.11.x/>`_,Python,テンプレート処理,BSD 3 clause,""
+`Jinja <https://jinja.palletsprojects.com/en/2.11.x/>`_,Python,テンプレート処理,BSD 3 clause,
 `lcov <https://github.com/linux-test-project/lcov>`_,C++,GCC のカバレッジの HTML 化,GPL,
-`llvm-cov <https://llvm.org/docs/CommandGuide/llvm-cov.html>`_,C++,Clang のカバレッジの集計・出力,`LLVM <http://releases.llvm.org/8.0.0/LICENSE.TXT>`_,
+`llvm-cov <https://llvm.org/docs/CommandGuide/llvm-cov.html>`_,C++,Clang のカバレッジの集計・出力,Apache 2.0 (with exception),
 `marshmallow <https://marshmallow.readthedocs.io/en/stable/index.html>`_,Python,データのバリデーション、シリアライズ、デシリアライズ,MIT,未使用。良さそうと思ってメモ。
 `msgpack-c <https://github.com/msgpack/msgpack-c/tree/cpp_master>`_,C++11,`MessagePack <https://msgpack.org/>`_ の読み書き,Boost 1.0,JSON よりも速い。
 `nlohmann/json <https://github.com/nlohmann/json>`_,C++11,`JSON <https://www.json.org/json-ja.html>`_ の読み書き,MIT,リポジトリが重い。
-`PICT <https://github.com/microsoft/pict>`_,"",組み合わせテスト生成,MIT,制約つきの組み合わせテストを生成できる。
+`PICT <https://github.com/microsoft/pict>`_,,組み合わせテスト生成,MIT,制約つきの組み合わせテストを生成できる。
 `pipenv <https://github.com/pypa/pipenv>`_,Python,Python の仮想環境の管理,MIT,慣れれば使いやすい。
 `POCO C++ Libraries <https://pocoproject.org/>`_,C++,C++ の補助的なライブラリ,Boost 1.0,未使用。別途ビルドして使用する必要がある。
 `pyenv <https://github.com/pyenv/pyenv>`_,Python,Python のバージョンの管理,MIT,インストールは不便。
 `simplejson <https://github.com/simplejson/simplejson>`_,Python,`JSON <https://www.json.org/json-ja.html>`_ の読み書き,MIT,Python 標準の json より速いらしい。
 `sqlite_orm <https://github.com/fnc12/sqlite_orm>`_,C++14,SQLite の Object-Relational Mapping,BSD 3 clause,未使用。気になる。
 `toml11 <https://github.com/ToruNiina/toml11>`_,C++11,`TOML <https://github.com/toml-lang/toml>`_ の読み書き,MIT,未使用。試したい。
-`UIKit <https://getuikit.com/>`_,HTML,HTML の UI フレームワーク,MIT,""
+`UIKit <https://getuikit.com/>`_,HTML,HTML の UI フレームワーク,MIT,
 `VTK <https://vtk.org/>`_,"C++, Python",3 次元のコンピュータグラフィックス,BSD 3 clause,別途ビルドして使用する必要がある。
-`Vue.js <https://vuejs.org/>`_,"Javascript, TypeScript",フロントサイドのフレームワーク,MIT,""
+`Vue.js <https://vuejs.org/>`_,"Javascript, TypeScript",フロントサイドのフレームワーク,MIT,
 `yaml-cpp <https://github.com/jbeder/yaml-cpp>`_,C++11,`YAML <https://yaml.org/>`_ の読み書き,MIT,
