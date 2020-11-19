@@ -18,6 +18,7 @@
     Deleted branch feat/first_dockerfile (was 15d5ffa).
     Deleted branch fix/location_of_test_yml (was 304049b).
 
-実行例はこのメモを書いた日の
-`sphinx-docker <https://gitlab.com/MusicScience37/sphinx-docker>`_
-のローカルリポジトリでのもの。
+このコマンドは次の環境で動作確認が取れている。
+
+- Ubuntu 18.04 / 20.04
+- Windows 10 上の Git Bash
