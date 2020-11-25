@@ -64,14 +64,20 @@ Clangd のコマンドへ渡す引数を設定する。
     {
       "clangd.arguments": [
         "--compile-commands-dir=${workspaceFolder}/build/Debug",
-        "--clang-tidy"
+        "--clang-tidy",
+        "-header-insertion=never"
       ]
-    }
 
 - ``--compile-commands-dir`` で compile\_commands.json ファイルがあるディレクトリを示す。
   ワーキングディレクトリ直下に compile\_commands.json があればこのオプションは不要。
 - ``--clang-tidy`` で Clang-Tidy のチェックを行うようにしている。
   （Clang-Tidy の設定ファイル .clang-tidy があることを前提としている。）
+- ``-header-insertion=never`` は自動で ``#include`` を追加する機能の設定。
+  この機能を有効にすると、外部ライブラリを使用する際に、
+  ユーザがインクルードする想定ではない内部実装のヘッダを勝手にインクルードする
+  （たとえユーザ向けのヘッダを既にインクルードしていても、
+  その行を消してライブラリ内部のヘッダへ変更する）ため、
+  このオプションを付けておいた方が良い。
 
 ここまで設定が終われば、あとは C++ のソースコードを開くことで自動的に Clangd が動作し始める。
 
