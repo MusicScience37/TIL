@@ -10,3 +10,4 @@ C++
     vtk/index
     asio_io_context
     clangd
+    catch2_with_mocking
