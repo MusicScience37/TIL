@@ -7,8 +7,12 @@ verify_ssl = true
 sphinx-autobuild = "*"
 pylint = "*"
 autopep8 = "*"
+doc8 = "*"
 
 [packages]
 sphinx = "*"
 sphinx-rtd-theme = "*"
 sphinxcontrib-plantuml = "*"
+
+[requires]
+python_version = "3.8.6"
