@@ -18,6 +18,7 @@
 `nlohmann/json <https://github.com/nlohmann/json>`_,C++11,`JSON <https://www.json.org/json-ja.html>`_ の読み書き,MIT,リポジトリが重い。
 `PICT <https://github.com/microsoft/pict>`_,,組み合わせテスト生成,MIT,制約つきの組み合わせテストを生成できる。
 `pipenv <https://github.com/pypa/pipenv>`_,Python,Python の仮想環境の管理,MIT,慣れれば使いやすい。
+`Plotly.py <https://plotly.com/>`_,Python,インタラクティブなグラフのプロット,MIT,HTML 形式でインタラクティブなグラフが描ける。
 `POCO C++ Libraries <https://pocoproject.org/>`_,C++,C++ の補助的なライブラリ,Boost 1.0,未使用。別途ビルドして使用する必要がある。
 `pyenv <https://github.com/pyenv/pyenv>`_,Python,Python のバージョンの管理,MIT,インストールは不便。
 `simplejson <https://github.com/simplejson/simplejson>`_,Python,`JSON <https://www.json.org/json-ja.html>`_ の読み書き,MIT,Python 標準の json より速いらしい。
