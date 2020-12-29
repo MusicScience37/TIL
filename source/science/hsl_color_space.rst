@@ -128,12 +128,18 @@ HSL から RGB への変換については、
     import numpy as np
     import plotly.graph_objects as go
 
-    h = np.linspace(0, 1, 61)
+    N = 61
+    h = np.linspace(0, 1, N)
     r = np.vectorize(hue2r)(h)
     g = np.vectorize(hue2g)(h)
     b = np.vectorize(hue2b)(h)
 
+    rgb = np.concatenate((r, g, b))
+    rgb = np.reshape(rgb, (1, 3, N))
+    rgb = np.swapaxes(rgb, 1, 2)
+
     fig = go.Figure()
+    fig.add_trace(go.Image(z=rgb * 255.0, dx=1.0 / (N - 1), dy=0.5, y0=1.5))
     fig.add_trace(go.Scatter(x=h, y=r,
                              mode='lines', name="r'",
                              line={'color': 'red'}))
@@ -144,10 +150,9 @@ HSL から RGB への変換については、
                              mode='lines', name="b'",
                              line={'color': 'blue'}))
 
-    fig.update_layout(
-        title="色相に対する (r', g', b') の挙動",
-        xaxis_title='色相',
-        yaxis_title='RGB の値')
+    fig.update_layout(title="色相に対する (r', g', b') の挙動")
+    fig.update_xaxes(range=[0.0, 1.0], title='色相')
+    fig.update_yaxes(range=[0.0, 1.75], scaleratio=0.4)
 
     fig
 
