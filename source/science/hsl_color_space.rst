@@ -152,7 +152,7 @@ HSL から RGB への変換については、
 
     fig.update_layout(title="色相に対する (r', g', b') の挙動")
     fig.update_xaxes(range=[0.0, 1.0], title='色相')
-    fig.update_yaxes(range=[0.0, 1.75], scaleratio=0.4)
+    fig.update_yaxes(range=[0.0, 1.75], scaleratio=0.4, title='RGB')
 
     fig
 
