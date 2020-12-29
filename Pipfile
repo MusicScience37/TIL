@@ -15,4 +15,4 @@ sphinx-rtd-theme = "*"
 sphinxcontrib-plantuml = "*"
 
 [requires]
-python_version = "3.8.6"
+python_version = "3.8"
