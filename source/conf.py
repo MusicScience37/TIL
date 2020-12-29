@@ -11,7 +11,7 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
-# import sys
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -50,6 +50,15 @@ plantuml_jar_path = os.getenv("PLANTUML_JAR_PATH")
 plantuml = 'java -jar ' + plantuml_jar_path
 plantuml_output_format = 'svg'
 plantuml_syntax_error_image = True
+
+# setting of jupyter-sphinx
+extensions += ['jupyter_sphinx']
+if sys.platform == 'win32':
+    # required on Windows
+    # https://stackoverflow.com/questions/58422817/jupyter-notebook-with-python-3-8-notimplementederror
+    import asyncio
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
