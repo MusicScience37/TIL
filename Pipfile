@@ -13,6 +13,9 @@ doc8 = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
 sphinxcontrib-plantuml = "*"
+pandas = "*"
+plotly = "*"
+jupyter-sphinx = "*"
 
 [requires]
 python_version = "3.8"
