@@ -11,6 +11,7 @@ TIL - Today I Learned
 
     development/index
     security_network/index
+    science/index
     license
 
 * :ref:`search`
