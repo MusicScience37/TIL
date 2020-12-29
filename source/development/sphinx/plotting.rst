@@ -38,10 +38,8 @@ Sphinx ドキュメントにグラフを挿入する。
 
 なお、jupyter-sphinx 自体はソースコードのブロックを実行してくれるライブラリのため、
 当然グラフでない計算結果の表示にも使用できる。
+また、1 つの rst ファイル内では変数が共有される。
 
 .. jupyter-execute::
 
-    import numpy as np
-
-    x = np.linspace(0, 1, 10)
     x

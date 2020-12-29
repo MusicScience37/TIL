@@ -67,7 +67,89 @@ RGB 色空間による表現 :math:`(r, g, b)` を計算する。
     論文中の記述と矛盾するため :math:`(2i - 1)` とした。
 
 HSL から RGB への変換については、
-[W3C-color]_ に JavaScript による実装例がある。
+[W3C-color]_ に JavaScript による実装例があるが、
+ここでは、Python で実装して挙動を確認する。
+
+色相に対する RGB の変化
+------------------------
+
+まず、:math:`(r', g', b')` の計算式を実装する。
+
+.. jupyter-execute::
+
+    def hue2r(hue: float) -> float:
+        """色相に対する RGB の R を計算する
+
+        hue は [0, 1] の範囲にあるとする。
+        """
+
+        if (0.0 <= hue <= 1.0 / 6.0) or (5.0 / 6.0 <= hue):
+            return 1.0
+        elif 1.0 / 6.0 <= hue <= 2.0 / 6.0:
+            return 2.0 - 6.0 * hue
+        elif 2.0 / 6.0 <= hue <= 4.0 / 6.0:
+            return 0.0
+        else:
+            return 6.0 * hue - 4.0
+
+    def hue2g(hue: float) -> float:
+        """色相に対する RGB の G を計算する
+
+        hue は [0, 1] の範囲にあるとする。
+        """
+
+        if 0.0 <= hue <= 1.0 / 6.0:
+            return 6 * hue
+        elif 1.0 / 6.0 <= hue <= 3.0 / 6.0:
+            return 1.0
+        elif 3.0 / 6.0 <= hue <= 4.0 / 6.0:
+            return 4.0 - 6.0 * hue
+        else:
+            return 0.0
+
+    def hue2b(hue: float) -> float:
+        """色相に対する RGB の B を計算する
+
+        hue は [0, 1] の範囲にあるとする。
+        """
+
+        if 0.0 <= hue <= 2.0 / 6.0:
+            return 0.0
+        elif 2.0 / 6.0 <= hue <= 3.0 / 6.0:
+            return 6.0 * hue - 2.0
+        elif 3.0 / 6.0 <= hue <= 5.0 / 6.0:
+            return 1.0
+        else:
+            return 6.0 - 6.0 * hue
+
+
+.. jupyter-execute::
+
+    import numpy as np
+    import plotly.graph_objects as go
+
+    h = np.linspace(0, 1, 61)
+    r = np.vectorize(hue2r)(h)
+    g = np.vectorize(hue2g)(h)
+    b = np.vectorize(hue2b)(h)
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=h, y=r,
+                             mode='lines', name="r'",
+                             line={'color': 'red'}))
+    fig.add_trace(go.Scatter(x=h, y=g,
+                             mode='lines', name="g'",
+                             line={'color': 'green'}))
+    fig.add_trace(go.Scatter(x=h, y=b,
+                             mode='lines', name="b'",
+                             line={'color': 'blue'}))
+
+    fig.update_layout(
+        title="色相に対する (r', g', b') の挙動",
+        xaxis_title='色相',
+        yaxis_title='RGB の値')
+
+    fig
 
 参考
 --------
