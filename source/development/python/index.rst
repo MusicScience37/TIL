@@ -8,3 +8,4 @@ Python
     shebang
     pyenv
     pipenv
+    kivy
