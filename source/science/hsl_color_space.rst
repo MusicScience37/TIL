@@ -156,6 +156,63 @@ HSL から RGB への変換については、
 
     fig
 
+色相、彩度、明度に対する色の変化
+----------------------------------
+
+続いて、彩度と明度も含めた色の計算を行う。
+
+.. jupyter-execute::
+
+    def hsl2rgb(h: float, s: float, l: float) -> np.ndarray:
+        """HSL から RGB へ変換する
+        """
+
+        rgb = np.array([hue2r(h), hue2g(h), hue2b(h)])
+        if l <= 0.5:
+            return (0.5 + s * (rgb - 0.5)) * 2.0 * l
+        else:
+            return 0.5 + s * (rgb - 0.5) \
+                + (0.5 - s * (rgb - 0.5)) * (2.0 * l - 1.0)
+
+.. jupyter-execute::
+
+    import plotly.express as px
+    import xarray as xr
+
+    N = 61
+
+    h = np.linspace(0.0, 1.0, N)
+    h = np.reshape(h, (N, 1, 1))
+    h = np.repeat(h, N, 1)
+    h = np.repeat(h, N, 2)
+
+    s = np.linspace(0.0, 1.0, N)
+    s = np.reshape(s, (1, N, 1))
+    s = np.repeat(s, N, 0)
+    s = np.repeat(s, N, 2)
+
+    l = np.linspace(0.0, 1.0, N)
+    l = np.reshape(l, (1, 1, N))
+    l = np.repeat(l, N, 0)
+    l = np.repeat(l, N, 1)
+
+    rgb = np.vectorize(hsl2rgb, signature='(),(),()->(3)')(h, s, l)
+    values = np.linspace(0.0, 1.0, N)
+    data = xr.DataArray(
+            rgb,
+            dims=['Hue', 'Saturation', 'Lightness', 'RGB'],
+            coords=[
+                ('Hue', values),
+                ('Saturation', values),
+                ('Lightness', values),
+                ('RGB', ['R', 'G', 'B']),
+            ])
+    data = data.transpose('Lightness', 'Saturation', 'Hue', 'RGB')
+
+    px.imshow(data, animation_frame='Lightness',
+              zmin=0.0, zmax=1.0,
+              origin='lower')
+
 参考
 --------
 
