@@ -211,7 +211,8 @@ HSL から RGB への変換については、
 
     px.imshow(data, animation_frame='Lightness',
               zmin=0.0, zmax=1.0,
-              origin='lower')
+              origin='lower',
+              title='色相、彩度、明度に対する色の変化')
 
 参考
 --------
