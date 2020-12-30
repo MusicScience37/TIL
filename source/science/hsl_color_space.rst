@@ -128,7 +128,7 @@ HSL から RGB への変換については、
     import numpy as np
     import plotly.graph_objects as go
 
-    N = 61
+    N = 121
     h = np.linspace(0, 1, N)
     r = np.vectorize(hue2r)(h)
     g = np.vectorize(hue2g)(h)
@@ -178,8 +178,6 @@ HSL から RGB への変換については、
 
     import plotly.express as px
     import xarray as xr
-
-    N = 61
 
     h = np.linspace(0.0, 1.0, N)
     h = np.reshape(h, (N, 1, 1))
