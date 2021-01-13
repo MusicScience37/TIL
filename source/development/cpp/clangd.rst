@@ -10,14 +10,18 @@ Clangd の利用
 - エラー検知
 - 定義への移動
 
-などを行えるようにする言語サーバ。
+などを行えるようにするツール。
+
+コンパイラ clang などと同じ
+`LLVM <https://llvm.org/>`_
+プロジェクトで作成されている。
 
 インストール
 ----------------
 
 Ubuntu の場合、``apt install clangd`` とすれば簡単にインストールできる。
 
-ただし、Clangd 11 でなければ
+ただし、Clangd のバージョン 11 でなければ
 ``#include`` の補間ができないと
 Issue `Better include autocomplete <https://github.com/clangd/vscode-clangd/issues/46>`_
 に書いてあったため、今回は
@@ -44,14 +48,24 @@ Visual Studio Code で Clangd を利用するには、
 
   - compile\_commands.json は名前の通りコンパイル時に使用するコマンドを書く。
   - CMake では ``CMAKE_EXPORT_COMPILE_COMMANDS`` 変数を ON にすれば出力される。
+
+    - ルートの CMakeLists.txt から他のすべての CMakeLists.txt を
+      add\_subdirectory コマンドで読み込むようになっているリポジトリでないと期待通りに動作しない。
+
   - 拡張機能 C/C++ や、
-    `Clang-Tidy <https://clang.llvm.org/extra/clang-tidy/>`_ でも
+    静的解析ツール `Clang-Tidy <https://clang.llvm.org/extra/clang-tidy/>`_ でも
     このファイルを利用している。
 
 - compile\_flags.txt を使用する方法
 
   - compile\_flags.txt は名前の通りコンパイル時にコンパイラに使用するフラグを書く。
-    インクルードディレクトリの指定（``-I``）は最低限必要。
+
+    .. code:: text
+
+        -Iinclude
+        -Iexternal/library/include
+
+  - インクルードディレクトリの指定（``-I``）は最低限必要。
 
 今回は、CMake を使用しているため、
 前者の compile\_commands.json を使用した。
@@ -71,18 +85,18 @@ Clangd のコマンドへ渡す引数を設定する。
 
 - ``--compile-commands-dir`` で compile\_commands.json ファイルがあるディレクトリを示す。
   ワーキングディレクトリ直下に compile\_commands.json があればこのオプションは不要。
-- ``--header-insertion`` は自動で ``#include`` を追加する機能の設定。
+- ``--header-insertion`` は自動で必要な ``#include`` を追加する機能の設定。
   この機能を有効にすると、外部ライブラリを使用するソースコードを実装している際に、
   ユーザがインクルードする想定ではない内部実装のヘッダを勝手にインクルードする
   （たとえユーザ向けのヘッダを既にインクルードしていても、
   その行を消してライブラリ内部のヘッダへ変更する）という問題があり、
   今のところ無効にしている。
 
-.. note::
-    ``--header-insertion`` で使用される include-what-you-use の利点については
-    `Include What You Use - Fluent C++ <https://www.fluentcpp.com/2021/01/01/include-what-you-use/>`_
-    などを参照。
-    実装中でなく、リファクタリングのときに使うのであれば、便利なツールだと思う。
+  .. note::
+      ``--header-insertion`` で使用される include-what-you-use の利点については
+      `Include What You Use - Fluent C++ <https://www.fluentcpp.com/2021/01/01/include-what-you-use/>`_
+      などを参照。
+      実装中でなく、リファクタリングのときに使うのであれば、便利なツールだと思う。
 
 ここまで設定が終われば、あとは C++ のソースコードを開くことで自動的に Clangd が動作し始める。
 
