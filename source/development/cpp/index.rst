@@ -10,3 +10,4 @@ C++
     asio_io_context
     clangd
     catch2_with_mocking
+    serialization/index
