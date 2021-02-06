@@ -250,6 +250,6 @@ RapidJSON と nlohmann/JSON が時間かかるのは共通している。
 
   - 処理効率は RapidJSON が良い。
   - API は nlohmann/json が使いやすい。
-    特に、STL との間の相互変換は nlohmann/json では簡単できても、
+    特に、STL との間の相互変換は nlohmann/json では簡単にできても、
     RapidJSON では自力での実装が必要。
   - 実装時間と実行時間のバランスでどちらを利用すべきかが変わる。
