@@ -11,3 +11,4 @@ C++
     clangd
     catch2_with_mocking
     serialization/index
+    gdb_common
