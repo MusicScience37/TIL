@@ -12,3 +12,4 @@ C++
     catch2_with_mocking
     serialization/index
     gdb_common
+    read_all_in_file
