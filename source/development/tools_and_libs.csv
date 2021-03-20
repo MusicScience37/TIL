@@ -1,5 +1,6 @@
 名称,対象言語,用途,ライセンス,メモ
 `axios <https://github.com/axios/axios>`_,"Javascript, TypeScript",HTTP クライアント,MIT,JSON を使用した HTTP 通信に便利なライブラリ。
+`bigfloat <https://bigfloat.readthedocs.io/en/latest/index.html>`_, "Python", "任意精度演算ライブラリ", "LGPL 3.0", ":ref:`development-python-bigfloat`"
 `Boost <https://www.boost.org/>`_,C++,C++ の補助的なライブラリ,Boost 1.0,別途ビルドして使用する必要がある。
 `Catch2 <https://github.com/catchorg/Catch2>`_,C++11,ユニットテスト,Boost 1.0,アサートが書きやすい。ベンチマークもできる。
 `CMake <https://cmake.org/>`_,"C, C++, ...",ビルドツール,BSD 3 clause,

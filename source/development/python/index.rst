@@ -9,3 +9,4 @@ Python
     pyenv
     pipenv
     kivy
+    bigfloat
