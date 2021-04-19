@@ -10,3 +10,4 @@ Python
     pipenv
     kivy
     bigfloat
+    pybind_rdynamic
