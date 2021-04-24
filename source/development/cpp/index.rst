@@ -13,3 +13,4 @@ C++
     serialization/index
     gdb_common
     read_all_in_file
+    conan_cmake.rst
