@@ -35,7 +35,7 @@ CMake 向けの Generator
 
 2021/4/25 現在、
 CMake 向けの Generator には次のようなものがある
-（ `CMake — conan 1.35.2 documentation <https://docs.conan.io/en/latest/integrations/build_system/cmake.html>`_ ）。
+（参考、例の引用元：`CMake — conan 1.35.2 documentation <https://docs.conan.io/en/latest/integrations/build_system/cmake.html>`_）。
 
 ``cmake`` generator
     ``cmake`` generator を選択すると、
