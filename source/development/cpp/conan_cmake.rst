@@ -165,6 +165,10 @@ conanfile.txt または conanfile.txt を作成すると、
         requires = "protobuf/3.15.5"
         generators = "cmake_find_package"
 
+.. note::
+    本ページにおける動作確認を行ったリポジトリ：
+    `test_conan_20210425 <https://gitlab.com/MusicScience37/test_conan_20210425>`_
+
 CMake と同様にビルドディレクトリを作成し、
 ビルドディレクトリから ``conan install`` コマンドを起動し、
 オプションとして conanfile.py のあるディレクトリを指定することで、
