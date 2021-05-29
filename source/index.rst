@@ -9,10 +9,10 @@ TIL - Today I Learned
 .. toctree::
     :maxdepth: 2
 
+    about
     development/index
     security_network/index
     science/index
-    license
 
 * :ref:`search`
 
