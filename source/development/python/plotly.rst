@@ -1,6 +1,6 @@
 .. _development-python-plotly:
 
-Plotly の Python ライブラリでプロットする
+Plotly の Python ライブラリでグラフをプロット
 =============================================
 
 Python パッケージ
