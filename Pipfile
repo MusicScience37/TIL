@@ -10,7 +10,7 @@ autopep8 = "*"
 doc8 = "*"
 
 [packages]
-sphinx = "~=3.5.4" # バージョン 4 にするとグラフが表示できない。
+sphinx = "*"
 sphinx-rtd-theme = "*"
 sphinxcontrib-plantuml = "*"
 pandas = "*"
