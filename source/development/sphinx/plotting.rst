@@ -1,3 +1,5 @@
+.. _development-sphinx-plotting:
+
 グラフのプロット
 ================
 

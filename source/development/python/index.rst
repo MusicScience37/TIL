@@ -11,3 +11,4 @@ Python
     kivy
     bigfloat
     pybind_rdynamic
+    plotly
