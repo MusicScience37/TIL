@@ -36,6 +36,8 @@ todo_include_todos = True
 
 # setting of mathjax
 extensions += ['sphinx.ext.mathjax']
+# force to use MathJax 2 for compatibility with Plotly
+mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 mathjax_config = {
     'TeX': {
         'Macros': {
@@ -58,14 +60,6 @@ if sys.platform == 'win32':
     # https://stackoverflow.com/questions/58422817/jupyter-notebook-with-python-3-8-notimplementederror
     import asyncio
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-# Fix 404 error for thebelab CSS and Javascripts
-jupyter_sphinx_thebelab_config = {
-    'requestKernel': True,
-    'binderOptions': {
-        'repo': "binder-examples/requirements",
-    },
-}
-
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
