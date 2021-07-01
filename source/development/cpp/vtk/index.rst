@@ -1,5 +1,5 @@
-VTK
-==========
+VTK (Visualization Tool Kit)
+=====================================
 
 .. toctree::
     :maxdepth: 1

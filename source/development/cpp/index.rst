@@ -2,16 +2,11 @@ C++
 ===============================
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
-    prevent_optimizing_variables
-    protected_member_of_base_class_objects_other_than_this
-    vtk/index
-    asio_io_context
+    std/index
+    asio/index
+    catch2/index
     pybind11/index
-    clangd
-    catch2_with_mocking
-    serialization/index
-    gdb_common
-    read_all_in_file
-    conan_cmake.rst
+    vtk/index
+    etc/index
