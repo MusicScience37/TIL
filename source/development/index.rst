@@ -13,3 +13,4 @@
     python/index
     tex/index
     vscode/index
+    plantuml/index
