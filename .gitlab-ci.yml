@@ -6,12 +6,14 @@ build:
   stage: build
   image: musicscience37/sphinx-doxygen:v-3.2
   script:
+    - apt update
+    - apt install -y fonts-ipafont
     - pipenv sync
     - pipenv run make html
   artifacts:
     paths:
       - build
-    expire_in: '1 week'
+    expire_in: "1 week"
 
 pages:
   stage: deploy
@@ -20,6 +22,6 @@ pages:
     - mv build/html public
   artifacts:
     paths:
-    - public
+      - public
   only:
     - master
