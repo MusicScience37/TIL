@@ -17,12 +17,28 @@ TIL (Today I Learned) は「今日学んだこと」という名前の通り、
 運用
 -----------
 
-- ビルド：`Sphinx と Doxygen の Docker コンテナ <https://hub.docker.com/r/musicscience37/sphinx-doxygen>`_
+.. uml::
 
-- 公開：GitLab Pages
+    !include <logos/docker.puml>
+    !include <logos/gitlab.puml>
 
-  - `https://musicscience37.gitlab.io/til/ <https://musicscience37.gitlab.io/til/>`_
-  - `https://til.musicscience37.com/ <https://til.musicscience37.com/>`_
+    cloud "<$docker>\nDocker Hub" as hub {
+        node "musicscience37/sphinx-doxygen image" as ci_image
+    }
+
+    cloud "<$gitlab>\nGitLab.com" as gitlab {
+        database "til repository" as repo
+        component "GitLab CI" as ci
+        database "GitLab Pages\nhttps://musicscience37.gitlab.io/til/" as pages
+
+        repo --> ci : 読み込み
+        ci_image --> ci : 読み込み
+        ci --> pages : 出力
+    }
+
+    node "DNS\nmusicscience37.com" as dns
+    dns -up-> pages : til.musicscience37.com CNAME MusicScience37.gitlab.io.
+    note right of dns : https://til.musicscience37.com/ \nで TIL にアクセスできるように設定
 
 ルール
 ---------
