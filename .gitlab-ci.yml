@@ -7,6 +7,9 @@ include:
   - template: Dependency-Scanning.gitlab-ci.yml
 variables:
   SECURE_LOG_LEVEL: debug
+gemnasium-python-dependency_scanning:
+  image:
+    name: registry.gitlab.com/gitlab-org/security-products/analyzers/gemnasium-python:2-python-3.9
 
 build:
   stage: build
