@@ -11,8 +11,10 @@ TIL (Today I Learned) は「今日学んだこと」という名前の通り、
 
     2021/7/1 時点で「Today I Learned」で GitHub 上を検索したところ、6145 件ヒットした。
 
-実際に、TIL を通して自分が困って調べたことをまとめて書いておくことで、
+TIL を通して自分が困って調べたことをまとめて書いておくことで、
 再び同じ問題にぶつかったときに調べ直さなくて良くなる効果がある。
+
+文書の形式としては、比較的簡単に書ける Markdown を使用することが多いようである。
 
 運用
 -----------
@@ -29,22 +31,39 @@ TIL (Today I Learned) は「今日学んだこと」という名前の通り、
     cloud "<$gitlab>\nGitLab.com" as gitlab {
         database "til repository" as repo
         component "GitLab CI" as ci
-        database "GitLab Pages\nhttps://musicscience37.gitlab.io/til/" as pages
+        database "GitLab Pages" as pages
 
         repo --> ci : 読み込み
         ci_image --> ci : 読み込み
         ci --> pages : 出力
     }
 
+    note right of pages : https://musicscience37.gitlab.io/til/\nでアクセス
+
     node "DNS\nmusicscience37.com" as dns
     dns -up-> pages : til.musicscience37.com CNAME MusicScience37.gitlab.io.
-    note right of dns : https://til.musicscience37.com/ \nで TIL にアクセスできるように設定
+    note right of dns : https://til.musicscience37.com/\nで TIL へアクセスできるように設定
+
+主なツール
+-----------------
+
+- `Sphinx <https://www.sphinx-doc.org/en/master/>`_
+
+  - Restructured Text の形式で書いた文章を HTML, CSS, Javascript へ変換する。
+  - ただ Markdown を書く場合に比べて環境構築は多少手間がかかるが、
+    環境構築後はテキストの文章を書くだけで見た目の整ったページを作ることができ、
+    数式や UML を挿入することもできる。
+
+- `Pipenv <https://pipenv.pypa.io/en/latest/>`_
+
+  - Python の仮想環境を管理するツール。
+  - Python パッケージのバージョンを作業環境と CI 環境で揃えるために使用する。
 
 ルール
 ---------
 
 - ビルドが通る状態で master にコミットする。
-- sphinx の設定は一旦ブランチを切って作業して結果を確認してからマージする。
+- Sphinx の設定は一旦ブランチを切って作業を行い、CI で結果を確認してからマージする。
 
 ライセンス
 ------------------------
