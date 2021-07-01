@@ -8,6 +8,7 @@ C++
     protected_member_of_base_class_objects_other_than_this
     vtk/index
     asio_io_context
+    pybind11/index
     clangd
     catch2_with_mocking
     serialization/index
