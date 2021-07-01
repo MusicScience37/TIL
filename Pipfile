@@ -4,19 +4,19 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-sphinx-autobuild = "*"
-pylint = "*"
 autopep8 = "*"
 doc8 = "*"
+pylint = "*"
+sphinx-autobuild = "*"
 
 [packages]
+jupyter-sphinx = "*"
+pandas = "*"
+plotly = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
 sphinxcontrib-plantuml = "*"
-pandas = "*"
-plotly = "*"
-jupyter-sphinx = "*"
 xarray = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"
