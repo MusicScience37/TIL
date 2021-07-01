@@ -25,6 +25,7 @@
 `pipenv <https://github.com/pypa/pipenv>`_,Python,Python の仮想環境の管理,MIT,慣れれば使いやすい。
 `Plotly.py <https://plotly.com/>`_,Python,インタラクティブなグラフのプロット,MIT,HTML 形式でインタラクティブなグラフが描ける。:ref:`development-python-plotly`
 `POCO C++ Libraries <https://pocoproject.org/>`_,C++,C++ の補助的なライブラリ,Boost 1.0,未使用。別途ビルドして使用する必要がある。
+`Pybind11 <https://github.com/pybind/pybind11>`_,C++,C++ と Python における型や関数の相互変換,BSD,:ref:`Pybind11 関連のメモ <development-cpp-pybind11>`
 `pyenv <https://github.com/pyenv/pyenv>`_,Python,Python のバージョンの管理,MIT,インストールは不便。
 `simplejson <https://github.com/simplejson/simplejson>`_,Python,`JSON <https://www.json.org/json-ja.html>`_ の読み書き,MIT,Python 標準の json より速いらしい。
 `sqlite_orm <https://github.com/fnc12/sqlite_orm>`_,C++14,SQLite の Object-Relational Mapping,BSD 3 clause,未使用。気になる。
