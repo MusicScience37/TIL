@@ -21,10 +21,10 @@ TIL を通して自分が困って調べたことをまとめて書いておく�
 
 .. uml::
 
-    !include <logos/docker.puml>
+    !include <logos/docker-icon.puml>
     !include <logos/gitlab.puml>
 
-    cloud "<$docker>\nDocker Hub" as hub {
+    cloud "<$docker-icon>\nDocker Hub" as hub {
         node "musicscience37/sphinx-doxygen image" as ci_image
     }
 
