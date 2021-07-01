@@ -1,6 +1,10 @@
 stages:
   - build
+  - test
   - deploy
+
+include:
+  - template: Dependency-Scanning.gitlab-ci.yml
 
 build:
   stage: build
