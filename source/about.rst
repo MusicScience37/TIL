@@ -29,7 +29,7 @@ TIL を通して自分が困って調べたことをまとめて書いておく�
     }
 
     cloud "<$gitlab>\nGitLab.com" as gitlab {
-        database "til repository" as repo
+        database "TIL repository" as repo
         component "GitLab CI" as ci
         database "GitLab Pages" as pages
 
@@ -43,6 +43,14 @@ TIL を通して自分が困って調べたことをまとめて書いておく�
     node "DNS\nmusicscience37.com" as dns
     dns -up-> pages : til.musicscience37.com CNAME MusicScience37.gitlab.io.
     note right of dns : https://til.musicscience37.com/\nで TIL へアクセスできるように設定
+
+リポジトリ
+~~~~~~~~~~~~~~
+
+- `GitLab の TIL リポジトリ <https://gitlab.com/MusicScience37/til>`_
+  （作業用）
+- `GitHub の TIL リポジトリ <https://github.com/MusicScience37/TIL>`_
+  （ミラー）
 
 主なツール
 -----------------
