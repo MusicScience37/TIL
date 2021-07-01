@@ -7,3 +7,4 @@ Pybind11
     :maxdepth: 1
 
     rdynamic
+    require_python_shared
