@@ -3,7 +3,7 @@ stages:
   - build
   - deploy
 
-image: musicscience37/sphinx-doxygen:v-3.2
+image: musicscience37/sphinx-doxygen:v3.3
 
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
@@ -22,8 +22,6 @@ pre-commit:
 build:
   stage: build
   script:
-    - apt update
-    - apt install -y fonts-ipafont
     - pipenv sync
     - pipenv run make html
   artifacts:
