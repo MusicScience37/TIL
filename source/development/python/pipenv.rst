@@ -34,8 +34,8 @@ Python のバージョンを選択したい場合、pyenv をインストール�
       seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/kenta/.local/share/virtualenv)
         added seed packages: pip==20.2.3, setuptools==50.3.1, wheel==0.35.1
       activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
-    
-    ✔ Successfully created virtual environment! 
+
+    ✔ Successfully created virtual environment!
     Virtualenv location: /home/kenta/projects/doc/til/.venv
     Creating a Pipfile for this project…
 
@@ -46,13 +46,13 @@ Python のバージョンを選択したい場合、pyenv をインストール�
     $ pipenv install sphinx~=3.2.1
     Installing sphinx~=3.2.1…
     Adding sphinx to Pipfile's [packages]…
-    ✔ Installation Succeeded 
+    ✔ Installation Succeeded
     Pipfile.lock not found, creating…
     Locking [dev-packages] dependencies…
     Locking [packages] dependencies…
     Building requirements...
     Resolving dependencies...
-    ✔ Success! 
+    ✔ Success!
     Updated Pipfile.lock (165e96)!
     Installing dependencies from Pipfile.lock (165e96)…
       🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 0/0 — 00:00:00
@@ -66,7 +66,7 @@ Python のバージョンを選択したい場合、pyenv をインストール�
     $ pipenv update
     Building requirements...
     Resolving dependencies...
-    ✔ Success! 
+    ✔ Success!
     Skipped Update of Package watchdog: 0.10.3 installed,, 0.10.3 available.
     Skipped Update of Package urllib3: 1.25.11 installed,, 1.25.11 available.
     Skipped Update of Package tornado: 6.0.4 installed,, 6.0.4 available.

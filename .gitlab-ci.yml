@@ -3,6 +3,8 @@ stages:
   - build
   - deploy
 
+image: musicscience37/sphinx-doxygen:v-3.2
+
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
 variables:
@@ -11,9 +13,14 @@ gemnasium-python-dependency_scanning:
   image:
     name: registry.gitlab.com/gitlab-org/security-products/analyzers/gemnasium-python:2-python-3.9
 
+pre-commit:
+  stage: test
+  script:
+    - pipenv sync --dev
+    - pipenv run pre-commit run --all-files
+
 build:
   stage: build
-  image: musicscience37/sphinx-doxygen:v-3.2
   script:
     - apt update
     - apt install -y fonts-ipafont
@@ -26,7 +33,6 @@ build:
 
 pages:
   stage: deploy
-  image: ubuntu
   script:
     - mv build/html public
   artifacts:
