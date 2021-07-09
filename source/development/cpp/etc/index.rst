@@ -8,3 +8,4 @@
     clangd
     gdb_common
     conan_cmake
+    sanitizer
