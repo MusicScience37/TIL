@@ -61,6 +61,13 @@ if sys.platform == 'win32':
     import asyncio
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
+# setting of opengraph
+# https://pypi.org/project/sphinxext-opengraph/
+extensions += ['sphinxext.opengraph']
+ogp_site_url = 'https://til.musicscience37.com/'
+ogp_site_name = "MusicScience37's TIL"
+ogp_image = 'KIcon/KIcon80white.png'
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
