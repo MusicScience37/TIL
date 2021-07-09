@@ -95,3 +95,9 @@ html_title = 'MusicScience37\'s TIL'
 
 html_logo = 'KIcon/KIcon80white.png'
 html_favicon = 'KIcon/KIcon.ico'
+
+html_theme_options = {
+    'style_nav_header_background': '#B24700',
+}
+
+html_css_files = ['til-custom.css']
