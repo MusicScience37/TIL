@@ -139,6 +139,8 @@ AddressSanitizer は
 Clang による範囲外アクセスの検出
 ``````````````````````````````````
 
+ソースコード：`test-cpp-sanitizer <https://gitlab.com/MusicScience37/test-cpp-sanitizer>`_
+
 次のような C++ のソースコードを準備した。
 
 .. code-block:: c++
