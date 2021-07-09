@@ -3,8 +3,6 @@ stages:
   - build
   - deploy
 
-image: musicscience37/sphinx-doxygen:v3.3
-
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
 variables:
@@ -15,6 +13,7 @@ gemnasium-python-dependency_scanning:
 
 pre-commit:
   stage: test
+  image: musicscience37/pipenv:v1.7
   script:
     - pipenv sync --dev
     - pipenv run pre-commit run --all-files
@@ -22,6 +21,7 @@ pre-commit:
 
 build:
   stage: build
+  image: musicscience37/sphinx-doxygen:v3.3
   script:
     - pipenv sync
     - pipenv run make html
@@ -33,6 +33,7 @@ build:
 
 pages:
   stage: deploy
+  image: ubuntu
   script:
     - mv build/html public
   artifacts:
