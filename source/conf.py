@@ -97,6 +97,7 @@ html_logo = 'KIcon/KIcon80white.png'
 html_favicon = 'KIcon/KIcon.ico'
 
 html_theme_options = {
+    'navigation_depth': -1,
     'style_nav_header_background': '#B24700',
 }
 
