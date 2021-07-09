@@ -14,6 +14,9 @@ pre-commit
 設定ファイルの作成
 ---------------------------------
 
+リポジトリのルートディレクトリに ``.pre-commit-config.yaml`` というファイル名で
+設定ファイルを配置しておく必要がある。
+
 サンプルの設定ファイルを生成するには次のコマンドを実行する。
 
 .. code-block:: console
@@ -35,7 +38,7 @@ pre-commit
         -   id: check-yaml
         -   id: check-added-large-files
 
-hook を追加していくことで様々なチェックを行うことができる。
+hooks の項目を追加していくことで様々なチェックを行うことができる。
 公式の `Supported hooks <https://pre-commit.com/hooks.html>`_ のページを見ると、
 かなりの数の hook が用意されいることが分かる。
 
@@ -47,6 +50,32 @@ Git への登録
 .. code-block:: console
 
     $ pre-commit install
+
+動作例を以下に示す。
+
+.. code-block:: console
+
+    $ git commit -m "test"
+    [WARNING] Unstaged files detected.
+    [INFO] Stashing unstaged files to /home/<user>/.cache/pre-commit/patch1625801172-570995.
+    Trim Trailing Whitespace.................................................Failed
+    - hook id: trailing-whitespace
+    - exit code: 1
+    - files were modified by this hook
+
+    Fixing NOTICE.txt
+
+    Fix End of Files.........................................................Passed
+    Check Yaml...........................................(no files to check)Skipped
+    Check for added large files..............................................Passed
+    [INFO] Restored changes from /home/<user>/.cache/pre-commit/patch1625801172-570995.
+
+設定ファイルに記述したチェック項目で違反があればコミットに失敗する。
+
+簡単に修正できるようなものについては自動で修正されるが、
+Git のステージへの追加まではされない。
+ユーザが問題ないか確認したあとステージし、
+改めてコミットを行うという流れになる。
 
 全てのファイルへの適用
 ------------------------------
