@@ -66,7 +66,7 @@ if sys.platform == 'win32':
 extensions += ['sphinxext.opengraph']
 ogp_site_url = 'https://til.musicscience37.com/'
 ogp_site_name = "MusicScience37's TIL"
-ogp_image = 'KIcon/KIcon80white.png'
+ogp_image = 'https://til.musicscience37.com/_static/KIcon80white.png'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
