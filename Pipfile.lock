@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b78f5fa5067c5e96ec5a29d688d3826f0660670458f0148b198c1c0998af525b"
+            "sha256": "6f351caeaffad09379ede20c7e3800bdcf0f66d8ad729a954daf632e16297273"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -866,6 +866,14 @@
             "markers": "python_version >= '3.5'",
             "version": "==1.1.5"
         },
+        "sphinxext-opengraph": {
+            "hashes": [
+                "sha256:5da1a6eaab25e377b841f506ef7d7c44b539428f3d6094ccc16d1dfd3ef65501",
+                "sha256:a51f2604f9a5b6c0d25d3a88e694d5c02e20812dc0e482adf96c8628f9109357"
+            ],
+            "index": "pypi",
+            "version": "==0.4.2"
+        },
         "tenacity": {
             "hashes": [
                 "sha256:352cc77bb3dffb070111c83c548ef5afb78acf93f89a28d753c5570066411b57",
@@ -1091,7 +1099,7 @@
                 "sha256:eed17b53c3e7912425579853d078a0832820f023191561fcee9d7cae424e0813",
                 "sha256:f65ce5bd4cbc6abdfbe29afc2f0245538ab358c14590912df638033f157d555e"
             ],
-            "markers": "python_version < '4.0' and python_full_version >= '3.6.1'",
+            "markers": "python_version < '4' and python_full_version >= '3.6.1'",
             "version": "==5.9.2"
         },
         "jinja2": {
