@@ -18,6 +18,7 @@ pre-commit:
   script:
     - pipenv sync --dev
     - pipenv run pre-commit run --all-files
+  needs: []
 
 build:
   stage: build
@@ -28,6 +29,7 @@ build:
     paths:
       - build
     expire_in: "1 week"
+  needs: []
 
 pages:
   stage: deploy
@@ -38,3 +40,4 @@ pages:
       - public
   only:
     - master
+  needs: [build]
