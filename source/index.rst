@@ -13,10 +13,4 @@ TIL - Today I Learned
     development/index
     security_network/index
     science/index
-
-* :ref:`search`
-
-TODO リスト
------------
-
-.. todolist::
+    internal/index
