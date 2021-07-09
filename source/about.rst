@@ -52,7 +52,7 @@ Sphinx の拡張機能を利用してソースコードや図、数式、グラ�
     note right of dns : https://til.musicscience37.com/\nで TIL へアクセスできるように設定
 
 リポジトリ
-~~~~~~~~~~~~~~
+----------------
 
 - `GitLab の TIL リポジトリ <https://gitlab.com/MusicScience37/til>`_
   （作業用）
