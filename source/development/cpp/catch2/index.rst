@@ -2,6 +2,6 @@ Catch2
 ===============================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     catch2_with_mocking
