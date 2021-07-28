@@ -6,7 +6,6 @@
 
     tools_and_libs
     cpp/index
-    cmake/index
     git/index
     docker/index
     sphinx/index

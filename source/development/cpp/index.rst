@@ -7,6 +7,7 @@ C++
     std/index
     asio/index
     catch2/index
+    cmake/index
     pybind11/index
     vtk/index
     etc/index
