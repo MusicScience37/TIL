@@ -127,7 +127,33 @@ git コマンドへ GPG の鍵を登録するには、次のコマンドを実�
     $ git config --global commit.gpgsign true
     $ git config --global tag.gpgsign true
 
+WSL (Windows Subsystem for Linux) を使用する場合、さらに次のような環境変数が必要。
+
+.. code-block:: bash
+
+    export GPG_TTY=$(tty)
+
+これを ``.bashrc`` に書くことでようやくコミットができた。
+
+コミットへの署名の確認
+--------------------------
+
+コミットしたあと、署名がされたかどうかを確認するには、次のようにする。
+
+.. code-block:: console
+
+    $ git log --show-signature -1
+    commit 271d7e50a2a8e1f6d4e95597d4e7bb63e3ac06d5 (HEAD -> master)
+    gpg: Signature made Wed Aug  4 23:05:49 2021 JST
+    gpg:                using RSA key EA7348F0A587E5BC2935B3AE46E0D51B1B343166
+    gpg: Good signature from "Kenta Kabashima <kenta_program37@hotmail.co.jp>" [ultimate]
+    Author: Kenta Kabashima <kenta_program37@hotmail.co.jp>
+    Date:   Wed Aug 4 23:05:49 2021 +0900
+
+        GPG の鍵を Git で使用するメモ
+
 参考
 ---------
 
 - `Signing commits with GPG | GitLab <https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/index.html>`_
+- `WSL Ubuntu: git gpg signing Inappropriate ioctl for device · Issue #4029 · microsoft/WSL <https://github.com/microsoft/WSL/issues/4029>`_
