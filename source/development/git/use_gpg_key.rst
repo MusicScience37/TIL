@@ -1,0 +1,133 @@
+GPG 鍵の利用
+====================
+
+`GPG (GNU Privacy Guard) <https://www.gnupg.org/index.html>`_
+の鍵を使用して Git のコミットに署名をすることができる。
+
+GPG のインストール
+--------------------
+
+Ubuntu の場合、GPG は apt でインストールできる。
+
+.. code-block:: console
+
+    $ apt install gpg
+
+鍵の生成
+--------------
+
+次のコマンドで鍵を生成する。
+
+.. code-block:: console
+
+    $ gpg --full-gen-key
+
+対話型で色々聞かれる。
+以下に実行例を示す。
+ただし、一部 ``<hidden>`` で隠している。
+また、途中で CUI の表示が変わってパスワードを聞かれた。
+
+.. code-block:: console
+
+    $ gpg --full-gen-key
+    gpg (GnuPG) 2.2.19; Copyright (C) 2019 Free Software Foundation, Inc.
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Please select what kind of key you want:
+       (1) RSA and RSA (default)
+       (2) DSA and Elgamal
+       (3) DSA (sign only)
+       (4) RSA (sign only)
+      (14) Existing key from card
+    Your selection? 1
+    RSA keys may be between 1024 and 4096 bits long.
+    What keysize do you want? (3072) 4096
+    Requested keysize is 4096 bits
+    Please specify how long the key should be valid.
+             0 = key does not expire
+          <n>  = key expires in n days
+          <n>w = key expires in n weeks
+          <n>m = key expires in n months
+          <n>y = key expires in n years
+    Key is valid for? (0) 0
+    Key does not expire at all
+    Is this correct? (y/N) y
+
+    GnuPG needs to construct a user ID to identify your key.
+
+    Real name: Kenta Kabashima
+    Email address: kenta_program37@hotmail.co.jp
+    Comment:
+    You selected this USER-ID:
+        "Kenta Kabashima <kenta_program37@hotmail.co.jp>"
+
+    Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+    We need to generate a lot of random bytes. It is a good idea to perform
+    some other action (type on the keyboard, move the mouse, utilize the
+    disks) during the prime generation; this gives the random number
+    generator a better chance to gain enough entropy.
+    We need to generate a lot of random bytes. It is a good idea to perform
+    some other action (type on the keyboard, move the mouse, utilize the
+    disks) during the prime generation; this gives the random number
+    generator a better chance to gain enough entropy.
+    gpg: /home/kenta/.gnupg/trustdb.gpg: trustdb created
+    gpg: key 46E0D51B1B343166 marked as ultimately trusted
+    gpg: directory '/home/<hidden>/.gnupg/openpgp-revocs.d' created
+    gpg: revocation certificate stored as '/home/<hidden>/.gnupg/openpgp-revocs.d/<hidden>.rev'
+    public and secret key created and signed.
+
+    pub   rsa4096 2021-08-04 [SC]
+          <hidden>
+    uid                      Kenta Kabashima <kenta_program37@hotmail.co.jp>
+    sub   rsa4096 2021-08-04 [E]
+
+公開鍵の確認
+-----------------
+
+まず、鍵の一覧を確認する。
+
+.. code-block:: console
+
+    $ gpg --list-secret-keys --keyid-format LONG
+    /home/<hidden>/.gnupg/pubring.kbx
+    ------------------------------
+    sec   rsa4096/<ID> 2021-08-04 [SC]
+          <hidden>
+    uid                 [ultimate] Kenta Kabashima <kenta_program37@hotmail.co.jp>
+    ssb   rsa4096/<hidden> 2021-08-04 [E]
+
+``sec`` から始まる行の ``rsa4096/`` の後の ``<ID>`` の部分に出ている文字列をコピーして、
+次のようにコマンドを呼び出すと、公開鍵が出力される。
+
+.. code-block:: console
+
+    $ gpg --armor --export <ID>
+    -----BEGIN PGP PUBLIC KEY BLOCK-----
+
+    （公開鍵がここに出てくる）
+
+CUI 画面上に出てきた公開鍵を Git のリモートリポジトリ側に登録しておく。
+
+git コマンドへの登録
+----------------------
+
+git コマンドへ GPG の鍵を登録するには、次のコマンドを実行する。
+（``<ID`` は前節のものと同じ。）
+
+.. code-block:: console
+
+    $ git config --global user.signingkey <ID>
+
+さらに、常に GPG の鍵で署名を行うために次のコマンドを実行する。
+
+.. code-block:: console
+
+    $ git config --global gpg.program gpg
+    $ git config --global commit.gpgsign true
+    $ git config --global tag.gpgsign true
+
+参考
+---------
+
+- `Signing commits with GPG | GitLab <https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/index.html>`_
