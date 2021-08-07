@@ -152,6 +152,12 @@ WSL (Windows Subsystem for Linux) を使用する場合、さらに次のよう�
 
         GPG の鍵を Git で使用するメモ
 
+また、GitLab に push した場合は次のように GitLab の画面上でも確認できる。
+
+.. figure:: sample-screen-shot-of-gitlab-for-verified-commit.png
+
+    署名したコミットを GitLab の画面で確認した例
+
 参考
 ---------
 
