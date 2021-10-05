@@ -11,3 +11,4 @@
     sanitizer
     address_sanitizer_with_valgrind_to_die
     libsegfault
+    backward-cpp
