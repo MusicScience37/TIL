@@ -1,4 +1,5 @@
 名称,対象言語,用途,ライセンス,メモ
+`aiohttp <https://docs.aiohttp.org/en/stable/>`_,Python,HTTP クライアント／サーバ,Apache 2.0,:ref:`development-python-aiohttp`
 `axios <https://github.com/axios/axios>`_,"Javascript, TypeScript",HTTP クライアント,MIT,JSON を使用した HTTP 通信に便利なライブラリ。
 `backward-cpp <https://github.com/bombela/backward-cpp>`_,C++,バックトレースの取得,MIT,未使用。
 `bigfloat <https://bigfloat.readthedocs.io/en/latest/index.html>`_,Python,任意精度演算ライブラリ,LGPL 3.0,:ref:`development-python-bigfloat`
