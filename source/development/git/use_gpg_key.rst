@@ -13,6 +13,8 @@ Ubuntu の場合、GPG は apt でインストールできる。
 
     $ apt install gpg
 
+Windows の場合、GPG は Git のインストールで一緒にインストールされた。
+
 鍵の生成
 --------------
 
