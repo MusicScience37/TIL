@@ -10,4 +10,5 @@ C++
     cmake/index
     pybind11/index
     vtk/index
+    visual_studio/index
     etc/index
