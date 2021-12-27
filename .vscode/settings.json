@@ -1,0 +1,21 @@
+{
+  "restructuredtext.confPath": "${workspaceFolder}/source",
+  "cmake.configureOnOpen": false,
+  "restructuredtext.linter.name": "doc8",
+  "restructuredtext.languageServer.disabled": true,
+  "cSpell.words": [
+    "clamav",
+    "doxygen",
+    "gemnasium",
+    "Kabashima",
+    "Kenta",
+    "mathjax",
+    "maxdepth",
+    "MusicScience37",
+    "pipenv",
+    "Plotly",
+    "toctree",
+    "todos",
+    "PlantUML"
+  ]
+}
