@@ -5,17 +5,24 @@
   "restructuredtext.languageServer.disabled": true,
   "cSpell.words": [
     "clamav",
+    "clamd",
+    "clamdscan",
     "doxygen",
+    "fdpass",
+    "freshclam",
     "gemnasium",
     "Kabashima",
     "Kenta",
     "mathjax",
     "maxdepth",
+    "mkdir",
+    "multiscan",
     "MusicScience37",
     "pipenv",
+    "PlantUML",
     "Plotly",
     "toctree",
     "todos",
-    "PlantUML"
+    "userspace"
   ]
 }

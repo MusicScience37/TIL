@@ -7,3 +7,4 @@
     csrf
     get_socket_info
     openssl/index
+    clamav
