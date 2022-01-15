@@ -4,7 +4,8 @@ stages:
   - deploy
 
 include:
-  - template: Dependency-Scanning.gitlab-ci.yml
+  - template: Security/Dependency-Scanning.gitlab-ci.yml
+  - template: Security/License-Scanning.gitlab-ci.yml
 variables:
   SECURE_LOG_LEVEL: debug
 gemnasium-python-dependency_scanning:
@@ -13,7 +14,7 @@ gemnasium-python-dependency_scanning:
 
 pre-commit:
   stage: test
-  image: musicscience37/pipenv:v1.7
+  image: musicscience37/pipenv:v1.9
   script:
     - pipenv sync --dev
     - pipenv run pre-commit run --all-files
@@ -21,7 +22,7 @@ pre-commit:
 
 build:
   stage: build
-  image: musicscience37/sphinx-doxygen:v3.3
+  image: musicscience37/sphinx-doxygen:v3.4
   script:
     - pipenv sync
     - pipenv run make html
