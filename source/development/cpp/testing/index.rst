@@ -6,3 +6,4 @@
 
     catch2_with_mocking
     approval-catch2-v3
+    approval-num-anal
