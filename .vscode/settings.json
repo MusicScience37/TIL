@@ -19,10 +19,12 @@
     "multiscan",
     "MusicScience37",
     "pipenv",
+    "Pipfile",
     "PlantUML",
     "Plotly",
     "toctree",
     "todos",
-    "userspace"
+    "userspace",
+    "venv"
   ]
 }
