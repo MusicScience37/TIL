@@ -136,7 +136,7 @@ nlohmann/json と対照的に、
     import pandas as pd
     import plotly.express as px
 
-    bench_results = pd.read_csv('source/development/cpp/etc/serialization/result_20210205_Ubuntu/bench.csv')
+    bench_results = pd.read_csv('source/development/cpp/serialization/serialization/result_20210205_Ubuntu/bench.csv')
 
     # parse は msgpack-c でしか行っていないからグラフに入れない
     bench_results = bench_results[bench_results['procedure'] != 'parse']

@@ -2,13 +2,25 @@ C++
 ===============================
 
 .. toctree::
+    :caption: Language
     :maxdepth: 2
 
-    std/index
-    asio/index
-    catch2/index
-    cmake/index
+    lang/index
+
+.. toctree::
+    :caption: Libraries
+    :maxdepth: 2
+
+    serialization/index
+    networking/index
+    testing/index
     pybind11/index
     vtk/index
-    visual_studio/index
-    etc/index
+    lib_etc/index
+
+.. toctree::
+    :caption: Development
+    :maxdepth: 2
+
+    build_env/index
+    tools/index
