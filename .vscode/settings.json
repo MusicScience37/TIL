@@ -22,6 +22,7 @@
     "Pipfile",
     "PlantUML",
     "Plotly",
+    "struct",
     "toctree",
     "todos",
     "userspace",
