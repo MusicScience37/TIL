@@ -1,0 +1,19 @@
+{
+  "build": { "dockerfile": "Dockerfile" },
+  "containerEnv": {
+    "CONAN_USER_HOME": "${containerWorkspaceFolder}",
+    "PIPENV_VENV_IN_PROJECT": "1"
+  },
+  "extensions": [
+    "streetsidesoftware.code-spell-checker",
+    "davidanson.vscode-markdownlint",
+    "jebbs.plantuml",
+    "esbenp.prettier-vscode",
+    "ms-python.python",
+    "lextudio.restructuredtext",
+    "trond-snekvik.simple-rst",
+    "ms-azuretools.vscode-docker",
+    "janisdd.vscode-edit-csv"
+  ],
+  "postCreateCommand": "bash ./.devcontainer/setup.bash"
+}
