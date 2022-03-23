@@ -97,3 +97,20 @@ Git の gpg 鍵を使用する場合、
 
    .. note::
        参照したドキュメントによると、gpg でなく gnupg2 であることに意味があるようだ。
+
+gpg のエラー
+`````````````````````````
+
+次のようなエラーが出てコミットができないことがあった。
+
+.. code-block:: console
+
+    error: gpg failed to sign the data
+    fatal: failed to write commit object
+
+WSL のコンソールを開いて以下のコマンドを実行すると何故か治った。
+
+.. code-block:: console
+
+    $ gpg-connect-agent killagent /bye
+    $ gpg-connect-agent /bye

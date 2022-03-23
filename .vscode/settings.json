@@ -1,8 +1,4 @@
 {
-  "restructuredtext.confPath": "${workspaceFolder}/source",
-  "cmake.configureOnOpen": false,
-  "restructuredtext.linter.name": "doc8",
-  "restructuredtext.languageServer.disabled": true,
   "cSpell.words": [
     "clamav",
     "clamd",
@@ -23,10 +19,12 @@
     "mkdir",
     "multiscan",
     "MusicScience37",
+    "pinentry",
     "pipenv",
     "Pipfile",
     "PlantUML",
     "Plotly",
+    "reloadagent",
     "Runge",
     "socat",
     "struct",
@@ -34,5 +32,8 @@
     "todos",
     "userspace",
     "venv"
-  ]
+  ],
+  "esbonio.sphinx.confDir": "${workspaceFolder}/source",
+  "restructuredtext.linter.disabledLinters": ["rstcheck", "rst-lint"],
+  "esbonio.server.enabled": false
 }
