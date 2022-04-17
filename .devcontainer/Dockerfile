@@ -1,4 +1,4 @@
-FROM musicscience37/sphinx-doxygen:clang12-v4.0
+FROM musicscience37/sphinx-doxygen:clang13-v4.2
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
