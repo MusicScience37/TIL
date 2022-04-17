@@ -14,7 +14,7 @@ gemnasium-python-dependency_scanning:
 
 pre-commit:
   stage: test
-  image: musicscience37/pipenv:focal-v2.0
+  image: musicscience37/pipenv:focal-v2.2
   script:
     - mkdir -p .venv
     - pipenv sync --dev
@@ -30,7 +30,7 @@ pre-commit:
 
 build:
   stage: build
-  image: musicscience37/sphinx-doxygen:clang12-v4.0
+  image: musicscience37/sphinx-doxygen:clang13-v4.2
   script:
     - mkdir -p .venv
     - pipenv sync
