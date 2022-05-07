@@ -160,8 +160,33 @@ WSL (Windows Subsystem for Linux) を使用する場合、さらに次のよう�
 
     署名したコミットを GitLab の画面で確認した例
 
+署名ができるかどうかの確認
+------------------------------
+
+署名付きのコミットを行おうとしてエラーが発生した際の原因の探索などで、
+gpg の鍵が有効かどうか確認したい場合がある。
+その場合は、次のようなコマンドを使用する。
+
+.. code-block:: console
+
+    $ echo 'test' | gpg --clearsign
+
+成功時には次のような出力が得られる。
+
+.. code-block:: console
+
+    $ echo 'test' | gpg --clearsign
+    -----BEGIN PGP SIGNED MESSAGE-----
+    Hash: SHA512
+
+    test
+    -----BEGIN PGP SIGNATURE-----
+    （ここでは省略）
+    -----END PGP SIGNATURE-----
+
 参考
 ---------
 
 - `Signing commits with GPG | GitLab <https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/index.html>`_
 - `WSL Ubuntu: git gpg signing Inappropriate ioctl for device · Issue #4029 · microsoft/WSL <https://github.com/microsoft/WSL/issues/4029>`_
+- `署名付きcommitでerror: gpg failed to sign the dataになるとき． <https://zenn.dev/taqxlow/articles/91c4da91e67a1b>`_
