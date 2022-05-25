@@ -2,6 +2,7 @@
 
 pipenv sync --dev
 
+git config --global --add safe.directory /workspaces/til
 pipenv run pre-commit install
 
 git config gpg.program gpg2

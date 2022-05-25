@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "boldsymbol",
     "clamav",
     "clamd",
     "clamdscan",
@@ -19,6 +20,7 @@
     "mkdir",
     "multiscan",
     "MusicScience37",
+    "opengraph",
     "pinentry",
     "pipenv",
     "Pipfile",
@@ -27,6 +29,8 @@
     "reloadagent",
     "Runge",
     "socat",
+    "sphinxcontrib",
+    "sphinxext",
     "struct",
     "toctree",
     "todos",
@@ -35,5 +39,9 @@
   ],
   "esbonio.sphinx.confDir": "${workspaceFolder}/source",
   "restructuredtext.linter.disabledLinters": ["rstcheck", "rst-lint"],
-  "esbonio.server.enabled": false
+  "esbonio.server.enabled": false,
+  "files.watcherExclude": {
+    "**/.venv/**": true
+  },
+  "python.formatting.provider": "black"
 }
