@@ -4,15 +4,17 @@ Ccache によるビルド高速化
 `Ccache <https://ccache.dev/>`_
 は、C/C++ のコンパイル時に生成されるオブジェクトファイルをキャッシュして、
 同じ条件によるコンパイルの処理をなくすことにより、
-リビルドの時間を短くすることができるツールとなっている。
-今回試した
+リビルドの時間を短くすることができるツールである。
+今回試したコンパイル時間が長い
 `numerical-collection-cpp <https://gitlab.com/MusicScience37/numerical-collection-cpp>`_
-リポジトリでは、リビルドを 40 倍高速化できた [#footnote-speed]_ 。
+リポジトリでは、
+リビルドを 40 倍高速化できた [#footnote-speed]_ 。
 
-インストール
------------------
+インストール方法
+-------------------
 
 Ubuntu 上では、``apt install ccache`` コマンドでインストールできる。
+また、公式ホームページでは Windows 用のバイナリも用意されている。
 
 設定
 --------------
@@ -35,6 +37,14 @@ Ubuntu 上では、``apt install ccache`` コマンドでインストールで�
     今回適用したリポジトリは、ビルドディレクトリが 5 GB もあったため、
     この設定項目を 10 GB に設定した。
 
+CMake への適用
+----------------------
+
+CMake でビルドを行う場合、
+``CMAKE_C_COMPILER_LAUNCHER``, ``CMAKE_CXX_COMPILER_LAUNCHER``
+という 2 つの変数に ``ccache`` コマンドを指定することで、
+Ccache を適用できる。
+
 .. rubric:: Footnotes
 
 .. [#footnote-speed]
@@ -42,3 +52,5 @@ Ubuntu 上では、``apt install ccache`` コマンドでインストールで�
     リポジトリのコミット 1ef7d5fd2be019fe142f2ffe2e939574b6d4118d 時点のソースコードに対して
     4 スレッドの Release ビルドを行ったところ、
     ビルド時間を 377 秒から 9 秒まで削減できた。
+    ヘッダオンリーの重いライブラリを使用しているために 1 ファイルごとのコンパイル時間が比較的長く、
+    Ccache の効果が得られやすいプロジェクトとなっている。
