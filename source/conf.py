@@ -20,7 +20,7 @@ import sys
 
 project = "TIL"
 copyright = (
-    "2019 - 2021, MusicScience37 (Kenta Kabashima). Licensed under the CC BY 4.0"
+    "2019 - 2022, MusicScience37 (Kenta Kabashima). Licensed under the CC BY 4.0"
 )
 author = "MusicScience37"
 
