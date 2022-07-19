@@ -1,4 +1,4 @@
-FROM musicscience37/sphinx-doxygen:clang14-v5.0
+FROM musicscience37/sphinx-doxygen
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -7,4 +7,5 @@ RUN apt-get update && \
     vim \
     nano && \
     apt-get autoremove && \
-    apt-get autoclean
+    apt-get autoclean && \
+    rm -r /var/lib/apt/lists/*

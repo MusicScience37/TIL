@@ -44,5 +44,14 @@
   "files.watcherExclude": {
     "**/.venv/**": true
   },
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "hadolint.cliOptions": [
+    "--ignore",
+    "DL3008",
+    "--ignore",
+    "DL3013",
+    "--ignore",
+    "DL3006",
+    "--no-color"
+  ]
 }
