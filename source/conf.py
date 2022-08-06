@@ -59,12 +59,6 @@ plantuml_syntax_error_image = True
 
 # setting of jupyter-sphinx
 extensions += ["jupyter_sphinx"]
-if sys.platform == "win32":
-    # required on Windows
-    # https://stackoverflow.com/questions/58422817/jupyter-notebook-with-python-3-8-notimplementederror
-    import asyncio
-
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 # setting of opengraph
 # https://pypi.org/project/sphinxext-opengraph/
@@ -72,6 +66,13 @@ extensions += ["sphinxext.opengraph"]
 ogp_site_url = "https://til.musicscience37.com/"
 ogp_site_name = "MusicScience37's TIL"
 ogp_image = "https://til.musicscience37.com/_static/KIcon128white.png"
+
+# setting of bibtex
+# https://sphinxcontrib-bibtex.readthedocs.io/
+extensions += ["sphinxcontrib.bibtex"]
+bibtex_bibfiles = ["bibliography.bib"]
+bibtex_default_style = "plain"
+bibtex_reference_style = "super"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]

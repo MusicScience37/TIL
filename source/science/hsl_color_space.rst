@@ -7,9 +7,9 @@ HSL 色空間は
 - Saturation （彩度）
 - Lightness （明度）
 
-により色を表現する [Mozilla-color]_ 。
+により色を表現する :footcite:p:`MozillaColor`。
 
-HSL 色空間は [Joblove1978]_ で定義されたものであり、
+HSL 色空間は :footcite:t:`Joblove1978` が定義したものであり、
 次のように HSL 色空間による表現 :math:`(h, s, l)` から
 RGB 色空間による表現 :math:`(r, g, b)` を計算する。
 
@@ -63,11 +63,12 @@ RGB 色空間による表現 :math:`(r, g, b)` を計算する。
     \end{cases}
 
 .. note::
-    [Joblove1978]_ では最後が :math:`(2i - 1)` でなく :math:`(2 - 2i)` だったが、
+    :footcite:t:`Joblove1978`
+    の定式化では最後が :math:`(2i - 1)` でなく :math:`(2 - 2i)` だったが、
     論文中の記述と矛盾するため :math:`(2i - 1)` とした。
 
 HSL から RGB への変換については、
-[W3C-color]_ に JavaScript による実装例があるが、
+:footcite:t:`W3CColor` に JavaScript による実装例があるが、
 ここでは、Python で実装して挙動を確認する。
 
 色相に対する RGB の変化
@@ -128,7 +129,7 @@ HSL から RGB への変換については、
     import numpy as np
     import plotly.graph_objects as go
 
-    N = 121
+    N = 61
     h = np.linspace(0, 1, N)
     r = np.vectorize(hue2r)(h)
     g = np.vectorize(hue2g)(h)
@@ -215,9 +216,4 @@ HSL から RGB への変換については、
 参考
 --------
 
-.. [Joblove1978]
-    Joblove, G. and D. P. Greenberg. “Color spaces for computer graphics.” SIGGRAPH '78 (1978).
-    (`Semantic Scholar <https://www.semanticscholar.org/paper/Color-spaces-for-computer-graphics-Joblove-Greenberg/042305fdca6fa3efa785c77bd1d72bf9cabbd993?sort=relevance&page=7>`_,
-    `PDF <http://papers.cumincad.org/data/works/att/634c.content.pdf>`_)
-.. [Mozilla-color] `\<color\> - CSS: カスケーディングスタイルシート | MDN <https://developer.mozilla.org/ja/docs/Web/CSS/color_value>`_
-.. [W3C-color] `CSS Color Module Level 4 <https://drafts.csswg.org/css-color/#the-hsl-notation>`_
+.. footbibliography::

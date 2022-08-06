@@ -13,7 +13,8 @@
     "lextudio.restructuredtext",
     "trond-snekvik.simple-rst",
     "ms-azuretools.vscode-docker",
-    "janisdd.vscode-edit-csv"
+    "janisdd.vscode-edit-csv",
+    "james-yu.latex-workshop"
   ],
   "postCreateCommand": "bash ./.devcontainer/setup.bash"
 }
