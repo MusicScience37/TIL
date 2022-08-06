@@ -19,6 +19,7 @@ sphinx-rtd-theme = "*"
 sphinxcontrib-plantuml = "*"
 xarray = "*"
 sphinxext-opengraph = "*"
+sphinxcontrib-bibtex = "*"
 
 [requires]
 python_version = "3.9"

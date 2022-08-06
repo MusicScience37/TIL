@@ -1,7 +1,7 @@
 ランダムな整数の衝突
 ========================
 
-UUID バージョン 4 [RFC4412]_ のようにランダムで十分長い整数は、
+UUID バージョン 4 :footcite:p:`Leach2005` のようにランダムで十分長い整数は、
 同じ整数が選択される（以降、「衝突する」）確率が十分低いため、
 単一のプロセスでなく複数のプロセスやコンピュータ上で生成される ID などで
 使用されることがある。
@@ -228,8 +228,4 @@ UUID バージョン 4 [RFC4412]_ のようにランダムで十分長い整数�
 参考
 ---------
 
-.. [RFC4412]
-    Paul J. Leach and Rich Salz and Michael H. Mealling.
-    "A Universally Unique IDentifier (UUID) URN Namespace."
-    RFC Editor, 2005.
-    (`https://www.rfc-editor.org/info/rfc4122 <https://www.rfc-editor.org/info/rfc4122>`_)
+.. footbibliography::
