@@ -5,7 +5,9 @@ RUN apt-get update && \
     openssh-client \
     gnupg2 \
     vim \
-    nano && \
+    nano \
+    git-lfs \
+    && \
     apt-get autoremove && \
     apt-get autoclean && \
     rm -r /var/lib/apt/lists/*
