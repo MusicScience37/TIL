@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Catch2TestRun name="bench_struct" rng-seed="2752608862" catch2-version="3.1.0">
+  <TestCase name="bench_struct_msgpack" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_msgpack.cpp" line="36">
+    <BenchmarkResults name="serialize struct with msgpack-c" samples="100" resamples="100000" iterations="157" clockResolution="19.6152" estimatedDuration="1.9625e+06">
+      <!-- All values in nano seconds -->
+      <mean value="118.214" lowerBound="117.359" upperBound="122.066" ci="0.95"/>
+      <standardDeviation value="7.83875" lowerBound="0.507571" upperBound="18.5288" ci="0.95"/>
+      <outliers variance="0.625445" lowMild="0" lowSevere="0" highMild="0" highSevere="2"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="parse struct with msgpack-c" samples="100" resamples="100000" iterations="650" clockResolution="19.6152" estimatedDuration="1.95e+06">
+      <!-- All values in nano seconds -->
+      <mean value="29.4213" lowerBound="29.4096" upperBound="29.4616" ci="0.95"/>
+      <standardDeviation value="0.100737" lowerBound="0.0241246" upperBound="0.231499" ci="0.95"/>
+      <outliers variance="0.0099" lowMild="1" lowSevere="1" highMild="0" highSevere="1"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize struct with msgpack-c" samples="100" resamples="100000" iterations="112" clockResolution="19.6152" estimatedDuration="1.9712e+06">
+      <!-- All values in nano seconds -->
+      <mean value="162.69" lowerBound="161.79" upperBound="166.413" ci="0.95"/>
+      <standardDeviation value="8.02806" lowerBound="1.37379" upperBound="18.7345" ci="0.95"/>
+      <outliers variance="0.474593" lowMild="0" lowSevere="0" highMild="0" highSevere="3"/>
+    </BenchmarkResults>
+    <OverallResult success="true"/>
+  </TestCase>
+  <TestCase name="bench_struct_protobuf" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_protobuf.cpp" line="8">
+    <BenchmarkResults name="serialize struct with protobuf" samples="100" resamples="100000" iterations="111" clockResolution="19.6152" estimatedDuration="1.9536e+06">
+      <!-- All values in nano seconds -->
+      <mean value="157.469" lowerBound="156.576" upperBound="161.568" ci="0.95"/>
+      <standardDeviation value="8.32121" lowerBound="0.865446" upperBound="19.7415" ci="0.95"/>
+      <outliers variance="0.514282" lowMild="0" lowSevere="0" highMild="5" highSevere="6"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize struct with protobuf" samples="100" resamples="100000" iterations="148" clockResolution="19.6152" estimatedDuration="1.9684e+06">
+      <!-- All values in nano seconds -->
+      <mean value="113.498" lowerBound="111.173" upperBound="119.508" ci="0.95"/>
+      <standardDeviation value="18.6231" lowerBound="8.73928" upperBound="32.9851" ci="0.95"/>
+      <outliers variance="0.915088" lowMild="0" lowSevere="0" highMild="1" highSevere="4"/>
+    </BenchmarkResults>
+    <OverallResult success="true"/>
+  </TestCase>
+  <TestCase name="bench_struct_nlohmann_json" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_nlohmann_json.cpp" line="9">
+    <BenchmarkResults name="serialize struct with nlohmann/json" samples="100" resamples="100000" iterations="1" clockResolution="19.6152" estimatedDuration="3.6951e+06">
+      <!-- All values in nano seconds -->
+      <mean value="35340.7" lowerBound="35005.3" upperBound="36219.3" ci="0.95"/>
+      <standardDeviation value="2551.94" lowerBound="1020.74" upperBound="4971.03" ci="0.95"/>
+      <outliers variance="0.666144" lowMild="0" lowSevere="0" highMild="4" highSevere="3"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize struct with nlohmann/json" samples="100" resamples="100000" iterations="1" clockResolution="19.6152" estimatedDuration="8.5947e+06">
+      <!-- All values in nano seconds -->
+      <mean value="81143" lowerBound="80284.7" upperBound="83309.3" ci="0.95"/>
+      <standardDeviation value="6500.85" lowerBound="2950.65" upperBound="12582.9" ci="0.95"/>
+      <outliers variance="0.70738" lowMild="0" lowSevere="0" highMild="0" highSevere="5"/>
+    </BenchmarkResults>
+    <OverallResult success="true"/>
+  </TestCase>
+  <TestCase name="bench_struct_rapidjson" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_rapidjson.cpp" line="76">
+    <BenchmarkResults name="serialize struct with rapidjson" samples="100" resamples="100000" iterations="2" clockResolution="19.6152" estimatedDuration="2.8298e+06">
+      <!-- All values in nano seconds -->
+      <mean value="13187.7" lowerBound="13150.6" upperBound="13301" ci="0.95"/>
+      <standardDeviation value="282.868" lowerBound="21.8943" upperBound="615.615" ci="0.95"/>
+      <outliers variance="0.142359" lowMild="0" lowSevere="0" highMild="1" highSevere="2"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize struct with rapidjson" samples="100" resamples="100000" iterations="2" clockResolution="19.6152" estimatedDuration="3.1912e+06">
+      <!-- All values in nano seconds -->
+      <mean value="15742.4" lowerBound="15437.5" upperBound="16430.9" ci="0.95"/>
+      <standardDeviation value="2216.15" lowerBound="1203.37" upperBound="3884.85" ci="0.95"/>
+      <outliers variance="0.883755" lowMild="0" lowSevere="0" highMild="0" highSevere="6"/>
+    </BenchmarkResults>
+    <OverallResult success="true"/>
+  </TestCase>
+  <TestCase name="bench_struct_simdjson" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_simdjson.cpp" line="10">
+    <BenchmarkResults name="deserialize struct with simdjson" samples="100" resamples="100000" iterations="2" clockResolution="19.6152" estimatedDuration="2.0342e+06">
+      <!-- All values in nano seconds -->
+      <mean value="10270.7" lowerBound="10198.5" upperBound="10447.2" ci="0.95"/>
+      <standardDeviation value="533.016" lowerBound="164.398" upperBound="940.134" ci="0.95"/>
+      <outliers variance="0.504313" lowMild="0" lowSevere="0" highMild="1" highSevere="3"/>
+    </BenchmarkResults>
+    <OverallResult success="true"/>
+  </TestCase>
+  <OverallResults successes="17" failures="0" expectedFailures="0"/>
+  <OverallResultsCases successes="5" failures="0" expectedFailures="0"/>
+</Catch2TestRun>

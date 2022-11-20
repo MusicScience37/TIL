@@ -70,6 +70,20 @@ nlohmann/json と対照的に、
 では、最速で最もメモリ使用量が少ないのが RapidJSON となっている。
 ただし、API の使いやすさでは他のライブラリに負ける。
 
+simdjson
+------------------------
+
+`simdjson <https://github.com/simdjson/simdjson>`_
+は JSON のデシリアライズを行うライブラリの 1 つ。
+ライセンスは Apache 2.0 ライセンスとなっている。
+
+SIMD 演算を用いて高速に JSON のデシリアライズを行うライブラリであり、
+デシリアライズ処理だけは RapidJSON よりも速いという。
+しかし、任意のデータをシリアライズする機能が実装されていないため、
+デシリアライズしか行わない場合にしか使用できない。
+また、API は RapidJSON 以上に使いにくく、
+ライブラリの使用による実装の仕方の制約が極めて強い。
+
 ベンチマーク
 ------------------
 
@@ -100,10 +114,11 @@ nlohmann/json と対照的に、
 ライブラリのバージョン
 '''''''''''''''''''''''''
 
-- msgpack-c: 3.3.0
-- Protocol Buffers: 3.14.0
-- nlohmann/json: 3.9.1
-- RapidJSON: 1.1.0
+- msgpack: 4.1.3
+- Protocol Buffers: 3.21.4
+- nlohmann/json: 3.11.2
+- RapidJSON: 20220822
+- simdjson: 3.0.0
 
 ソースコード
 '''''''''''''''''
@@ -116,18 +131,18 @@ nlohmann/json と対照的に、
 - 生データ
 
   - 文字列:
-    :download:`bench_string.xml <result_20210205_Ubuntu/bench_string.xml>`
+    :download:`bench_string.xml <result_20221120_Ubuntu/bench_string.xml>`
   - double 型のベクトル:
-    :download:`bench_double.xml <result_20210205_Ubuntu/bench_double.xml>`
+    :download:`bench_double.xml <result_20221120_Ubuntu/bench_double.xml>`
   - 構造体:
-    :download:`bench_struct.xml <result_20210205_Ubuntu/bench_struct.xml>`
+    :download:`bench_struct.xml <result_20221120_Ubuntu/bench_struct.xml>`
 
 - まとめたデータ
 
   - まとめた CSV:
-    :download:`bench.csv <result_20210205_Ubuntu/bench.csv>`
+    :download:`bench.csv <result_20221120_Ubuntu/bench.csv>`
   - 処理用スクリプト:
-    :download:`convert_xml_to_csv.py <result_20210205_Ubuntu/convert_xml_to_csv.py>`
+    :download:`convert_xml_to_csv.py <result_20221120_Ubuntu/convert_xml_to_csv.py>`
 
 まず、文字列のシリアライズ・デシリアライズの処理時間から確認する。
 
@@ -136,7 +151,7 @@ nlohmann/json と対照的に、
     import pandas as pd
     import plotly.express as px
 
-    bench_results = pd.read_csv('source/development/cpp/serialization/serialization/result_20210205_Ubuntu/bench.csv')
+    bench_results = pd.read_csv('source/development/cpp/serialization/serialization/result_20221120_Ubuntu/bench.csv')
 
     # parse は msgpack-c でしか行っていないからグラフに入れない
     bench_results = bench_results[bench_results['procedure'] != 'parse']
@@ -163,15 +178,15 @@ nlohmann/json と対照的に、
 
 1. msgpack-c
 2. Protocol Buffers
-3. RapidJSON
-4. nlohmann/json
+3. simdjson
+4. RapidJSON
+5. nlohmann/json
 
 の順に速かった。
-データが 1 バイトの場合だけ Protocol Buffers が最も速かった。
 
 double のベクトルの結果は以下の通り。
 JSON は double のベクトルのシリアライズ・デシリアライズで
-効率の極めて悪い少数の文字列表記を用いるため、
+効率の極めて悪い小数の文字列表記を用いるため、
 1024 × 1024 のデータサイズの試験を省略した。
 
 .. jupyter-execute::
@@ -188,8 +203,9 @@ JSON は double のベクトルのシリアライズ・デシリアライズで
 
 1. Protocol Buffers
 2. msgpack-c
-3. RapidJSON
-4. nlohmann/json
+3. simdjson
+4. RapidJSON
+5. nlohmann/json
 
 の順に速かった。
 
@@ -205,7 +221,7 @@ JSON は double のベクトルのシリアライズ・デシリアライズで
            labels=labels)
 
 msgpack-c と Protocol Buffers はシリアライズとデシリアライズで順番が入れ替わっているが、
-RapidJSON と nlohmann/JSON が時間かかるのは共通している。
+JSON ライブラリで時間がかかるのは共通している。
 
 ベンチマークのまとめ
 '''''''''''''''''''''''
@@ -214,7 +230,7 @@ RapidJSON と nlohmann/JSON が時間かかるのは共通している。
   JSON のライブラリよりも速かった。
 - msgpack-c と Protocol Buffers は状況によって順位が入れ替わり、
   差は 1 桁程度までに収まっている。
-- JSON のライブラリでは RapidJSON が常に速かった。
+- JSON のライブラリではシリアライズにおいて RapidJSON、デシリアライズにおいて simdjson が常に速かった。
 
 まとめ
 ----------------
@@ -225,8 +241,8 @@ RapidJSON と nlohmann/JSON が時間かかるのは共通している。
 - バイナリデータ形式 vs. JSON
 
   - バイナリデータの方が効率は良い。
-    特に少数のデータを多く扱う場合に差が出やすい。
-  - JSON の方がデータを読みやすい。
+    特に小数のデータを多く扱う場合に差が出やすい。
+  - JSON の方が人間にとってデータを読みやすい。
   - ASCII や Unicode の範囲を超えるデータがいつでも扱えるとは限らないため、
     バイナリデータの利用には注意が必要。
     ただし、msgpack-c と Protocol Buffers はエンディアンが規定されているため、
@@ -246,10 +262,11 @@ RapidJSON と nlohmann/JSON が時間かかるのは共通している。
     C++ だけでシリアライズ・デシリアライズを行うのであれば、
     C++ だけ書けば良い msgpack-c の方が簡単な印象。
 
-- nlohmann/json vs. RapidJSON
+- nlohmann/json vs. RapidJSON vs. simdjson
 
-  - 処理効率は RapidJSON が良い。
+  - デシリアライズの効率は simdjson が良い。
+  - デシリアライズしかできない simdjson を除くと、RapidJSON が速い。
   - API は nlohmann/json が使いやすい。
     特に、STL との間の相互変換は nlohmann/json では簡単にできても、
-    RapidJSON では自力での実装が必要。
-  - 実装時間と実行時間のバランスでどちらを利用すべきかが変わる。
+    RapidJSON, simdjson では自力での実装が必要。
+  - 実装時間と実行時間、シリアライズが必要かどうかによってどれを利用すべきかが変わる。
