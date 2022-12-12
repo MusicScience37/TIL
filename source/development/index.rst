@@ -13,3 +13,4 @@
     tex/index
     vscode/index
     plantuml/index
+    etc/index
