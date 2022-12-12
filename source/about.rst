@@ -69,7 +69,7 @@ Sphinx とその拡張機能を利用してソースコードや図、数式、�
     環境構築後はテキストの文章を書くだけで見た目の整ったページを作ることができ、
     数式や UML を挿入することもできる。
 
-- `Pipenv <https://pipenv.pypa.io/en/latest/>`_
+- `Poetry <https://python-poetry.org/>`_
 
   - Python の仮想環境を管理するツール。
   - Python パッケージのバージョンを作業環境と CI 環境で揃えるために使用する。
