@@ -29,5 +29,6 @@ TIL - Today I Learned
 .. toctree::
     :caption: Internal
     :maxdepth: 2
+    :hidden:
 
     internal/index
