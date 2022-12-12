@@ -6,7 +6,7 @@ Ccache によるビルド高速化
 同じ条件によるコンパイルの処理をなくすことにより、
 リビルドの時間を短くすることができるツールである。
 今回試したコンパイル時間が長い
-`numerical-collection-cpp <https://gitlab.com/MusicScience37/numerical-collection-cpp>`_
+`numerical-collection-cpp <https://gitlab.com/MusicScience37Projects/numerical-analysis/numerical-collection-cpp>`_
 リポジトリでは、
 リビルドを 40 倍高速化できた [#footnote-speed]_ 。
 
@@ -48,7 +48,7 @@ Ccache を適用できる。
 .. rubric:: Footnotes
 
 .. [#footnote-speed]
-    `numerical-collection-cpp <https://gitlab.com/MusicScience37/numerical-collection-cpp>`_
+    `numerical-collection-cpp <https://gitlab.com/MusicScience37Projects/numerical-analysis/numerical-collection-cpp>`_
     リポジトリのコミット 1ef7d5fd2be019fe142f2ffe2e939574b6d4118d 時点のソースコードに対して
     4 スレッドの Release ビルドを行ったところ、
     ビルド時間を 377 秒から 9 秒まで削減できた。

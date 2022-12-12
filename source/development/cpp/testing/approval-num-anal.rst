@@ -13,7 +13,7 @@
 例えば、
 C++ のコンパイル時に平方根を計算する
 ``num_collect::constants::sqrt`` 関数（``std::sqrt`` の ``constexpr`` 版）の単体試験を行う
-`あるソースコード <https://gitlab.com/MusicScience37/numerical-collection-cpp/-/blob/abcf85d2529893741ee171536d9244fb77f3adb6/test/units/constants/sqrt_test.cpp#L46>`_
+`あるソースコード <https://gitlab.com/MusicScience37Projects/numerical-analysis/numerical-collection-cpp/-/blob/abcf85d2529893741ee171536d9244fb77f3adb6/test/units/constants/sqrt_test.cpp#L46>`_
 では、次のように書いている。
 
 .. code-block:: cpp
@@ -43,7 +43,7 @@ C++ のコンパイル時に平方根を計算する
 「大きすぎない範囲で試験が通る適当な許容量を探索する」というヒューリスティックで
 許容量を決定することになってしまい、
 次の C++ のソースコード
-（ `引用元 <https://gitlab.com/MusicScience37/numerical-collection-cpp/-/blob/abcf85d2529893741ee171536d9244fb77f3adb6/test/units/ode/runge_kutta/rk4_formula_test.cpp#L110>`_ ）
+（ `引用元 <https://gitlab.com/MusicScience37Projects/numerical-analysis/numerical-collection-cpp/-/blob/abcf85d2529893741ee171536d9244fb77f3adb6/test/units/ode/runge_kutta/rk4_formula_test.cpp#L110>`_ ）
 のように試験ケースごとの固有の定数として許容量を記載しておく必要がある。
 
 .. code-block:: cpp
@@ -116,7 +116,7 @@ Approval Tests を用いた試験の流れ
 :ref:`development-cpp-approval-num-anal-intro`
 で触れた ``num_collect::constants::sqrt`` 関数を対象として試験を実装した。
 ``num_collect::constants::sqrt`` 関数は
-`numerical-collection-cpp ライブラリ <https://gitlab.com/MusicScience37/numerical-collection-cpp>`_
+`numerical-collection-cpp ライブラリ <https://gitlab.com/MusicScience37Projects/numerical-analysis/numerical-collection-cpp>`_
 の一部である。
 
 C++ の関数を試験するため、
