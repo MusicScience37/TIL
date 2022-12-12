@@ -21,10 +21,10 @@ TIL - Today I Learned
 ---------------
 
 - `数値解析ノート <https://numanalnote.musicscience37.com/numerical-analysis-note.pdf>`_
-  （Git リポジトリ： `Numerical Analysis Note <https://gitlab.com/MusicScience37Projects/numerical-analysis/numerical-analysis-note>`_ ）
+  （Git リポジトリ： `Numerical Analysis Note リポジトリ <https://gitlab.com/MusicScience37Projects/numerical-analysis/numerical-analysis-note>`_ ）
 
 - `My Cheat Sheets <https://cheatsheets.musicscience37.com/>`_
-  （Git リポジトリ： `My Cheat Sheets <https://gitlab.com/MusicScience37/my-cheat-sheets>`_ ）
+  （Git リポジトリ： `My Cheat Sheets リポジトリ <https://gitlab.com/MusicScience37/my-cheat-sheets>`_ ）
 
 .. toctree::
     :caption: Internal
