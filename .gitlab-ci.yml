@@ -14,16 +14,18 @@ gemnasium-python-dependency_scanning:
 
 pre-commit:
   stage: test
-  image: musicscience37/pipenv:focal
+  image: musicscience37/sphinx-doxygen
   script:
     - mkdir -p .venv
-    - pipenv sync --dev
-    - pipenv run pre-commit run --all-files
+    - poetry config virtualenvs.in-project true
+    - poetry env use 3.10
+    - poetry install
+    - poetry run pre-commit run --all-files
   cache:
     key:
-      prefix: pipenv-dev
+      prefix: poetry-linux
       files:
-        - Pipfile.lock
+        - poetry.lock
     paths:
       - .venv
   needs: []
@@ -33,13 +35,15 @@ build:
   image: musicscience37/sphinx-doxygen
   script:
     - mkdir -p .venv
-    - pipenv sync
-    - pipenv run make html
+    - poetry config virtualenvs.in-project true
+    - poetry env use 3.10
+    - poetry install
+    - poetry run make html
   cache:
     key:
-      prefix: pipenv-deploy
+      prefix: poetry-linux
       files:
-        - Pipfile.lock
+        - poetry.lock
     paths:
       - .venv
   artifacts:
