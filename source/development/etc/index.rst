@@ -5,3 +5,4 @@
     :maxdepth: 1
 
     response_time_limit
+    cspell

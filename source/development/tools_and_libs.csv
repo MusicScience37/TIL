@@ -11,6 +11,7 @@
 `clangd <https://clangd.llvm.org/>`_,C++,C++ のエディタ向けの言語サーバ,Apache 2.0 (with exception),:ref:`development-cpp-clangd`
 `Conan <https://conan.io/>`_,"C, C++",パッケージマネージャ,MIT,:ref:`development-cpp-conan_cmake`
 `cpp-taskflow <https://github.com/cpp-taskflow/cpp-taskflow>`_,C++,並行処理,MIT,未使用。
+`CSpell <https://cspell.org/>`_,,ソースコード向けのスペルチェッカー,MIT,:ref:`development-cspell`
 `Doxygen <http://www.doxygen.nl/>`_,"C, C++, ...",ドキュメンテーションの作成,GPL,
 `Eigen <http://eigen.tuxfamily.org/>`_,C++98,行列演算,MPL2 (+ LGPL),
 `flask <https://flask.palletsprojects.com/en/1.1.x/>`_,Python,Web サーバ用フレームワーク,BSD 3 clause,軽量な Web フレームワーク。
