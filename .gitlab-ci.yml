@@ -30,6 +30,30 @@ pre-commit:
       - .venv
   needs: []
 
+spell check:
+  stage: test
+  needs: []
+  image: node
+  script:
+    - npm install -g cspell
+    - cspell lint
+      "**/*.h"
+      "**/*.cpp"
+      "**/*.py"
+      "**/*.cmake"
+      "**/*.txt"
+      "**/*.md"
+      "**/*.rst"
+      "**/*.puml"
+      "**/*.bib"
+      "**/*.yaml"
+      "**/*.yml"
+      "**/*.json"
+      "**/*.toml"
+      "**/*.sh"
+      "**/*.bash"
+  interruptible: true
+
 build:
   stage: build
   image: musicscience37/sphinx-doxygen
