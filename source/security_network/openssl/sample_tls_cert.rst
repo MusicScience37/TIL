@@ -1,6 +1,10 @@
 TLS 証明書のサンプルを用意する
 ==============================
 
+..
+    cspell:ignore keyfile privkey dirstring nobmp keyid keyout CAcreateserial
+    cspell:ignore passin Mosquitto
+
 テスト用に TLS 証明書を用意したい。
 本物の認証局に依頼すると費用がかかるため、
 手元で代わりのものを作成する。

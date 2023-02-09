@@ -29,6 +29,9 @@ Windows の場合、GPG は Git のインストールで一緒にインストー
 ただし、一部 ``<hidden>`` で隠している。
 また、途中で CUI の表示が変わってパスワードを聞かれた。
 
+..
+    cspell:disable
+
 .. code-block:: console
 
     $ gpg --full-gen-key
@@ -84,10 +87,16 @@ Windows の場合、GPG は Git のインストールで一緒にインストー
     uid                      Kenta Kabashima <kenta_program37@hotmail.co.jp>
     sub   rsa4096 2021-08-04 [E]
 
+..
+    cspell:enable
+
 公開鍵の確認
 -----------------
 
 まず、鍵の一覧を確認する。
+
+..
+    cspell:disable
 
 .. code-block:: console
 
@@ -98,6 +107,9 @@ Windows の場合、GPG は Git のインストールで一緒にインストー
           <hidden>
     uid                 [ultimate] Kenta Kabashima <kenta_program37@hotmail.co.jp>
     ssb   rsa4096/<hidden> 2021-08-04 [E]
+
+..
+    cspell:enable
 
 ``sec`` から始まる行の ``rsa4096/`` の後の ``<ID>`` の部分に出ている文字列をコピーして、
 次のようにコマンドを呼び出すと、公開鍵が出力される。

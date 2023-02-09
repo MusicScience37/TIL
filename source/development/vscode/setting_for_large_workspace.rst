@@ -6,6 +6,9 @@
 ファイルの多いディレクトリを開いてエラーが表示される場合は、
 次の操作をすれば良い。
 
+..
+    cspell:ignore inotify
+
 1. ``/etc/sysctl.conf`` に
 
   .. code:: none

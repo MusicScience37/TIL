@@ -36,6 +36,9 @@ npm コマンドを用意し、
 のようにコマンドを実行することでスペルチェックを行う。
 以下に実行例を示す。
 
+..
+    cspell:disable
+
 .. code:: console
 
     $ cspell lint "**/*.h" "**/*.cpp" "**/*.py" "**/*.cmake" "**/*.txt" "**/*.md" "**/*.rst" "**/*.puml" "**/*.bib" "**/*.yaml" "**/*.json" "**/*.toml" "**/*.sh" --exclude "**/*.approved.*"
@@ -54,6 +57,9 @@ npm コマンドを用意し、
     /builds/MusicScience37Projects/utility-libraries/cpp-units/cmake/ConfigureSanitizer.cmake:24:8 - Unknown word (TOUPPER)
     /builds/MusicScience37Projects/utility-libraries/cpp-units/cmake/ConfigureSanitizer.cmake:26:48 - Unknown word (behaivior)
     /builds/MusicScience37Projects/utility-libraries/cpp-units/cmake/ConfigureSanitizer.cmake:30:56 - Unknown word (behaivior)
+
+..
+    cspell:enable
 
 スペルミスは Unknown word と指摘される。
 この例では behavior のスペルを誤ってしまったことを発見できた。
