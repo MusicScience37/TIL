@@ -22,6 +22,9 @@ Ubuntu 上では、``apt install ccache`` コマンドでインストールで�
 ここで、今回 ccache を使用した際に調整した設定項目を列挙しておく。
 なお、いずれも環境変数で設定する。
 
+..
+    cspell:ignore COMPILERCHECK MAXSIZE
+
 ``CCACHE_DIR``
     キャッシュを保存するディレクトリ。
 

@@ -47,6 +47,9 @@ Callgrind によるプロファイリングの情報の測定は次のコマン�
 例
 ----
 
+..
+    cspell:disable
+
 .. code:: console
 
     $ callgrind_annotate callgrind.out.84308
@@ -87,6 +90,9 @@ Callgrind によるプロファイリングの情報の測定は次のコマン�
     12,548,630  /build/glibc-eX1tMB/glibc-2.31/libio/fileops.c:_IO_file_xsputn@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
 
     （以下省略）
+
+..
+    cspell:enable
 
 kcachegrind による結果の確認
 -----------------------------------

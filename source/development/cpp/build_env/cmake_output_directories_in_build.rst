@@ -19,6 +19,9 @@ CMake のビルドディレクトリでは、
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY $<1:${CMAKE_BINARY_DIR}/lib>)
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY $<1:${CMAKE_BINARY_DIR}/bin>)
 
+..
+    cspell:ignore buildsystem
+
 すると、次のように各ファイルがビルドディレクトリ中の各サブディレクトリへ配置される。
 （参考：`cmake-buildsystem(7) - CMake 3.18.3 Documentation <https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#archive-output-artifacts>`_）
 

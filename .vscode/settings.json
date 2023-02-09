@@ -15,7 +15,7 @@
     "DL3006",
     "--no-color"
   ],
-  "cSpell.enableFiletypes": ["plantuml", "shellscript", "toml"],
+  "cSpell.enableFiletypes": ["bibtex", "plantuml", "shellscript", "toml"],
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
