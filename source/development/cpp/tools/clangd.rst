@@ -60,10 +60,16 @@ Visual Studio Code で Clangd を利用するには、
 
   - compile\_flags.txt は名前の通りコンパイル時にコンパイラに使用するフラグを書く。
 
+    ..
+        cspell:disable
+
     .. code:: text
 
         -Iinclude
         -Iexternal/library/include
+
+    ..
+        cspell:enable
 
   - インクルードディレクトリの指定（``-I``）は最低限必要。
 

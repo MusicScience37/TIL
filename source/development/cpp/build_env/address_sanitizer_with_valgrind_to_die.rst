@@ -11,6 +11,9 @@ Clang の
 AddressSanitizer と valgrind を一緒に使用するのは良くないらしい。
 （参考：`Workarounds for #837 (Shadow memory range interleaves with an existing memory mapping. ASan cannot proceed correctly. ABORTING.) · Issue #856 · google/sanitizers <https://github.com/google/sanitizers/issues/856>`_）
 
+..
+    cSpell:disable
+
 .. code-block:: console
 
     ==211==Shadow memory range interleaves with an existing memory mapping. ASan cannot proceed correctly. ABORTING.
@@ -108,3 +111,6 @@ AddressSanitizer と valgrind を一緒に使用するのは良くないらし�
         0x7fffd2ae0000-0x7fffd2ae3000    [vvar]
         0xffffffffff600000-0xffffffffff601000    [vsyscall]
     ==211==End of process memory map.
+
+..
+    cSpell:enable

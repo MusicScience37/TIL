@@ -3,6 +3,11 @@
 Conan を用いた CMake の依存ライブラリ管理
 =============================================
 
+..
+    cspell:ignore helloworld conanfile conans conanmanifest conaninfo
+    cspell:ignore RPATHs arenastring lited libprotobufd libprotocd protoc proto
+    cspell:ignore graphinfo protocd protobufd
+
 `Conan <https://conan.io/>`_
 は C/C++ 向けのパッケージマネージャで、
 プロジェクトごとの設定ファイルに書かれた通りに依存ライブラリをインストールできるほか、
@@ -404,7 +409,7 @@ protobuf を用いた CMakefile.txt は次のようになる。
 
 CMakefile.txt については以下を参照した。
 
-- `Serialiazing your data with Protobuf <https://blog.conan.io/2019/03/06/Serializing-your-data-with-Protobuf.html>`_
+- `Serializing your data with Protobuf <https://blog.conan.io/2019/03/06/Serializing-your-data-with-Protobuf.html>`_
 - `FindProtobuf — CMake 3.20.1 Documentation <https://cmake.org/cmake/help/latest/module/FindProtobuf.html>`_
 - `add_custom_command — CMake 3.20.1 Documentation <https://cmake.org/cmake/help/latest/command/add_custom_command.html>`_
 

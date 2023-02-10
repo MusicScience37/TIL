@@ -4,11 +4,17 @@
 Ubuntu の iproute2 パッケージに入っている ss コマンドを使用すると、
 使用中のソケットを表示することができる。
 
+..
+    cspell:disable
+
 .. code-block:: console
 
     $ ss -tlnp
     State      Recv-Q      Send-Q             Local Address:Port              Peer Address:Port
     LISTEN     0           128                      0.0.0.0:8888                   0.0.0.0:*          users:(("sphinx-autobuil",pid=17856,fd=7))
+
+..
+    cspell:enable
 
 例はこのページを書いているリポジトリの
 `start_auto_build.sh` コマンドを動作させたときのもの。

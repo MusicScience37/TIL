@@ -46,6 +46,9 @@ Ubuntu では apt のパッケージ gcc の依存パッケージの一部とし
 
 libSegFault.so をロードするようにすると、次のようになる。
 
+..
+    cspell:disable
+
 .. code-block:: console
 
     $ LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so ./test
@@ -124,3 +127,6 @@ libSegFault.so をロードするようにすると、次のようになる。
     7ffeb0d5b000-7ffeb0d5e000 r--p 00000000 00:00 0                          [vvar]
     7ffeb0d5e000-7ffeb0d5f000 r-xp 00000000 00:00 0                          [vdso]
     Segmentation fault
+
+..
+    cspell:enable

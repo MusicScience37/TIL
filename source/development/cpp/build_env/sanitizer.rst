@@ -1,6 +1,9 @@
 コンパイラの Sanitizer 機能で変数の使用をチェック
 ==================================================
 
+..
+    cspell:ignore hwaddress fsanitize flto redzone
+
 コンパイラに Sanitizer という機能があり、
 変数の使用に関係する様々なチェックを行うことができる。
 
@@ -33,14 +36,14 @@ GCC のオプション
     - - address
       - メモリのチェック。領域外の参照や解放後のメモリの参照など。
       - thread, hwaddress
-    - - kernrl-address
+    - - kernel-address
       - Linux Kernel 用のメモリチェック。
       -
     - - hwaddress
       - ハードウェアによるメモリのチェック。オーバーヘッドが少ないが、AArch64 でしか利用できない。
       - thread, address
-    - - kernell-hwaddress
-      - ハードウェアによる Linux Kernrl のメモリのチェック。オーバーヘッドが少ないが、AArch64 でしか利用できない。
+    - - kernel-hwaddress
+      - ハードウェアによる Linux Kernel のメモリのチェック。オーバーヘッドが少ないが、AArch64 でしか利用できない。
       -
     - - pointer-compare
       - ポインタの比較に処理を追加する。kernel-address, address と併用する必要がある。

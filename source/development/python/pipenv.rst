@@ -23,6 +23,9 @@ Python のバージョンを選択したい場合、pyenv をインストール�
 
 プロジェクトのディレクトリに移動して初期化を行う。
 
+..
+    cspell:disable
+
 .. code:: console
 
     $ pipenv --three
@@ -38,6 +41,9 @@ Python のバージョンを選択したい場合、pyenv をインストール�
     ✔ Successfully created virtual environment!
     Virtualenv location: /home/kenta/projects/doc/til/.venv
     Creating a Pipfile for this project…
+
+..
+    cspell:enable
 
 パッケージを追加する。
 
@@ -60,6 +66,9 @@ Python のバージョンを選択したい場合、pyenv をインストール�
     Alternatively, run a command inside the virtualenv with pipenv run.
 
 パッケージを更新する。
+
+..
+    cspell:disable
 
 .. code:: console
 
@@ -103,6 +112,9 @@ Python のバージョンを選択したい場合、pyenv をインストール�
     Skipped Update of Package argh: 0.26.2 installed,, 0.26.2 available.
     Skipped Update of Package alabaster: 0.7.12 installed,, 0.7.12 available.
     All packages are up to date!
+
+..
+    cspell:enable
 
 インストールされたパッケージを使用する。
 

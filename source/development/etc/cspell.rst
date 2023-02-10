@@ -36,6 +36,9 @@ npm コマンドを用意し、
 のようにコマンドを実行することでスペルチェックを行う。
 以下に実行例を示す。
 
+..
+    cspell:disable
+
 .. code:: console
 
     $ cspell lint "**/*.h" "**/*.cpp" "**/*.py" "**/*.cmake" "**/*.txt" "**/*.md" "**/*.rst" "**/*.puml" "**/*.bib" "**/*.yaml" "**/*.json" "**/*.toml" "**/*.sh" --exclude "**/*.approved.*"
@@ -54,6 +57,9 @@ npm コマンドを用意し、
     /builds/MusicScience37Projects/utility-libraries/cpp-units/cmake/ConfigureSanitizer.cmake:24:8 - Unknown word (TOUPPER)
     /builds/MusicScience37Projects/utility-libraries/cpp-units/cmake/ConfigureSanitizer.cmake:26:48 - Unknown word (behaivior)
     /builds/MusicScience37Projects/utility-libraries/cpp-units/cmake/ConfigureSanitizer.cmake:30:56 - Unknown word (behaivior)
+
+..
+    cspell:enable
 
 スペルミスは Unknown word と指摘される。
 この例では behavior のスペルを誤ってしまったことを発見できた。
@@ -89,3 +95,20 @@ CSpell の設定ファイルは
 .. note::
     Visual Studio Code の設定ファイル（``settings.json``）内に記載することもできるが、
     その場合は Visual Studio Code の拡張機能にしか適用されない設定となる。
+
+個々のファイル内での一時的な設定
+----------------------------------
+
+特定のファイルにしかない単語を無視する場合などには、
+ファイル内のコメントで一時的な設定を行う
+`Inline Document Settings <https://cspell.org/configuration/document-settings/>`_
+を使用する。
+
+例えば、``cSpell:ignore <単語>`` の形式で無視する単語を指定することができる。
+
+.. code:: cpp
+
+    // cSpell:ignore bcdef
+
+    void test() {
+        const auto input = std::string("bcdef");  // ここの bcdef は指摘されない。
