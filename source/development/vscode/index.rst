@@ -6,3 +6,4 @@ VSCode
 
     setting_for_large_workspace
     devcontainer-wsl-storage
+    gpg-in-devcontainer
