@@ -91,5 +91,5 @@ Sphinx とその拡張機能を利用してソースコードや図、数式、�
 `クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス <http://creativecommons.org/licenses/by-sa/4.0/>`_
 となっている。
 
-.. image:: KIcon/KIcon512white.png
+.. image:: https://kicon.musicscience37.com/KIcon512white.png
     :width: 200px

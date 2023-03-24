@@ -64,7 +64,7 @@ extensions += ["jupyter_sphinx"]
 extensions += ["sphinxext.opengraph"]
 ogp_site_url = "https://til.musicscience37.com/"
 ogp_site_name = "MusicScience37's TIL"
-ogp_image = "https://til.musicscience37.com/_static/KIcon128white.png"
+ogp_image = "https://kicon.musicscience37.com/KIcon128white.png"
 
 # setting of bibtex
 # https://sphinxcontrib-bibtex.readthedocs.io/
@@ -86,7 +86,7 @@ language = "ja"
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["KIcon/*"]
+exclude_patterns = []
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -101,14 +101,12 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = [
     "_static",
-    "KIcon/KIcon128white.png",
-    "KIcon/KIcon512white.png",
 ]
 
 html_title = "MusicScience37's TIL"
 
-html_logo = "KIcon/KIcon80white.png"
-html_favicon = "KIcon/KIcon.ico"
+html_logo = "https://kicon.musicscience37.com/KIcon80white.png"
+html_favicon = "https://kicon.musicscience37.com/KIcon.ico"
 
 html_theme_options = {
     "navigation_depth": -1,

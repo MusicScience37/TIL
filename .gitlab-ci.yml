@@ -78,9 +78,10 @@ build:
 
 pages:
   stage: deploy
-  image: ubuntu
+  image: alpine
   script:
     - mv build/html public
+    - wget -nv https://kicon.musicscience37.com/KIcon.ico -O public/favicon.ico
   artifacts:
     paths:
       - public
