@@ -52,11 +52,11 @@
 - メモリ：16 GB
 - OS：Ubuntu 22.04
 
-送信時間の測定
+レイテンシの測定
 -------------------
 
 各通信方法とデータサイズ（32 byte, 1 KB, 32 kB, 1 MB）ごとに
-100 回通信し、データの送信処理にかかる時間の平均をプロットした。
+100 回往復の通信をし、データを送受信するのにかかる時間の平均をプロットした。
 エラーバーは最大と最小の時間を示している。
 
 .. jupyter-execute::
@@ -65,7 +65,7 @@
     import pandas as pd
     import plotly.express as px
 
-    bench_results = pd.read_csv("source/development/cpp/networking/shm_stream_result_20230325/bench.csv")
+    bench_results = pd.read_csv("source/development/cpp/networking/shm_stream_result_20230326/ping_pong.csv")
 
     # 表示用データ
     bench_results["error_plus"] = bench_results["Max Time [sec]"] - bench_results["Mean Time [sec]"]
@@ -82,15 +82,59 @@
         log_y=True,
     )
 
+送信時間の測定
+-------------------
+
+各通信方法とデータサイズ（32 byte, 1 KB, 32 kB, 1 MB）ごとに
+100 回データを送信し、データの送信処理にかかる時間の平均をプロットした。
+エラーバーは最大と最小の時間を示している。
+
+.. jupyter-execute::
+    :hide-code:
+
+    import pandas as pd
+    import plotly.express as px
+
+    bench_results = pd.read_csv("source/development/cpp/networking/shm_stream_result_20230326/send_messages.csv")
+
+    # 表示用データ
+    bench_results["error_plus"] = bench_results["Max Time [sec]"] - bench_results["Mean Time [sec]"]
+    bench_results["error_minus"] = bench_results["Mean Time [sec]"] - bench_results["Min Time [sec]"]
+
+    px.line(
+        bench_results,
+        x="Data Size [byte]",
+        y="Mean Time [sec]",
+        error_y="error_plus",
+        error_y_minus="error_minus",
+        color="Protocol",
+        log_x=True,
+        log_y=True,
+    )
+
+比較
+-----------
+
 - 共有メモリを用いた通信はどちらも UDP より速くなっている。
 
 - IPv4 と IPv6 の UDP の両方を試したが、
   IPv4 と IPv6 では特に差が見受けられなかった。
 
 - 共有メモリを用いた通信 2 種類では、
-  アトミック演算のみを使用した ``light_stream`` の方が速いが、
-  ``light_stream`` ではデータの待機処理にビジーループを用いているため
-  比較的負荷が高くなる。
-  実際、CPU が 1 個しか使用できない CI 環境では、
-  ``blocking_stream`` が最も速く、
-  ``light_stream`` は UDP よりも遅くなってしまった。
+  アトミック演算のみを使用した ``light_stream`` の方が速い。
+  ``light_stream`` ではデータの待機処理にビジーループを用いているため比較的負荷はかかるが、
+  代わりに速度は速くなった。
+
+ソースコードなど
+-------------------
+
+実験は
+`cpp-shm-stream リポジトリ <https://gitlab.com/MusicScience37Projects/utility-libraries/cpp-shm-stream>`__
+のコミット
+``97411b05de27074fb06123f6ff41b7e120d17980``
+上で Release ビルドを行い、
+以下のコマンドを実行することで行った。
+
+- ``./build/Release/bin/bench_send_messages --json temp/bench.json``
+
+- ``python3 ./tests/bench/ping_pong/bench.py build/Release/``
