@@ -118,6 +118,7 @@
     "protobuf",
     "pthread",
     "pthreads",
+    "ptrace",
     "puml",
     "pybind",
     "pyenv",
