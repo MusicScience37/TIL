@@ -1,4 +1,4 @@
-開発
+ツール
 ===============================
 
 .. toctree::
@@ -8,3 +8,4 @@
     callgrind
     gdb_common
     libsegfault
+    vcpkg
