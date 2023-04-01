@@ -87,9 +87,7 @@ Sphinx とその拡張機能を利用してソースコードや図、数式、�
 
 なお、本ページで使用している下記のアイコンは
 `KIcon リポジトリ <https://gitlab.com/MusicScience37/kicon>`_
-で別に管理しており、ライセンスは
-`クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス <http://creativecommons.org/licenses/by-sa/4.0/>`_
-となっている。
+で別に管理しており、別のライセンスになっている。
 
-.. image:: https://kicon.musicscience37.com/KIcon512white.png
+.. image:: https://kicon.musicscience37.com/KIcon512.png
     :width: 200px
