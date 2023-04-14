@@ -124,6 +124,7 @@
     "ptrace",
     "puml",
     "pybind",
+    "PYDEVD",
     "pyenv",
     "Pygments",
     "pylint",

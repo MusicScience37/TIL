@@ -56,60 +56,61 @@
 -------------------
 
 各通信方法とデータサイズ（32 byte, 1 KB, 32 kB, 1 MB）ごとに
-100 回往復の通信をし、データを送受信するのにかかる時間の平均をプロットした。
-エラーバーは最大と最小の時間を示している。
+10000 回往復の通信をし、データを送受信するのにかかる時間を箱ひげ図でプロットした。
+
+.. jupyter-execute:: shm_stream_result_parser.py
+    :hide-code:
 
 .. jupyter-execute::
     :hide-code:
 
-    import pandas as pd
+    import pandas
     import plotly.express as px
 
-    bench_results = pd.read_csv("source/development/cpp/networking/shm_stream_result_20230408/ping_pong.csv")
+    bench_results = parse_data("source/development/cpp/networking/shm_stream_result_20230414/ping_pong.data")
 
-    # 表示用データ
-    bench_results["error_plus"] = bench_results["Max Time [sec]"] - bench_results["Mean Time [sec]"]
-    bench_results["error_minus"] = bench_results["Mean Time [sec]"] - bench_results["Min Time [sec]"]
-
-    px.line(
+    px.box(
         bench_results,
-        x="Data Size [byte]",
-        y="Mean Time [sec]",
-        error_y="error_plus",
-        error_y_minus="error_minus",
-        color="Protocol",
-        log_x=True,
+        x="data_size",
+        y="time",
+        color="protocol",
         log_y=True,
+        points=False,
+        labels = {
+          "data_size": "データサイズ [byte]",
+          "time": "レイテンシ [sec]",
+          "protocol": "通信方法",
+        },
+        title="レイテンシの測定結果",
     )
 
 送信時間の測定
 -------------------
 
 各通信方法とデータサイズ（32 byte, 1 KB, 32 kB, 1 MB）ごとに
-100 回データを送信し、データの送信処理にかかる時間の平均をプロットした。
-エラーバーは最大と最小の時間を示している。
+10000 回データを送信し、データの送信処理にかかる時間を箱ひげ図でプロットした。
 
 .. jupyter-execute::
     :hide-code:
 
-    import pandas as pd
+    import pandas
     import plotly.express as px
 
-    bench_results = pd.read_csv("source/development/cpp/networking/shm_stream_result_20230408/send_messages.csv")
+    bench_results = parse_data("source/development/cpp/networking/shm_stream_result_20230414/send_messages.data")
 
-    # 表示用データ
-    bench_results["error_plus"] = bench_results["Max Time [sec]"] - bench_results["Mean Time [sec]"]
-    bench_results["error_minus"] = bench_results["Mean Time [sec]"] - bench_results["Min Time [sec]"]
-
-    px.line(
+    px.box(
         bench_results,
-        x="Data Size [byte]",
-        y="Mean Time [sec]",
-        error_y="error_plus",
-        error_y_minus="error_minus",
-        color="Protocol",
-        log_x=True,
+        x="data_size",
+        y="time",
+        color="protocol",
         log_y=True,
+        points=False,
+        labels = {
+          "data_size": "データサイズ [byte]",
+          "time": "送信時間 [sec]",
+          "protocol": "通信方法",
+        },
+        title="送信時間の測定結果",
     )
 
 比較
@@ -131,10 +132,10 @@
 実験は
 `cpp-shm-stream リポジトリ <https://gitlab.com/MusicScience37Projects/utility-libraries/cpp-shm-stream>`__
 のコミット
-``94183769c1a860aeed4ce33cda798d579178a329``
+``fa8c023d51fcf9ac9f398a11c7e548fc0539255a``
 上で Release ビルドを行い、
 以下のコマンドを実行することで行った。
 
-- ``./build/Release/bin/bench_send_messages --json temp/bench.json``
+- ``./build/Release/bin/bench_send_messages --msgpack send_messages.data --samples 10000``
 
 - ``python3 ./tests/bench/ping_pong/bench.py build/Release/``
