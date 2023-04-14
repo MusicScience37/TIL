@@ -57,6 +57,8 @@ spell check:
 build:
   stage: build
   image: musicscience37/sphinx-doxygen
+  variables:
+    PYDEVD_DISABLE_FILE_VALIDATION: 1
   script:
     - mkdir -p .venv
     - poetry config virtualenvs.in-project true
