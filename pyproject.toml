@@ -18,6 +18,7 @@ sphinxcontrib-plantuml = "^0.24.1"
 xarray = "^2023.2.0"
 sphinxext-opengraph = "^0.8.1"
 sphinxcontrib-bibtex = "^2.5.0"
+msgpack = "^1.0.5"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.1.0"
