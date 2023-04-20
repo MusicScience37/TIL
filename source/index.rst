@@ -26,6 +26,8 @@ TIL - Today I Learned
 - `My Cheat Sheets <https://cheatsheets.musicscience37.com/>`_
   （Git リポジトリ： `My Cheat Sheets リポジトリ <https://gitlab.com/MusicScience37/my-cheat-sheets>`_ ）
 
+- `MusicScience37 <https://www.musicscience37.com/ja/>`_ （自己紹介など）
+
 .. toctree::
     :caption: Internal
     :maxdepth: 2
