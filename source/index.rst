@@ -16,6 +16,7 @@ TIL - Today I Learned
     development/index
     security_network/index
     science/index
+    etc/index
 
 外部サイト
 ---------------
