@@ -15,7 +15,8 @@
         "janisdd.vscode-edit-csv",
         "james-yu.latex-workshop",
         "tamasfe.even-better-toml",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "ms-python.black-formatter"
       ]
     }
   },
