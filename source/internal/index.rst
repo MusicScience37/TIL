@@ -123,3 +123,12 @@ PlantUML
     activate クライアント
     クライアント -> サーバ ++ : リクエスト
     return レスポンス
+
+nbsphinx
+.................
+
+.. toctree::
+    :caption: About
+    :maxdepth: 1
+
+    test-nbsphinx

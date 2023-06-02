@@ -7,6 +7,8 @@ RUN apt-get update && \
     vim \
     nano \
     git-lfs \
+    # for nbsphinx
+    pandoc \
     && \
     apt-get autoremove && \
     apt-get autoclean && \
