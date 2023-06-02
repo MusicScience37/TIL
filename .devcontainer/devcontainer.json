@@ -16,7 +16,8 @@
         "james-yu.latex-workshop",
         "tamasfe.even-better-toml",
         "redhat.vscode-yaml",
-        "ms-python.black-formatter"
+        "ms-python.black-formatter",
+        "ms-toolsai.jupyter"
       ]
     }
   },
