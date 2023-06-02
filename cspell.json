@@ -112,6 +112,7 @@
     "numpy",
     "opengraph",
     "ostringstream",
+    "pandoc",
     "pinentry",
     "pipenv",
     "Pipfile",
