@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Catch2TestRun name="bench_string" rng-seed="961387734" xml-format-version="3" catch2-version="3.4.0">
+  <TestCase name="bench_string_msgpack" filename="/workspaces/bench_for_cpp_serialization/src/bench_string/string_msgpack.cpp" line="11">
+    <BenchmarkResults name="serialize string(1) with msgpack-c" samples="100" resamples="100000" iterations="346" clockResolution="19.5239" estimatedDuration="1.9376e+06">
+      <!-- All values in nano seconds -->
+      <mean value="59.5736" lowerBound="57.9115" upperBound="63.7483" ci="0.95"/>
+      <standardDeviation value="11.6871" lowerBound="0.557091" upperBound="21.4431" ci="0.95"/>
+      <outliers variance="0.936413" lowMild="0" lowSevere="0" highMild="0" highSevere="5"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="parse string(1) with msgpack-c" samples="100" resamples="100000" iterations="1085" clockResolution="19.5239" estimatedDuration="1.8445e+06">
+      <!-- All values in nano seconds -->
+      <mean value="19.4052" lowerBound="19.3372" upperBound="19.5018" ci="0.95"/>
+      <standardDeviation value="0.408082" lowerBound="0.282144" upperBound="0.628897" ci="0.95"/>
+      <outliers variance="0.14205" lowMild="0" lowSevere="23" highMild="1" highSevere="5"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1) with msgpack-c" samples="100" resamples="100000" iterations="228" clockResolution="19.5239" estimatedDuration="1.938e+06">
+      <!-- All values in nano seconds -->
+      <mean value="87.8446" lowerBound="87.7" upperBound="88.1519" ci="0.95"/>
+      <standardDeviation value="1.0279" lowerBound="0.590912" upperBound="2.0456" ci="0.95"/>
+      <outliers variance="0.0099" lowMild="0" lowSevere="0" highMild="1" highSevere="1"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="serialize string(1024) with msgpack-c" samples="100" resamples="100000" iterations="268" clockResolution="19.5239" estimatedDuration="1.9564e+06">
+      <!-- All values in nano seconds -->
+      <mean value="68.4085" lowerBound="66.9127" upperBound="71.9235" ci="0.95"/>
+      <standardDeviation value="11.3522" lowerBound="4.83274" upperBound="19.2972" ci="0.95"/>
+      <outliers variance="0.915198" lowMild="4" lowSevere="0" highMild="1" highSevere="8"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="parse string(1024) with msgpack-c" samples="100" resamples="100000" iterations="942" clockResolution="19.5239" estimatedDuration="1.884e+06">
+      <!-- All values in nano seconds -->
+      <mean value="21.2595" lowerBound="21.2343" upperBound="21.3226" ci="0.95"/>
+      <standardDeviation value="0.17938" lowerBound="0.013771" upperBound="0.330645" ci="0.95"/>
+      <outliers variance="0.0099" lowMild="0" lowSevere="0" highMild="0" highSevere="2"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1024) with msgpack-c" samples="100" resamples="100000" iterations="222" clockResolution="19.5239" estimatedDuration="1.9536e+06">
+      <!-- All values in nano seconds -->
+      <mean value="88.7881" lowerBound="87.2871" upperBound="92.5125" ci="0.95"/>
+      <standardDeviation value="10.8964" lowerBound="1.88713" upperBound="19.9234" ci="0.95"/>
+      <outliers variance="0.852327" lowMild="0" lowSevere="0" highMild="1" highSevere="3"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="serialize string(1048576) with msgpack-c" samples="100" resamples="100000" iterations="1" clockResolution="19.5239" estimatedDuration="1.21242e+07">
+      <!-- All values in nano seconds -->
+      <mean value="114596" lowerBound="113922" upperBound="116375" ci="0.95"/>
+      <standardDeviation value="5143.35" lowerBound="1782.92" upperBound="10244.8" ci="0.95"/>
+      <outliers variance="0.424983" lowMild="1" lowSevere="0" highMild="1" highSevere="4"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="parse string(1048576) with msgpack-c" samples="100" resamples="100000" iterations="955" clockResolution="19.5239" estimatedDuration="1.91e+06">
+      <!-- All values in nano seconds -->
+      <mean value="19.7357" lowerBound="19.7119" upperBound="19.8284" ci="0.95"/>
+      <standardDeviation value="0.221945" lowerBound="0.0243565" upperBound="0.526368" ci="0.95"/>
+      <outliers variance="0.0099" lowMild="3" lowSevere="2" highMild="0" highSevere="1"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1048576) with msgpack-c" samples="100" resamples="100000" iterations="222" clockResolution="19.5239" estimatedDuration="1.9314e+06">
+      <!-- All values in nano seconds -->
+      <mean value="93.4908" lowerBound="93.276" upperBound="93.8557" ci="0.95"/>
+      <standardDeviation value="1.39537" lowerBound="0.96856" upperBound="2.45572" ci="0.95"/>
+      <outliers variance="0.0755109" lowMild="0" lowSevere="0" highMild="5" highSevere="1"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <TestCase name="bench_string_protobuf" filename="/workspaces/bench_for_cpp_serialization/src/bench_string/string_protobuf.cpp" line="10">
+    <BenchmarkResults name="serialize string(1) with protobuf" samples="100" resamples="100000" iterations="407" clockResolution="19.5239" estimatedDuration="1.9536e+06">
+      <!-- All values in nano seconds -->
+      <mean value="44.17" lowerBound="44.113" upperBound="44.3588" ci="0.95"/>
+      <standardDeviation value="0.473993" lowerBound="0.171005" upperBound="1.06568" ci="0.95"/>
+      <outliers variance="0.0099" lowMild="0" lowSevere="0" highMild="0" highSevere="1"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1) with protobuf" samples="100" resamples="100000" iterations="433" clockResolution="19.5239" estimatedDuration="1.9485e+06">
+      <!-- All values in nano seconds -->
+      <mean value="43.2562" lowerBound="42.4627" upperBound="45.2584" ci="0.95"/>
+      <standardDeviation value="5.71959" lowerBound="0.856441" upperBound="10.472" ci="0.95"/>
+      <outliers variance="0.873079" lowMild="0" lowSevere="0" highMild="0" highSevere="4"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="serialize string(1024) with protobuf" samples="100" resamples="100000" iterations="89" clockResolution="19.5239" estimatedDuration="1.9669e+06">
+      <!-- All values in nano seconds -->
+      <mean value="207.415" lowerBound="206.183" upperBound="213.256" ci="0.95"/>
+      <standardDeviation value="11.8512" lowerBound="0.675985" upperBound="28.228" ci="0.95"/>
+      <outliers variance="0.544991" lowMild="0" lowSevere="0" highMild="0" highSevere="1"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1024) with protobuf" samples="100" resamples="100000" iterations="148" clockResolution="19.5239" estimatedDuration="1.9536e+06">
+      <!-- All values in nano seconds -->
+      <mean value="129.43" lowerBound="128.864" upperBound="131.947" ci="0.95"/>
+      <standardDeviation value="5.20835" lowerBound="0.696797" upperBound="12.317" ci="0.95"/>
+      <outliers variance="0.375324" lowMild="2" lowSevere="0" highMild="0" highSevere="2"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="serialize string(1048576) with protobuf" samples="100" resamples="100000" iterations="1" clockResolution="19.5239" estimatedDuration="2.16053e+07">
+      <!-- All values in nano seconds -->
+      <mean value="207654" lowerBound="206051" upperBound="210387" ci="0.95"/>
+      <standardDeviation value="10405.7" lowerBound="7024.93" upperBound="16135.2" ci="0.95"/>
+      <outliers variance="0.484444" lowMild="0" lowSevere="0" highMild="2" highSevere="3"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1048576) with protobuf" samples="100" resamples="100000" iterations="1" clockResolution="19.5239" estimatedDuration="1.08354e+07">
+      <!-- All values in nano seconds -->
+      <mean value="107928" lowerBound="106663" upperBound="110069" ci="0.95"/>
+      <standardDeviation value="8208.33" lowerBound="5493.87" upperBound="11498" ci="0.95"/>
+      <outliers variance="0.686763" lowMild="0" lowSevere="0" highMild="0" highSevere="10"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <TestCase name="bench_string_cereal" filename="/workspaces/bench_for_cpp_serialization/src/bench_string/string_cereal.cpp" line="11">
+    <BenchmarkResults name="serialize string(1) with cereal" samples="100" resamples="100000" iterations="273" clockResolution="19.5239" estimatedDuration="1.9383e+06">
+      <!-- All values in nano seconds -->
+      <mean value="68.9327" lowerBound="68.8457" upperBound="69.3427" ci="0.95"/>
+      <standardDeviation value="0.831457" lowerBound="0.0522754" upperBound="1.97993" ci="0.95"/>
+      <outliers variance="0.0099" lowMild="0" lowSevere="0" highMild="0" highSevere="2"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1) with cereal" samples="100" resamples="100000" iterations="313" clockResolution="19.5239" estimatedDuration="1.9406e+06">
+      <!-- All values in nano seconds -->
+      <mean value="223.811" lowerBound="223.54" upperBound="224.246" ci="0.95"/>
+      <standardDeviation value="1.72958" lowerBound="1.19789" upperBound="2.37503" ci="0.95"/>
+      <outliers variance="0.0099" lowMild="0" lowSevere="0" highMild="0" highSevere="6"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="serialize string(1024) with cereal" samples="100" resamples="100000" iterations="53" clockResolution="19.5239" estimatedDuration="1.961e+06">
+      <!-- All values in nano seconds -->
+      <mean value="366.432" lowerBound="363.608" upperBound="379.093" ci="0.95"/>
+      <standardDeviation value="25.5694" lowerBound="0.963182" upperBound="60.4784" ci="0.95"/>
+      <outliers variance="0.646022" lowMild="1" lowSevere="0" highMild="0" highSevere="2"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1024) with cereal" samples="100" resamples="100000" iterations="121" clockResolution="19.5239" estimatedDuration="1.9602e+06">
+      <!-- All values in nano seconds -->
+      <mean value="162.953" lowerBound="157.721" upperBound="176.407" ci="0.95"/>
+      <standardDeviation value="39.1533" lowerBound="16.0859" upperBound="74.1114" ci="0.95"/>
+      <outliers variance="0.957506" lowMild="0" lowSevere="0" highMild="1" highSevere="6"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="serialize string(1048576) with cereal" samples="100" resamples="100000" iterations="1" clockResolution="19.5239" estimatedDuration="1.4436e+07">
+      <!-- All values in nano seconds -->
+      <mean value="136388" lowerBound="134420" upperBound="141221" ci="0.95"/>
+      <standardDeviation value="14741.7" lowerBound="7138.89" upperBound="29017.8" ci="0.95"/>
+      <outliers variance="0.820786" lowMild="0" lowSevere="0" highMild="1" highSevere="7"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1048576) with cereal" samples="100" resamples="100000" iterations="1" clockResolution="19.5239" estimatedDuration="1.56576e+07">
+      <!-- All values in nano seconds -->
+      <mean value="155914" lowerBound="154841" upperBound="158952" ci="0.95"/>
+      <standardDeviation value="8134.99" lowerBound="1401.45" upperBound="16970.9" ci="0.95"/>
+      <outliers variance="0.50448" lowMild="0" lowSevere="0" highMild="3" highSevere="2"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <TestCase name="bench_string_nlohmann_json" filename="/workspaces/bench_for_cpp_serialization/src/bench_string/string_nlohmann_json.cpp" line="8">
+    <BenchmarkResults name="serialize string(1) with nlohmann/json" samples="100" resamples="100000" iterations="222" clockResolution="19.5239" estimatedDuration="1.9536e+06">
+      <!-- All values in nano seconds -->
+      <mean value="84.3595" lowerBound="83.7314" upperBound="87.3969" ci="0.95"/>
+      <standardDeviation value="6.08532" lowerBound="0.252635" upperBound="14.5119" ci="0.95"/>
+      <outliers variance="0.666115" lowMild="1" lowSevere="1" highMild="2" highSevere="4"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1) with nlohmann/json" samples="100" resamples="100000" iterations="166" clockResolution="19.5239" estimatedDuration="1.9588e+06">
+      <!-- All values in nano seconds -->
+      <mean value="113.424" lowerBound="111.749" upperBound="121.116" ci="0.95"/>
+      <standardDeviation value="15.6519" lowerBound="1.47126" upperBound="37.1442" ci="0.95"/>
+      <outliers variance="0.883501" lowMild="2" lowSevere="0" highMild="2" highSevere="3"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="serialize string(1024) with nlohmann/json" samples="100" resamples="100000" iterations="6" clockResolution="19.5239" estimatedDuration="1.9968e+06">
+      <!-- All values in nano seconds -->
+      <mean value="3358.17" lowerBound="3280.91" upperBound="3511.12" ci="0.95"/>
+      <standardDeviation value="530.606" lowerBound="308.055" upperBound="833.711" ci="0.95"/>
+      <outliers variance="0.904817" lowMild="0" lowSevere="0" highMild="0" highSevere="9"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1024) with nlohmann/json" samples="100" resamples="100000" iterations="4" clockResolution="19.5239" estimatedDuration="2.5288e+06">
+      <!-- All values in nano seconds -->
+      <mean value="6038.19" lowerBound="5916.61" upperBound="6347.7" ci="0.95"/>
+      <standardDeviation value="917.906" lowerBound="407.657" upperBound="1817.09" ci="0.95"/>
+      <outliers variance="0.904401" lowMild="0" lowSevere="0" highMild="0" highSevere="4"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="serialize string(1048576) with nlohmann/json" samples="100" resamples="100000" iterations="1" clockResolution="19.5239" estimatedDuration="3.34922e+08">
+      <!-- All values in nano seconds -->
+      <mean value="3.52167e+06" lowerBound="3.48458e+06" upperBound="3.61892e+06" ci="0.95"/>
+      <standardDeviation value="287026" lowerBound="138524" upperBound="602485" ci="0.95"/>
+      <outliers variance="0.717465" lowMild="3" lowSevere="0" highMild="4" highSevere="5"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1048576) with nlohmann/json" samples="100" resamples="100000" iterations="1" clockResolution="19.5239" estimatedDuration="6.32023e+08">
+      <!-- All values in nano seconds -->
+      <mean value="5.70184e+06" lowerBound="5.68796e+06" upperBound="5.71582e+06" ci="0.95"/>
+      <standardDeviation value="71187.1" lowerBound="63924.6" upperBound="79965.9" ci="0.95"/>
+      <outliers variance="0.0099" lowMild="0" lowSevere="0" highMild="0" highSevere="0"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <TestCase name="bench_string_rapidjson" filename="/workspaces/bench_for_cpp_serialization/src/bench_string/string_rapidjson.cpp" line="10">
+    <BenchmarkResults name="serialize string(1) with rapidjson" samples="100" resamples="100000" iterations="261" clockResolution="19.5239" estimatedDuration="1.9314e+06">
+      <!-- All values in nano seconds -->
+      <mean value="74.6453" lowerBound="74.5045" upperBound="75.0168" ci="0.95"/>
+      <standardDeviation value="1.061" lowerBound="0.254389" upperBound="2.07983" ci="0.95"/>
+      <outliers variance="0.0750503" lowMild="5" lowSevere="0" highMild="0" highSevere="11"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1) with rapidjson" samples="100" resamples="100000" iterations="178" clockResolution="19.5239" estimatedDuration="1.958e+06">
+      <!-- All values in nano seconds -->
+      <mean value="112.185" lowerBound="112.011" upperBound="112.771" ci="0.95"/>
+      <standardDeviation value="1.4755" lowerBound="0.461252" upperBound="3.34769" ci="0.95"/>
+      <outliers variance="0.065574" lowMild="0" lowSevere="10" highMild="0" highSevere="4"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="serialize string(1024) with rapidjson" samples="100" resamples="100000" iterations="15" clockResolution="19.5239" estimatedDuration="2.0745e+06">
+      <!-- All values in nano seconds -->
+      <mean value="1329.51" lowerBound="1306.73" upperBound="1386.71" ci="0.95"/>
+      <standardDeviation value="161.488" lowerBound="11.8275" upperBound="297.019" ci="0.95"/>
+      <outliers variance="0.852167" lowMild="0" lowSevere="0" highMild="1" highSevere="3"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1024) with rapidjson" samples="100" resamples="100000" iterations="9" clockResolution="19.5239" estimatedDuration="2.1105e+06">
+      <!-- All values in nano seconds -->
+      <mean value="2114" lowerBound="2108.94" upperBound="2132.46" ci="0.95"/>
+      <standardDeviation value="44.1387" lowerBound="10.9355" upperBound="102.139" ci="0.95"/>
+      <outliers variance="0.141936" lowMild="0" lowSevere="0" highMild="0" highSevere="2"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="serialize string(1048576) with rapidjson" samples="100" resamples="100000" iterations="1" clockResolution="19.5239" estimatedDuration="1.2836e+08">
+      <!-- All values in nano seconds -->
+      <mean value="1.27223e+06" lowerBound="1.26521e+06" upperBound="1.28268e+06" ci="0.95"/>
+      <standardDeviation value="42912.9" lowerBound="32093.7" upperBound="68873.7" ci="0.95"/>
+      <outliers variance="0.296802" lowMild="0" lowSevere="0" highMild="1" highSevere="1"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1048576) with rapidjson" samples="100" resamples="100000" iterations="1" clockResolution="19.5239" estimatedDuration="2.0757e+08">
+      <!-- All values in nano seconds -->
+      <mean value="2.0695e+06" lowerBound="2.05396e+06" upperBound="2.09549e+06" ci="0.95"/>
+      <standardDeviation value="100760" lowerBound="69859.7" upperBound="178440" ci="0.95"/>
+      <outliers variance="0.464813" lowMild="0" lowSevere="0" highMild="0" highSevere="1"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <TestCase name="bench_string_simdjson" filename="/workspaces/bench_for_cpp_serialization/src/bench_string/string_simdjson.cpp" line="9">
+    <BenchmarkResults name="deserialize string(1) with simdjson" samples="100" resamples="100000" iterations="152" clockResolution="19.5239" estimatedDuration="1.9456e+06">
+      <!-- All values in nano seconds -->
+      <mean value="131.808" lowerBound="128.314" upperBound="139.612" ci="0.95"/>
+      <standardDeviation value="24.6185" lowerBound="12.8359" upperBound="46.0947" ci="0.95"/>
+      <outliers variance="0.936042" lowMild="0" lowSevere="0" highMild="0" highSevere="4"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1024) with simdjson" samples="100" resamples="100000" iterations="46" clockResolution="19.5239" estimatedDuration="1.9734e+06">
+      <!-- All values in nano seconds -->
+      <mean value="444.776" lowerBound="436.103" upperBound="467.322" ci="0.95"/>
+      <standardDeviation value="67.9909" lowerBound="29.9782" upperBound="127.054" ci="0.95"/>
+      <outliers variance="0.904463" lowMild="0" lowSevere="0" highMild="1" highSevere="4"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize string(1048576) with simdjson" samples="100" resamples="100000" iterations="1" clockResolution="19.5239" estimatedDuration="4.06e+07">
+      <!-- All values in nano seconds -->
+      <mean value="415608" lowerBound="413162" upperBound="419876" ci="0.95"/>
+      <standardDeviation value="16134.3" lowerBound="10181.8" upperBound="23014.9" ci="0.95"/>
+      <outliers variance="0.355806" lowMild="0" lowSevere="0" highMild="0" highSevere="6"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <OverallResults successes="27" failures="0" expectedFailures="0" skips="0"/>
+  <OverallResultsCases successes="6" failures="0" expectedFailures="0" skips="0"/>
+</Catch2TestRun>

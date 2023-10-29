@@ -42,6 +42,16 @@ Go, PHP, Dart
 インタフェースの定義を複数の言語の間で共有したいときに便利なライブラリとなっている。
 （参考：`今さらProtocol Buffersと、手に馴染む道具の話 - Qiita <https://qiita.com/yugui/items/160737021d25d761b353>`_）
 
+cereal
+----------------
+
+`cereal <https://github.com/USCiLab/cereal>`_
+はバイナリ形式、XML、JSON などでデータをシリアライズ・デシリアライズできるライブラリ。
+ライセンスは BSD 3-Clause となっている。
+
+比較的効率的なバイナリ形式でのシリアライズ・デシリアライズもできるため，今回比較に用いた。
+後述のベンチマークは全てバイナリ形式で行っている。
+
 nlohmann/json
 ---------------------
 
@@ -84,16 +94,6 @@ SIMD 演算を用いて高速に JSON のデシリアライズを行うライブ
 また、API は RapidJSON 以上に使いにくく、
 ライブラリの使用による実装の仕方の制約が極めて強い。
 
-cereal
-----------------
-
-`cereal <https://github.com/USCiLab/cereal>`_
-はバイナリ形式、XML、JSON などでデータをシリアライズ・デシリアライズできるライブラリ。
-ライセンスは BSD 3-Clause となっている。
-
-比較的効率的なバイナリ形式でのシリアライズ・デシリアライズもできるため，今回比較に用いた。
-後述のベンチマークは全てバイナリ形式で行っている。
-
 ベンチマーク
 ------------------
 
@@ -105,11 +105,13 @@ cereal
 - OS: Ubuntu 22.04
 - CPU: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz （6 コア 12 スレッド）
 - メモリ: 16 GB
+- コンパイラ: Clang 16.0.0
 
 対象データ
 '''''''''''''''
 
 - 文字列（1 文字、1024 文字、1024 × 1024 文字）
+- int 型のベクトル（1 要素、1024 要素、1024 × 1024 要素）
 - double 型のベクトル（1 要素、1024 要素、1024 × 1024 要素）
 - 次のような構造体
 
@@ -127,7 +129,7 @@ cereal
 - msgpack: 6.0.0
 - Protocol Buffers: 3.21.12
 - nlohmann/json: 3.11.2
-- RapidJSON: 2023-04-27
+- RapidJSON: 2023-07-17
 - simdjson: 3.2.1
 - cereal 1.3.2
 
@@ -142,16 +144,18 @@ cereal
 - 生データ
 
   - 文字列:
-    :download:`bench_string.xml <result_20230926_Ubuntu/bench_string.xml>`
+    :download:`bench_string.xml <result_20231029_Ubuntu/bench_string.xml>`
+  - int 型のベクトル:
+    :download:`bench_int.xml <result_20231029_Ubuntu/bench_int.xml>`
   - double 型のベクトル:
-    :download:`bench_double.xml <result_20230926_Ubuntu/bench_double.xml>`
+    :download:`bench_double.xml <result_20231029_Ubuntu/bench_double.xml>`
   - 構造体:
-    :download:`bench_struct.xml <result_20230926_Ubuntu/bench_struct.xml>`
+    :download:`bench_struct.xml <result_20231029_Ubuntu/bench_struct.xml>`
 
 - まとめたデータ
 
   - まとめた CSV:
-    :download:`bench.csv <result_20230926_Ubuntu/bench.csv>`
+    :download:`bench.csv <result_20231029_Ubuntu/bench.csv>`
 
 まず、文字列のシリアライズ・デシリアライズの処理時間から確認する。
 
@@ -160,7 +164,7 @@ cereal
     import pandas as pd
     import plotly.express as px
 
-    bench_results = pd.read_csv('source/development/cpp/serialization/serialization/result_20230926_Ubuntu/bench.csv')
+    bench_results = pd.read_csv('source/development/cpp/serialization/serialization/result_20231029_Ubuntu/bench.csv')
 
     # parse は msgpack-c でしか行っていないからグラフに入れない
     bench_results = bench_results[bench_results['procedure'] != 'parse']
@@ -183,14 +187,42 @@ cereal
            title='ベンチマーク結果（文字列）',
            labels=labels)
 
-ほとんどの場合で
+多くの場合で
 
 1. msgpack-c
-2. cereal
-3. Protocol Buffers
+2. Protocol Buffers
+3. cereal
 4. simdjson
 5. RapidJSON
 6. nlohmann/json
+
+の順に速かった。
+特に、msgpack-c によるデシリアライズの処理では文字列のコピーをしない方法が存在しており、
+その方法を用いているため、
+データサイズに関係ない処理時間が実現できている。
+
+int のベクトルの結果は以下の通り。
+JSON は int のベクトルのシリアライズ・デシリアライズで
+効率の極めて悪い小数の文字列表記を用いるため、
+1024 × 1024 のデータサイズの試験を省略した。
+また、simdjson はこのデータを正常にデシリアライズできなかったため除外した。
+
+.. jupyter-execute::
+
+    px.bar(bench_results[bench_results['data_type'] == 'int'],
+           y='mean_sec', log_y=True,
+           error_y_minus='error_minus_sec', error_y='error_plus_sec',
+           x='procedure', color='library', barmode="group",
+           facet_col='data_size',
+           title='ベンチマーク結果（int のベクトル）',
+           labels=labels)
+
+今度は
+
+1. cereal
+2. Protocol Buffers or msgpack-c （シリアライズとデシリアライズで順位が変わる）
+3. RapidJSON
+4. nlohmann/json
 
 の順に速かった。
 
@@ -240,7 +272,7 @@ JSON ライブラリで時間がかかるのは共通している。
 - バイナリデータを用いる msgpack-c と Protocol Buffers、cereal が
   JSON のライブラリよりも速かった。
 - msgpack-c と Protocol Buffers、cereal は状況によって順位が入れ替わり、
-  差は 1 桁程度までに収まっている。
+  差は文字列のデシリアライズ以外 1 桁程度までに収まっている。
 - JSON のライブラリではシリアライズにおいて RapidJSON、デシリアライズにおいて simdjson が常に速かった。
 
 まとめ

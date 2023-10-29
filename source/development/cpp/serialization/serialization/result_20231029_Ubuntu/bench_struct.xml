@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Catch2TestRun name="bench_struct" rng-seed="1693870831" xml-format-version="3" catch2-version="3.4.0">
+  <TestCase name="bench_struct_msgpack" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_msgpack.cpp" line="36">
+    <BenchmarkResults name="serialize struct with msgpack-c" samples="100" resamples="100000" iterations="201" clockResolution="20.2662" estimatedDuration="2.01e+06">
+      <!-- All values in nano seconds -->
+      <mean value="109.558" lowerBound="106.828" upperBound="116.169" ci="0.95"/>
+      <standardDeviation value="20.0025" lowerBound="9.49435" upperBound="39.2352" ci="0.95"/>
+      <outliers variance="0.925946" lowMild="5" lowSevere="0" highMild="2" highSevere="4"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="parse struct with msgpack-c" samples="100" resamples="100000" iterations="598" clockResolution="20.2662" estimatedDuration="1.9734e+06">
+      <!-- All values in nano seconds -->
+      <mean value="33.8478" lowerBound="33.2647" upperBound="35.2629" ci="0.95"/>
+      <standardDeviation value="4.31126" lowerBound="1.10989" upperBound="7.76441" ci="0.95"/>
+      <outliers variance="0.86271" lowMild="0" lowSevere="0" highMild="0" highSevere="2"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize struct with msgpack-c" samples="100" resamples="100000" iterations="122" clockResolution="20.2662" estimatedDuration="2.0252e+06">
+      <!-- All values in nano seconds -->
+      <mean value="148.456" lowerBound="147.575" upperBound="152.357" ci="0.95"/>
+      <standardDeviation value="8.01905" lowerBound="0.487727" upperBound="18.9225" ci="0.95"/>
+      <outliers variance="0.524385" lowMild="0" lowSevere="0" highMild="2" highSevere="2"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <TestCase name="bench_struct_protobuf" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_protobuf.cpp" line="8">
+    <BenchmarkResults name="serialize struct with protobuf" samples="100" resamples="100000" iterations="123" clockResolution="20.2662" estimatedDuration="2.0295e+06">
+      <!-- All values in nano seconds -->
+      <mean value="157.563" lowerBound="156.637" upperBound="161.34" ci="0.95"/>
+      <standardDeviation value="8.19379" lowerBound="1.3692" upperBound="19.025" ci="0.95"/>
+      <outliers variance="0.504377" lowMild="5" lowSevere="0" highMild="1" highSevere="2"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize struct with protobuf" samples="100" resamples="100000" iterations="189" clockResolution="20.2662" estimatedDuration="2.0223e+06">
+      <!-- All values in nano seconds -->
+      <mean value="97.984" lowerBound="97.2717" upperBound="100.819" ci="0.95"/>
+      <standardDeviation value="6.84308" lowerBound="0.400223" upperBound="16.3019" ci="0.95"/>
+      <outliers variance="0.646045" lowMild="0" lowSevere="0" highMild="1" highSevere="1"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <TestCase name="bench_struct_cereal" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_cereal.cpp" line="16">
+    <BenchmarkResults name="serialize struct with cereal" samples="100" resamples="100000" iterations="50" clockResolution="20.2662" estimatedDuration="2.045e+06">
+      <!-- All values in nano seconds -->
+      <mean value="400.792" lowerBound="388.785" upperBound="426.793" ci="0.95"/>
+      <standardDeviation value="86.5404" lowerBound="46.3824" upperBound="139.532" ci="0.95"/>
+      <outliers variance="0.946975" lowMild="0" lowSevere="0" highMild="3" highSevere="5"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize struct with cereal" samples="100" resamples="100000" iterations="133" clockResolution="20.2662" estimatedDuration="2.0349e+06">
+      <!-- All values in nano seconds -->
+      <mean value="147.54" lowerBound="146.543" upperBound="151.946" ci="0.95"/>
+      <standardDeviation value="8.84656" lowerBound="0.175107" upperBound="20.9157" ci="0.95"/>
+      <outliers variance="0.574872" lowMild="0" lowSevere="0" highMild="0" highSevere="2"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <TestCase name="bench_struct_nlohmann_json" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_nlohmann_json.cpp" line="9">
+    <BenchmarkResults name="serialize struct with nlohmann/json" samples="100" resamples="100000" iterations="1" clockResolution="20.2662" estimatedDuration="3.5015e+06">
+      <!-- All values in nano seconds -->
+      <mean value="34142.7" lowerBound="33804.6" upperBound="35051.4" ci="0.95"/>
+      <standardDeviation value="2535.71" lowerBound="793.936" upperBound="5101.68" ci="0.95"/>
+      <outliers variance="0.676513" lowMild="0" lowSevere="0" highMild="0" highSevere="3"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize struct with nlohmann/json" samples="100" resamples="100000" iterations="1" clockResolution="20.2662" estimatedDuration="8.0108e+06">
+      <!-- All values in nano seconds -->
+      <mean value="143212" lowerBound="131480" upperBound="157331" ci="0.95"/>
+      <standardDeviation value="65575.2" lowerBound="55936.6" upperBound="76013.6" ci="0.95"/>
+      <outliers variance="0.98927" lowMild="0" lowSevere="0" highMild="9" highSevere="0"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <TestCase name="bench_struct_rapidjson" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_rapidjson.cpp" line="76">
+    <BenchmarkResults name="serialize struct with rapidjson" samples="100" resamples="100000" iterations="2" clockResolution="20.2662" estimatedDuration="2.5886e+06">
+      <!-- All values in nano seconds -->
+      <mean value="17310.1" lowerBound="16593.6" upperBound="18278.6" ci="0.95"/>
+      <standardDeviation value="4226.79" lowerBound="3284.89" upperBound="6317.98" ci="0.95"/>
+      <outliers variance="0.957585" lowMild="0" lowSevere="0" highMild="1" highSevere="1"/>
+    </BenchmarkResults>
+    <BenchmarkResults name="deserialize struct with rapidjson" samples="100" resamples="100000" iterations="2" clockResolution="20.2662" estimatedDuration="3.1696e+06">
+      <!-- All values in nano seconds -->
+      <mean value="16059.9" lowerBound="15893.7" upperBound="16474.3" ci="0.95"/>
+      <standardDeviation value="1263.25" lowerBound="505.92" upperBound="2268.18" ci="0.95"/>
+      <outliers variance="0.697269" lowMild="0" lowSevere="0" highMild="1" highSevere="4"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <TestCase name="bench_struct_simdjson" filename="/workspaces/bench_for_cpp_serialization/src/bench_struct/struct_simdjson.cpp" line="10">
+    <BenchmarkResults name="deserialize struct with simdjson" samples="100" resamples="100000" iterations="2" clockResolution="20.2662" estimatedDuration="2.257e+06">
+      <!-- All values in nano seconds -->
+      <mean value="8186.91" lowerBound="8125.16" upperBound="8470.95" ci="0.95"/>
+      <standardDeviation value="571.488" lowerBound="30.8306" upperBound="1353.32" ci="0.95"/>
+      <outliers variance="0.646032" lowMild="0" lowSevere="0" highMild="2" highSevere="3"/>
+    </BenchmarkResults>
+    <OverallResult success="true" skips="0"/>
+  </TestCase>
+  <OverallResults successes="20" failures="0" expectedFailures="0" skips="0"/>
+  <OverallResultsCases successes="6" failures="0" expectedFailures="0" skips="0"/>
+</Catch2TestRun>
