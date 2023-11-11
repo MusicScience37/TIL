@@ -118,6 +118,10 @@ html_theme_options = {
     },
     "pygment_light_style": "gruvbox-light",
     "pygment_dark_style": "native",
+    "repository_url": "https://gitlab.com/MusicScience37/til",
+    "use_repository_button": True,
+    "use_source_button": True,
+    "path_to_docs": "source",
 }
 
 html_css_files = ["til-custom.css"]
