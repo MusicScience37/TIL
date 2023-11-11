@@ -5,7 +5,7 @@
 html[data-theme="light"] {
   /* teal in the original theme */
   --pst-color-primary: #ef680e;
-  --pst-color-primary-bg: #fff7f2;
+  --pst-color-primary-bg: #fffefd;
   --pst-color-inline-code-links: #ef680e;
   /* violet in the original theme */
   --pst-color-secondary: #736600;
@@ -16,4 +16,18 @@ html[data-theme="light"] {
   --pst-color-accent: #008004;
   --pst-color-accent-bg: #c0ffc2;
   --pst-color-inline-code: #008004;
+}
+
+html[data-theme="dark"] {
+  /* teal in the original theme */
+  --pst-color-primary: #ff7a22;
+  --pst-color-primary-bg: #3d1f00;
+  --pst-color-inline-code-links: #ff7a22;
+  /* violet in the original theme */
+  --pst-color-secondary: #9c8a00;
+  --pst-color-secondary-bg: #413a00;
+  /* pink in the original theme */
+  --pst-color-accent: #00bb06;
+  --pst-color-accent-bg: #004702;
+  --pst-color-inline-code: #00bb06;
 }

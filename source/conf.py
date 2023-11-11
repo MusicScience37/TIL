@@ -117,6 +117,7 @@ html_theme_options = {
         "text": html_title,
     },
     "pygment_light_style": "gruvbox-light",
+    "pygment_dark_style": "native",
 }
 
 html_css_files = ["til-custom.css"]

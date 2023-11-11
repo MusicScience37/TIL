@@ -58,6 +58,34 @@ TODO リスト
         return 0;
     }
 
+.. code-block:: python
+    :caption: 色々な要素を含んだ Python コード
+
+    """Test of a code block."""
+
+    import pathlib
+    import typing
+
+    THIS_DIR = pathlib.Path(__file__).absolute().parent
+
+
+    class Example:
+        """A class for test of a code block."""
+
+        def __init__(self, value: typing.Optional[int] = None) -> None:
+            if value is None:
+                value = 12345
+            self._value = value
+
+        @property
+        def value(self) -> int:
+            """Get the value."""
+            return self._value
+
+
+    if __name__ == "__main__":
+        main()
+
 数式
 ....................
 
