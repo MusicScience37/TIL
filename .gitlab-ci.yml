@@ -49,6 +49,7 @@ spell check:
       "**/*.toml"
       "**/*.sh"
       "**/*.bash"
+      "**/*.css"
   interruptible: true
 
 build:
