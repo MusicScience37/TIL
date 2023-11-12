@@ -20,7 +20,7 @@ sphinxcontrib-bibtex = "^2.5.0"
 msgpack = "^1.0.7"
 nbsphinx = "^0.9.3"
 notebook = "^7.0.6"
-sphinx-book-theme = "^1.0.1"
+sphinx-orange-book-theme = "0.1.0a2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.11.0"

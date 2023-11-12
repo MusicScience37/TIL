@@ -2528,6 +2528,20 @@ doc = ["ablog", "docutils (==0.17.1)", "folium", "ipywidgets", "matplotlib", "my
 test = ["beautifulsoup4", "coverage", "myst-nb", "pytest", "pytest-cov", "pytest-regressions", "sphinx_thebe"]
 
 [[package]]
+name = "sphinx-orange-book-theme"
+version = "0.1.0a2"
+description = "An orange version of sphinx-book-theme."
+optional = false
+python-versions = ">=3.10,<3.12"
+files = [
+    {file = "sphinx_orange_book_theme-0.1.0a2-py3-none-any.whl", hash = "sha256:50583401f998ae8d6067b25d911b6fc6226cfe39a2bbf12944611cc0d5e9f4de"},
+    {file = "sphinx_orange_book_theme-0.1.0a2.tar.gz", hash = "sha256:bd45243f4c1eeac5d5ca6c45fe6435d26213568907898b4d8438a23bf2954b7c"},
+]
+
+[package.dependencies]
+sphinx-book-theme = ">=1.0.1,<2.0.0"
+
+[[package]]
 name = "sphinxcontrib-applehelp"
 version = "1.0.7"
 description = "sphinxcontrib-applehelp is a Sphinx extension which outputs Apple help books"
@@ -2984,4 +2998,4 @@ viz = ["matplotlib", "nc-time-axis", "seaborn"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.12"
-content-hash = "3485741f248c8490f52d638dc26227a39ca8c30ec13b9429625ef4a97c1cf615"
+content-hash = "2ed61d08196d1600c29127e956287d8cb5e88897aec2ae478709172b04c681d8"
