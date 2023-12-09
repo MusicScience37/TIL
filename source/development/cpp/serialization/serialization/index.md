@@ -1,14 +1,18 @@
-C++ 上でデータをシリアライズする
-==========================================
+---
+file_format: mystnb
+---
+
+# C++ 上でデータをシリアライズする
 
 C++ 上でデータをシリアライズ・デシリアライズするライブラリの調査記録。
 
-msgpack-c
---------------
+## 調査したライブラリ
 
-`msgpack-c <https://github.com/msgpack/msgpack-c>`_
+### msgpack-c
+
+[msgpack-c](https://github.com/msgpack/msgpack-c)
 は
-`MessagePack <https://msgpack.org/>`_
+[MessagePack](https://msgpack.org/)
 形式でデータのシリアライズ・デシリアライズを行うライブラリ。
 ライセンスは Boost Software License Version 1.0 となっている。
 
@@ -21,13 +25,12 @@ D, Perl, Erlang, Smalltalk, Scala, OCaml,
 Go, Objective-C
 といった言語のライブラリが存在する。
 
-Protocol Buffers
-------------------------
+### Protocol Buffers
 
-`Protocol Buffers <https://developers.google.com/protocol-buffers/>`_
+[Protocol Buffers](https://developers.google.com/protocol-buffers/)
 は Google が考案したデータのシリアライズ・デシリアライズ形式で、
 C++ 向けのライブラリは
-`protobuf <https://github.com/protocolbuffers/protobuf>`_
+[protobuf](https://github.com/protocolbuffers/protobuf)
 にて公開されている。
 ライセンスは 3 条項 BSD ライセンスとなっている。
 
@@ -40,22 +43,20 @@ Go, PHP, Dart
 といった言語に対応している。
 
 インタフェースの定義を複数の言語の間で共有したいときに便利なライブラリとなっている。
-（参考：`今さらProtocol Buffersと、手に馴染む道具の話 - Qiita <https://qiita.com/yugui/items/160737021d25d761b353>`_）
+（参考：[今さら Protocol Buffers と、手に馴染む道具の話 - Qiita](https://qiita.com/yugui/items/160737021d25d761b353)）
 
-cereal
-----------------
+### cereal
 
-`cereal <https://github.com/USCiLab/cereal>`_
+[cereal](https://github.com/USCiLab/cereal)
 はバイナリ形式、XML、JSON などでデータをシリアライズ・デシリアライズできるライブラリ。
 ライセンスは BSD 3-Clause となっている。
 
 比較的効率的なバイナリ形式でのシリアライズ・デシリアライズもできるため，今回比較に用いた。
 後述のベンチマークは全てバイナリ形式で行っている。
 
-nlohmann/json
----------------------
+### nlohmann/json
 
-`nlohmann/json <https://github.com/nlohmann/json>`_
+[nlohmann/json](https://github.com/nlohmann/json)
 は JSON のシリアライズ・デシリアライズを行うライブラリの 1 つ。
 ライセンスは MIT ライセンスとなっている。
 
@@ -67,23 +68,21 @@ nlohmann/json
 データ形式の時点で効率があまり良くない上に、
 仕様上 Unicode でない文字を使用できないため注意。
 
-RapidJSON
----------------------
+### RapidJSON
 
-`RapidJSON <https://github.com/Tencent/rapidjson/>`_
+[RapidJSON](https://github.com/Tencent/rapidjson/)
 も JSON のシリアライズ・デシリアライズを行うライブラリの 1 つ。
 ライセンスは MIT ライセンスとなっている。
 
 nlohmann/json と対照的に、
 効率を重視しているライブラリであり、
-`Native JSON Benchmark <https://github.com/miloyip/nativejson-benchmark#parsing-time>`_
+[Native JSON Benchmark](https://github.com/miloyip/nativejson-benchmark#parsing-time)
 では、最速で最もメモリ使用量が少ないのが RapidJSON となっている。
 ただし、API の使いやすさでは他のライブラリに負ける。
 
-simdjson
-------------------------
+### simdjson
 
-`simdjson <https://github.com/simdjson/simdjson>`_
+[simdjson](https://github.com/simdjson/simdjson)
 は JSON のデシリアライズを行うライブラリの 1 つ。
 ライセンスは Apache 2.0 ライセンスとなっている。
 
@@ -94,37 +93,33 @@ SIMD 演算を用いて高速に JSON のデシリアライズを行うライブ
 また、API は RapidJSON 以上に使いにくく、
 ライブラリの使用による実装の仕方の制約が極めて強い。
 
-ベンチマーク
-------------------
+## ベンチマーク
 
 上記のライブラリについてベンチマークを行った。
 
-環境
-''''''''''''
+### 環境
 
 - OS: Ubuntu 22.04
 - CPU: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz （6 コア 12 スレッド）
 - メモリ: 16 GB
 - コンパイラ: Clang 16.0.0
 
-対象データ
-'''''''''''''''
+### 対象データ
 
 - 文字列（1 文字、1024 文字、1024 × 1024 文字）
 - int 型のベクトル（1 要素、1024 要素、1024 × 1024 要素）
 - double 型のベクトル（1 要素、1024 要素、1024 × 1024 要素）
 - 次のような構造体
 
-  .. code-block:: cpp
+  ```cpp
+  struct test_struct {
+      std::int32_t param_int;
+      double param_double;
+      std::vector<char> binary;
+  };
+  ```
 
-      struct test_struct {
-          std::int32_t param_int;
-          double param_double;
-          std::vector<char> binary;
-      };
-
-ライブラリのバージョン
-'''''''''''''''''''''''''
+### ライブラリのバージョン
 
 - msgpack: 6.0.0
 - Protocol Buffers: 3.21.12
@@ -133,59 +128,64 @@ SIMD 演算を用いて高速に JSON のデシリアライズを行うライブ
 - simdjson: 3.2.1
 - cereal 1.3.2
 
-ソースコード
-'''''''''''''''''
+### ソースコード
 
-`bench_for_cpp_serialization <https://gitlab.com/MusicScience37/bench_for_cpp_serialization>`_
+[bench_for_cpp_serialization](https://gitlab.com/MusicScience37/bench_for_cpp_serialization)
 
-結果
-''''''''
+### 結果
 
 - 生データ
 
   - 文字列:
-    :download:`bench_string.xml <result_20231029_Ubuntu/bench_string.xml>`
+    {download}`bench_string.xml <result_20231029_Ubuntu/bench_string.xml>`
   - int 型のベクトル:
-    :download:`bench_int.xml <result_20231029_Ubuntu/bench_int.xml>`
+    {download}`bench_int.xml <result_20231029_Ubuntu/bench_int.xml>`
   - double 型のベクトル:
-    :download:`bench_double.xml <result_20231029_Ubuntu/bench_double.xml>`
+    {download}`bench_double.xml <result_20231029_Ubuntu/bench_double.xml>`
   - 構造体:
-    :download:`bench_struct.xml <result_20231029_Ubuntu/bench_struct.xml>`
+    {download}`bench_struct.xml <result_20231029_Ubuntu/bench_struct.xml>`
 
 - まとめたデータ
 
   - まとめた CSV:
-    :download:`bench.csv <result_20231029_Ubuntu/bench.csv>`
+    {download}`bench.csv <result_20231029_Ubuntu/bench.csv>`
 
 まず、文字列のシリアライズ・デシリアライズの処理時間から確認する。
 
-.. jupyter-execute::
+```{code-cell}
+:tags: [hide-input]
 
-    import pandas as pd
-    import plotly.express as px
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
 
-    bench_results = pd.read_csv('source/development/cpp/serialization/serialization/result_20231029_Ubuntu/bench.csv')
+bench_results = pd.read_csv('result_20231029_Ubuntu/bench.csv')
 
-    # parse は msgpack-c でしか行っていないからグラフに入れない
-    bench_results = bench_results[bench_results['procedure'] != 'parse']
+# parse は msgpack-c でしか行っていないからグラフに入れない
+bench_results = bench_results[bench_results['procedure'] != 'parse']
 
-    # 表示用データ
-    bench_results['error_minus_ns'] = bench_results['mean_ns'] - bench_results['lower_bound_ns']
-    bench_results['error_plus_ns'] = bench_results['upper_bound_ns'] - bench_results['mean_ns']
-    bench_results['mean_sec'] = bench_results['mean_ns'] * 1e-9
-    bench_results['error_minus_sec'] = bench_results['error_minus_ns'] * 1e-9
-    bench_results['error_plus_sec'] = bench_results['error_plus_ns'] * 1e-9
-    labels={
-        'mean_sec': '平均処理時間 [sec.]',
-    }
+# 表示用データ
+bench_results['error_minus_ns'] = bench_results['mean_ns'] - bench_results['lower_bound_ns']
+bench_results['error_plus_ns'] = bench_results['upper_bound_ns'] - bench_results['mean_ns']
+bench_results['mean_sec'] = bench_results['mean_ns'] * 1e-9
+bench_results['error_minus_sec'] = bench_results['error_minus_ns'] * 1e-9
+bench_results['error_plus_sec'] = bench_results['error_plus_ns'] * 1e-9
+labels={
+    'mean_sec': '平均処理時間 [sec.]',
+}
 
-    px.bar(bench_results[bench_results['data_type'] == 'string'],
-           y='mean_sec', log_y=True,
-           error_y_minus='error_minus_sec', error_y='error_plus_sec',
-           x='procedure', color='library', barmode="group",
-           facet_col='data_size',
-           title='ベンチマーク結果（文字列）',
-           labels=labels)
+fig = px.bar(
+    bench_results[bench_results['data_type'] == 'string'],
+    y='mean_sec', log_y=True,
+    error_y_minus='error_minus_sec', error_y='error_plus_sec',
+    x='procedure', color='library', barmode="group",
+    facet_col='data_size',
+    title='ベンチマーク結果（文字列）',
+    labels=labels,
+)
+fig.update_layout(height=500)
+go.FigureWidget(fig)
+```
 
 多くの場合で
 
@@ -207,15 +207,21 @@ JSON は int のベクトルのシリアライズ・デシリアライズで
 1024 × 1024 のデータサイズの試験を省略した。
 また、simdjson はこのデータを正常にデシリアライズできなかったため除外した。
 
-.. jupyter-execute::
+```{code-cell}
+:tags: [hide-input]
 
-    px.bar(bench_results[bench_results['data_type'] == 'int'],
-           y='mean_sec', log_y=True,
-           error_y_minus='error_minus_sec', error_y='error_plus_sec',
-           x='procedure', color='library', barmode="group",
-           facet_col='data_size',
-           title='ベンチマーク結果（int のベクトル）',
-           labels=labels)
+fig = px.bar(
+    bench_results[bench_results['data_type'] == 'int'],
+    y='mean_sec', log_y=True,
+    error_y_minus='error_minus_sec', error_y='error_plus_sec',
+    x='procedure', color='library', barmode="group",
+    facet_col='data_size',
+    title='ベンチマーク結果（int のベクトル）',
+    labels=labels,
+)
+fig.update_layout(height=500)
+go.FigureWidget(fig)
+```
 
 今度は
 
@@ -231,15 +237,21 @@ JSON は double のベクトルのシリアライズ・デシリアライズで
 効率の極めて悪い小数の文字列表記を用いるため、
 1024 × 1024 のデータサイズの試験を省略した。
 
-.. jupyter-execute::
+```{code-cell}
+:tags: [hide-input]
 
-    px.bar(bench_results[bench_results['data_type'] == 'double'],
-           y='mean_sec', log_y=True,
-           error_y_minus='error_minus_sec', error_y='error_plus_sec',
-           x='procedure', color='library', barmode="group",
-           facet_col='data_size',
-           title='ベンチマーク結果（double のベクトル）',
-           labels=labels)
+fig = px.bar(
+    bench_results[bench_results['data_type'] == 'double'],
+    y='mean_sec', log_y=True,
+    error_y_minus='error_minus_sec', error_y='error_plus_sec',
+    x='procedure', color='library', barmode="group",
+    facet_col='data_size',
+    title='ベンチマーク結果（double のベクトル）',
+    labels=labels,
+)
+fig.update_layout(height=500)
+go.FigureWidget(fig)
+```
 
 今度は
 
@@ -254,20 +266,25 @@ JSON は double のベクトルのシリアライズ・デシリアライズで
 
 最後に構造体のデータを用いた場合の結果を示す。
 
-.. jupyter-execute::
+```{code-cell}
+:tags: [hide-input]
 
-    px.bar(bench_results[bench_results['data_type'] == 'struct'],
-           y='mean_sec', log_y=True,
-           error_y_minus='error_minus_sec', error_y='error_plus_sec',
-           x='procedure', color='library', barmode="group",
-           title='ベンチマーク結果（構造体）',
-           labels=labels)
+fig = px.bar(
+    bench_results[bench_results['data_type'] == 'struct'],
+    y='mean_sec', log_y=True,
+    error_y_minus='error_minus_sec', error_y='error_plus_sec',
+    x='procedure', color='library', barmode="group",
+    title='ベンチマーク結果（構造体）',
+    labels=labels,
+)
+fig.update_layout(height=500)
+go.FigureWidget(fig)
+```
 
 msgpack-c と Protocol Buffers、cereal はシリアライズとデシリアライズで順番が入れ替わっているが、
 JSON ライブラリで時間がかかるのは共通している。
 
-ベンチマークのまとめ
-'''''''''''''''''''''''
+### ベンチマークのまとめ
 
 - バイナリデータを用いる msgpack-c と Protocol Buffers、cereal が
   JSON のライブラリよりも速かった。
@@ -275,8 +292,7 @@ JSON ライブラリで時間がかかるのは共通している。
   差は文字列のデシリアライズ以外 1 桁程度までに収まっている。
 - JSON のライブラリではシリアライズにおいて RapidJSON、デシリアライズにおいて simdjson が常に速かった。
 
-まとめ
-----------------
+## まとめ
 
 ここでは、C++ 上でデータのシリアライズ・デシリアライズを行うライブラリをまとめた。
 状況によってライブラリを使い分けていこう。
@@ -299,7 +315,7 @@ JSON ライブラリで時間がかかるのは共通している。
   - cereal は C++ のみのサポートになる。
   - ユーザ定義のデータ型のシリアライズ・デシリアライズを行うにあたって、
 
-    - msgpack-c ではパースされたデータ（``msgpack::object``）とユーザ定義のデータ型との間の変換の実装が必要。
+    - msgpack-c ではパースされたデータ（`msgpack::object`）とユーザ定義のデータ型との間の変換の実装が必要。
     - Protocol Buffers では自動生成されたクラスとユーザ定義のデータ型との間の変換の実装が必要。
     - cereal ではデータ型ごとのシリアライズ・デシリアライズ用の関数の実装が必要。
 

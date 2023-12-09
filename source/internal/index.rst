@@ -21,4 +21,5 @@ TODO リスト
     :maxdepth: 1
 
     test-page
-    test-nbsphinx
+    test-notebook
+    test-markdown

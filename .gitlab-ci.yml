@@ -58,8 +58,6 @@ build:
   variables:
     PYDEVD_DISABLE_FILE_VALIDATION: 1
   script:
-    - apt-get update
-    - apt-get install -y pandoc
     - mkdir -p .venv
     - poetry config virtualenvs.in-project true
     - poetry env use 3.11
@@ -72,6 +70,7 @@ build:
         - poetry.lock
     paths:
       - .venv
+      - jupyter_cache
   artifacts:
     paths:
       - build
