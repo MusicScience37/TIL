@@ -48,6 +48,41 @@ CMake でビルドを行う場合、
 という 2 つの変数に ``ccache`` コマンドを指定することで、
 Ccache を適用できる。
 
+Visual Studio の場合
+...........................
+
+GCC, Clang を使用する場合は上記だけで良いが、
+Visual Studio を使用する場合は少し工夫が必要となる。
+CMake に指定する generator として Visual Studio を指定すると
+``CMAKE_C_COMPILER_LAUNCHER``, ``CMAKE_CXX_COMPILER_LAUNCHER``
+の設定が無視される。
+そのため、例えば以下のように Visual Studio のコンパイラの情報を読み込むスクリプトを実行してから
+generator として Ninja を指定して cmake コマンドを実行する必要がある [#footnote-ci-win-example]_ 。
+
+.. code-block:: bat
+    :caption: ci_win.cmd
+
+    call "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Auxiliary\\Build\\vcvarsall.bat" x86_x64
+
+    cmake .. ^
+        -G Ninja ^
+        -DCMAKE_CXX_COMPILER_LAUNCHER=ccache ^
+        -DCMAKE_TOOLCHAIN_FILE=..\vcpkg\scripts\buildsystems\vcpkg.cmake ^
+        -DCMAKE_BUILD_TYPE=Release ^
+        -DSTAT_BENCH_TESTING:BOOL=ON ^
+        -DSTAT_BENCH_ENABLE_BENCH=ON ^
+        -DSTAT_BENCH_TEST_BENCHMARKS=ON ^
+        -DSTAT_BENCH_BUILD_EXAMPLES=ON ^
+        -DSTAT_BENCH_TEST_EXAMPLES=ON ^
+        -DSTAT_BENCH_WRITE_JUNIT:BOOL=ON
+
+    cmake --build . --config Release --parallel
+
+    ctest -V --build-config Release
+
+.. caution::
+    1 行目の処理は power shell でなくコマンドプロンプトを使用するバッチファイルにおいてしか実行できない。
+
 .. rubric:: Footnotes
 
 .. [#footnote-speed]
@@ -57,3 +92,8 @@ Ccache を適用できる。
     ビルド時間を 377 秒から 9 秒まで削減できた。
     ヘッダオンリーの重いライブラリを使用しているために 1 ファイルごとのコンパイル時間が比較的長く、
     Ccache の効果が得られやすいプロジェクトとなっている。
+
+.. [#footnote-ci-win-example]
+    `cpp-stat-bench リポジトリの scripts/ci_win.cmd <https://gitlab.com/MusicScience37Projects/utility-libraries/cpp-stat-bench/-/blob/0ba5074320052a6eae545a654bc63168fc111245/scripts/ci_win.cmd>`_
+    より引用したもの。
+    GitLab CI でこのバッチファイルを ``cmd.exe /C ..\scripts\ci_win.cmd`` のように実行している。
