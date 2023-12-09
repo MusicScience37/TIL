@@ -231,20 +231,6 @@ term
       b &= 12345 \\
       \bm{c} &= \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}
 
-jupyter-execute with Plotly
-----------------------------------
-
-.. jupyter-execute::
-
-    import numpy as np
-    import plotly.express as px
-
-    x = np.linspace(0, 10, 100)
-    y = np.sin(x)
-
-    fig = px.line(x=x, y=y)
-    fig
-
 PlantUML
 ----------------
 

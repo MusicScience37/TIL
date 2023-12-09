@@ -61,9 +61,6 @@ plantuml = "java -jar " + plantuml_jar_path
 plantuml_output_format = "svg"
 plantuml_syntax_error_image = True
 
-# setting of jupyter-sphinx
-extensions += ["jupyter_sphinx"]
-
 # setting of opengraph
 # https://pypi.org/project/sphinxext-opengraph/
 extensions += ["sphinxext.opengraph"]
