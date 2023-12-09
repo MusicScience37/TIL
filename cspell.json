@@ -103,6 +103,7 @@
     "mkdir",
     "Mockitopp",
     "MPFR",
+    "mpmath",
     "msgpack",
     "multiscan",
     "MusicScience37",

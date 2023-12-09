@@ -10,5 +10,6 @@ Python
     pipenv
     kivy
     bigfloat
+    mpmath
     plotly
     aiohttp
