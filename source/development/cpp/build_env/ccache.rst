@@ -59,6 +59,9 @@ CMake に指定する generator として Visual Studio を指定すると
 そのため、例えば以下のように Visual Studio のコンパイラの情報を読み込むスクリプトを実行してから
 generator として Ninja を指定して cmake コマンドを実行する必要がある [#footnote-ci-win-example]_ 。
 
+..
+    cspell:ignore vcvarsall DSTAT ctest
+
 .. code-block:: bat
     :caption: ci_win.cmd
 
@@ -82,6 +85,11 @@ generator として Ninja を指定して cmake コマンドを実行する必�
 
 .. caution::
     1 行目の処理は power shell でなくコマンドプロンプトを使用するバッチファイルにおいてしか実行できない。
+
+.. seealso::
+    - `GitHub Actionsでccacheを使ってCMake+Microsoft Visual C++のビルドを高速化 - 2022-10-12 - ククログ <https://www.clear-code.com/blog/2022/10/12/ccache-for-msvc-and-cmake-on-github-actions.html>`_
+    - `Visual Studio 2019のプロジェクトをGitlab CI/CDで自動ビルド&Google Testでテストしてみた - 情弱の奇妙な冒険 <https://ssssssh.hatenablog.com/entry/2021/08/07/004051>`_
+    - `Visual Studio (up to 2019) のコマンドラインでの C/C++ コンパイル環境 #C++ - Qiita <https://qiita.com/softgate/items/b9e04da8f8fc9f180855>`_
 
 .. rubric:: Footnotes
 
