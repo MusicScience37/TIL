@@ -37,17 +37,22 @@ todo_include_todos = True
 
 # setting of mathjax
 extensions += ["sphinx.ext.mathjax"]
-# force to use MathJax 2 for compatibility with Plotly
-mathjax_path = (
-    "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-)
-mathjax_config = {
-    "TeX": {
-        "Macros": {
+mathjax3_config = {
+    "tex": {
+        "macros": {
             "bm": ["{\\boldsymbol{#1}}", 1],
         },
     },
 }
+
+# settings of myst-nb
+extensions += ["myst_nb"]  # This will automatically include myst_parser
+myst_enable_extensions = [
+    "amsmath",
+    "dollarmath",
+]
+nb_execution_mode = "cache"
+nb_execution_cache_path = "jupyter_cache"
 
 # setting of PlantUML
 extensions += ["sphinxcontrib.plantuml"]
@@ -72,9 +77,6 @@ extensions += ["sphinxcontrib.bibtex"]
 bibtex_bibfiles = ["bibliography.bib"]
 bibtex_default_style = "plain"
 bibtex_reference_style = "super"
-
-# setting of nbsphinx
-extensions += ["nbsphinx"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
