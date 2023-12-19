@@ -56,7 +56,7 @@ Python パッケージ
 テキストのパスへの変換（オプション）
 ---------------------------------------
 
-.. cspell: ignore Ghostscript
+.. cspell: ignore Ghostscript pdfwrite
 
 svg2pdf で生成される PDF ファイルでは
 テキストがフォントの埋め込みもされていない状態で含まれるため、
