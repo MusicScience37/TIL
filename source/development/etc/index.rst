@@ -6,3 +6,4 @@
 
     response_time_limit
     cspell
+    svg-to-pdf

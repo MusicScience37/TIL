@@ -6,3 +6,5 @@ TeX
 
     install
     prime_for_differentiation
+    latexindent
+    space-of-mid-in-set
