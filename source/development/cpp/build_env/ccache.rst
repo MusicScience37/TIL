@@ -5,7 +5,12 @@ Ccache によるビルド高速化
 は、C/C++ のコンパイル時に生成されるオブジェクトファイルをキャッシュして、
 同じ条件によるコンパイルの処理をなくすことにより、
 リビルドの時間を短くすることができるツールである。
-今回試したコンパイル時間が長い
+ソースコードと ``#include`` で読み込まれるヘッダの内容をもとにキャッシュを作るため、
+環境を作り直したりしてソースコードやヘッダのタイムスタンプが変化しても、
+ファイルの内容自体が変わっていなければキャッシュが使われるようになっている。
+そのため、CI における C/C++ のビルドを高速化するのに活用できる。
+
+なお、今回試したコンパイル時間が長い
 `numerical-collection-cpp <https://gitlab.com/MusicScience37Projects/numerical-analysis/numerical-collection-cpp>`_
 リポジトリでは、
 リビルドを 40 倍高速化できた [#footnote-speed]_ 。
@@ -31,7 +36,7 @@ Ubuntu 上では、``apt install ccache`` コマンドでインストールで�
 ``CCACHE_COMPILERCHECK``
     コンパイラが同一かどうかをチェックする方法を指定する。
     デフォルトではタイムスタンプが使用されるが、
-    Docker コンテナで使用する場合は
+    Docker コンテナや CI 環境で使用する場合は
     タイムスタンプよりもコンパイラのバイナリによる比較を行う ``content`` の方が都合が良い。
     （Docker コンテナを作り直しても、コンパイラが完全に一致すれば同じコンパイラとして扱う。）
 
@@ -56,8 +61,9 @@ Visual Studio を使用する場合は少し工夫が必要となる。
 CMake に指定する generator として Visual Studio を指定すると
 ``CMAKE_C_COMPILER_LAUNCHER``, ``CMAKE_CXX_COMPILER_LAUNCHER``
 の設定が無視される。
-そのため、例えば以下のように Visual Studio のコンパイラの情報を読み込むスクリプトを実行してから
-generator として Ninja を指定して cmake コマンドを実行する必要がある [#footnote-ci-win-example]_ 。
+しかし、以下の例のように Visual Studio のコンパイラの情報を読み込むスクリプトを実行してから
+generator として Ninja を指定して cmake コマンドを実行すると設定が反映される
+[#footnote-ci-win-example]_ 。
 
 ..
     cspell:ignore vcvarsall DSTAT ctest
@@ -71,17 +77,9 @@ generator として Ninja を指定して cmake コマンドを実行する必�
         -G Ninja ^
         -DCMAKE_CXX_COMPILER_LAUNCHER=ccache ^
         -DCMAKE_TOOLCHAIN_FILE=..\vcpkg\scripts\buildsystems\vcpkg.cmake ^
-        -DCMAKE_BUILD_TYPE=Release ^
-        -DSTAT_BENCH_TESTING:BOOL=ON ^
-        -DSTAT_BENCH_ENABLE_BENCH=ON ^
-        -DSTAT_BENCH_TEST_BENCHMARKS=ON ^
-        -DSTAT_BENCH_BUILD_EXAMPLES=ON ^
-        -DSTAT_BENCH_TEST_EXAMPLES=ON ^
-        -DSTAT_BENCH_WRITE_JUNIT:BOOL=ON
+        -DCMAKE_BUILD_TYPE=Release
 
     cmake --build . --config Release --parallel
-
-    ctest -V --build-config Release
 
 .. caution::
     1 行目の処理は power shell でなくコマンドプロンプトを使用するバッチファイルにおいてしか実行できない。
@@ -103,5 +101,5 @@ generator として Ninja を指定して cmake コマンドを実行する必�
 
 .. [#footnote-ci-win-example]
     `cpp-stat-bench リポジトリの scripts/ci_win.cmd <https://gitlab.com/MusicScience37Projects/utility-libraries/cpp-stat-bench/-/blob/0ba5074320052a6eae545a654bc63168fc111245/scripts/ci_win.cmd>`_
-    より引用したもの。
+    より必要な部分のみ引用したもの。
     GitLab CI でこのバッチファイルを ``cmd.exe /C ..\scripts\ci_win.cmd`` のように実行している。
