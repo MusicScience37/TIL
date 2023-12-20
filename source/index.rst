@@ -11,23 +11,20 @@ TIL - Today I Learned
 
 .. toctree::
     :caption: Contents
-    :maxdepth: 2
+    :maxdepth: 1
 
     development/index
     security_network/index
     science/index
     etc/index
 
-外部サイト
----------------
+.. toctree::
+    :caption: External
+    :maxdepth: 1
 
-- `数値解析ノート <https://numanalnote.musicscience37.com/numerical-analysis-note.pdf>`_
-  （Git リポジトリ： `Numerical Analysis Note リポジトリ <https://gitlab.com/MusicScience37Projects/numerical-analysis/numerical-analysis-note>`_ ）
-
-- `My Cheat Sheets <https://cheatsheets.musicscience37.com/>`_
-  （Git リポジトリ： `My Cheat Sheets リポジトリ <https://gitlab.com/MusicScience37/my-cheat-sheets>`_ ）
-
-- `MusicScience37 <https://www.musicscience37.com/ja/>`_ （自己紹介など）
+    数値解析ノート <https://numanalnote.musicscience37.com/>
+    My Cheat Sheets <https://cheatsheets.musicscience37.com/>
+    MusicScience37（自己紹介） <https://www.musicscience37.com/ja/>
 
 .. toctree::
     :caption: Internal
