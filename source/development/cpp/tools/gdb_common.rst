@@ -61,8 +61,7 @@ screen コマンドのシェルの中で GDB を起動することができる�
 このコマンドを実行してからいつも通り ``run`` コマンドを実行すると、
 例外発生時に実行を停止する。
 
-参考
-------------
+.. seealso::
 
-- `multithreading - How do I get the backtrace for all the threads in GDB? - Stack Overflow <https://stackoverflow.com/questions/18391808/how-do-i-get-the-backtrace-for-all-the-threads-in-gdb>`_
-- `roslaunch/Tutorials/Roslaunch Nodes in Valgrind or GDB - ROS Wiki <http://wiki.ros.org/roslaunch/Tutorials/Roslaunch%20Nodes%20in%20Valgrind%20or%20GDB>`_
+    - `multithreading - How do I get the backtrace for all the threads in GDB? - Stack Overflow <https://stackoverflow.com/questions/18391808/how-do-i-get-the-backtrace-for-all-the-threads-in-gdb>`_
+    - `roslaunch/Tutorials/Roslaunch Nodes in Valgrind or GDB - ROS Wiki <http://wiki.ros.org/roslaunch/Tutorials/Roslaunch%20Nodes%20in%20Valgrind%20or%20GDB>`_

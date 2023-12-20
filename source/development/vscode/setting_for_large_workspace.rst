@@ -11,17 +11,17 @@
 
 1. ``/etc/sysctl.conf`` に
 
-  .. code:: none
+   .. code:: none
 
-      fs.inotify.max_user_watches=524288
+       fs.inotify.max_user_watches=524288
 
-  と書き加える。
+   と書き加える。
 
 2. 次のコマンドを実行する。
 
-  .. code:: bash
+   .. code:: bash
 
-      sudo sysctl -p
+       sudo sysctl -p
 
 これで、ユーザのプロセスが同時に確認できるファイルの数が増え、
 EXPLORER の画面の表示の自動更新がしやすくなるという。

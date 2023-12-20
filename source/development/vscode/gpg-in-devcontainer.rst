@@ -26,7 +26,7 @@ WSL 上の Docker コンテナの場合
        $ sudo apt install socat gpg
 
    .. note::
-       最新のドキュメントでは socat のインストールが不要となっている。。
+       最新のドキュメントでは socat のインストールが不要となっている。
 
 3. WSL 内の設定
 
@@ -46,7 +46,7 @@ WSL 上の Docker コンテナの場合
 
        $ apt-get update && apt-get install gnupg2 -y
 
-   .. note::
+   .. important::
        参照したドキュメントによると、gpg でなく gnupg2 であることに意味があるようだ。
 
 SSH 接続先の Linux 上の Docker コンテナの場合
@@ -70,7 +70,7 @@ SSH 接続先の Linux 上の Docker コンテナの場合
 
        $ apt-get update && apt-get install gnupg2 -y
 
-   .. note::
+   .. important::
        参照したドキュメントによると、gpg でなく gnupg2 であることに意味があるようだ。
 
 gpg のエラー

@@ -8,6 +8,11 @@ Conan を用いた CMake の依存ライブラリ管理
     cspell:ignore RPATHs arenastring lited libprotobufd libprotocd protoc proto
     cspell:ignore graphinfo protocd protobufd
 
+.. caution::
+    このページは Conan のメジャーバージョンが 1 だった時点の情報で書いている。
+    2023/12/20 現在の最新版ではメジャーバージョンが 2 になっており、
+    このページで書いている通りにしても動作しない可能性がある。
+
 `Conan <https://conan.io/>`_
 は C/C++ 向けのパッケージマネージャで、
 プロジェクトごとの設定ファイルに書かれた通りに依存ライブラリをインストールできるほか、

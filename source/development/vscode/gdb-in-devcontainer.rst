@@ -43,9 +43,7 @@ ptrace の権限がないというエラーが発生する。
       "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
     }
 
+.. seealso::
 
-参考
-------------
-
-- `vscode-dev-containers/devcontainer.json at 5a084a93b0736ea86395ac99019a5b72a00b6341 · microsoft/vscode-dev-containers <https://github.com/microsoft/vscode-dev-containers/blob/5a084a93b0736ea86395ac99019a5b72a00b6341/container-templates/image/.devcontainer/devcontainer.json#L23>`_
-- `Docker上でgdbを動かす - 俺より凄いやつしかいない。 <https://www.cyamax.com/entry/2018/02/09/070000>`_
+    - `vscode-dev-containers/devcontainer.json at 5a084a93b0736ea86395ac99019a5b72a00b6341 · microsoft/vscode-dev-containers <https://github.com/microsoft/vscode-dev-containers/blob/5a084a93b0736ea86395ac99019a5b72a00b6341/container-templates/image/.devcontainer/devcontainer.json#L23>`_
+    - `Docker上でgdbを動かす - 俺より凄いやつしかいない。 <https://www.cyamax.com/entry/2018/02/09/070000>`_

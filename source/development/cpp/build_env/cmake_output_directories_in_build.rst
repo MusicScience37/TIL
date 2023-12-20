@@ -23,7 +23,6 @@ CMake のビルドディレクトリでは、
     cspell:ignore buildsystem
 
 すると、次のように各ファイルがビルドディレクトリ中の各サブディレクトリへ配置される。
-（参考：`cmake-buildsystem(7) - CMake 3.18.3 Documentation <https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#archive-output-artifacts>`_）
 
 .. csv-table:: Windows 上でのビルドディレクトリ内のバイナリの配置
     :header: 種類, 拡張子, CMake における分類, ディレクトリ
@@ -44,7 +43,11 @@ CMake のビルドディレクトリでは、
 .. note::
     Windows と Ubuntu では共有ライブラリが別の分類になっている。
 
-.. note::
+.. seealso::
+
+    - `cmake-buildsystem(7) - CMake 3.18.3 Documentation <https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#archive-output-artifacts>`_
+
+.. hint::
     ``${CMAKE_BINARY_DIR}/bin`` と ``$<1:${CMAKE_BINARY_DIR}/bin>`` では
     一部の環境において出力先が異なる。
     ``$<1:${CMAKE_BINARY_DIR}/bin>`` のように generator expression を使用することで、

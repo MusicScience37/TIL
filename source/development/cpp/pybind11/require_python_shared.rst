@@ -15,10 +15,9 @@ pyenv を使用している場合は次のようにインストールを行う�
 
 ``-f`` オプションは元々インストールされているバージョンがあっても無視してインストールするものである。
 
-参考
---------
-
 ..
     cspell:ignore Theano
 
-- `TheanoをpyenvでインストールしたPython3.4.2で動かそうとしたら「PICオプションつけて再コンパイルしろよ」と怒られた時にやった対処メモ - Qiita <https://qiita.com/sobeit@github/items/74ae8eb5bfc1c445016a>`_
+.. seealso::
+
+    - `TheanoをpyenvでインストールしたPython3.4.2で動かそうとしたら「PICオプションつけて再コンパイルしろよ」と怒られた時にやった対処メモ - Qiita <https://qiita.com/sobeit@github/items/74ae8eb5bfc1c445016a>`_

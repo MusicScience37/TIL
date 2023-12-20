@@ -7,7 +7,6 @@ pybind11 を使用してインタプリタを埋め込んだ際に、
 
 .. todo:: 結局原因がよく分かっていない。
 
-参考
--------
+.. seealso::
 
-`Problem with embedded Python in combination with CMake 3.4+ · Issue #1662 · pybind/pybind11 · GitHub <https://github.com/pybind/pybind11/issues/1662>`_
+    - `Problem with embedded Python in combination with CMake 3.4+ · Issue #1662 · pybind/pybind11 · GitHub <https://github.com/pybind/pybind11/issues/1662>`_

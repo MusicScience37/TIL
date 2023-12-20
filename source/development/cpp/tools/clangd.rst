@@ -98,7 +98,7 @@ Clangd のコマンドへ渡す引数を設定する。
   その行を消してライブラリ内部のヘッダへ変更する）という問題があり、
   今のところ無効にしている。
 
-  .. note::
+  .. hint::
       ``--header-insertion`` で使用される include-what-you-use の利点については
       `Include What You Use - Fluent C++ <https://www.fluentcpp.com/2021/01/01/include-what-you-use/>`_
       などを参照。

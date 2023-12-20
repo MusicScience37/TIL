@@ -28,7 +28,7 @@ npm コマンドを用意し、
 ``npm install -g cspell``
 コマンドを実行することでインストールする。
 
-.. note::
+.. hint::
     npm コマンドは Docker Hub にある Docker イメージ node をダウンロードするなどして用意する。
 
 インストールし、後述の設定ファイルを用意したら、
@@ -92,7 +92,7 @@ CSpell の設定ファイルは
       "flagWords": []
     }
 
-.. note::
+.. important::
     Visual Studio Code の設定ファイル（``settings.json``）内に記載することもできるが、
     その場合は Visual Studio Code の拡張機能にしか適用されない設定となる。
 
