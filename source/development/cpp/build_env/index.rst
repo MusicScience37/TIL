@@ -8,5 +8,6 @@
     sanitizer
     address_sanitizer_with_valgrind_to_die
     conan_cmake
+    vcpkg
     vs_exception_handling
     ccache

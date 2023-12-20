@@ -35,6 +35,7 @@
 `sqlite_orm <https://github.com/fnc12/sqlite_orm>`_,C++14,SQLite の Object-Relational Mapping,BSD 3 clause,未使用。気になる。
 `toml11 <https://github.com/ToruNiina/toml11>`_,C++11,`TOML <https://github.com/toml-lang/toml>`_ の読み書き,MIT,未使用。試したい。
 `UIKit <https://getuikit.com/>`_,HTML,HTML の UI フレームワーク,MIT,
+`vcpkg <https://vcpkg.io/>`_,"C, C++",パッケージマネージャ,MIT,:ref:`development-cpp-vcpkg`
 `VTK <https://vtk.org/>`_,"C++, Python",3 次元のコンピュータグラフィックス,BSD 3 clause,別途ビルドして使用する必要がある。
 `Vue.js <https://vuejs.org/>`_,"Javascript, TypeScript",フロントサイドのフレームワーク,MIT,
 `yaml-cpp <https://github.com/jbeder/yaml-cpp>`_,C++11,`YAML <https://yaml.org/>`_ の読み書き,MIT,

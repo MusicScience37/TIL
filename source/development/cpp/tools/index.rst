@@ -8,4 +8,3 @@
     callgrind
     gdb_common
     libsegfault
-    vcpkg
