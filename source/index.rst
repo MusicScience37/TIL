@@ -1,7 +1,13 @@
-TIL - Today I Learned
-===============================
+:og:title: MusicScience37's TIL ― Today I Learned
+:og:description: 日々の学んだことを書き込んでいくサイト
 
-日々の学んだことを書き込んでいくサイト
+.. meta::
+    :description: 日々の学んだことを書き込んでいくサイト
+
+MusicScience37's TIL
+==============================================
+
+*Today I Learned* ― 日々の学んだことを書き込んでいくサイト
 
 .. toctree::
     :caption: About
