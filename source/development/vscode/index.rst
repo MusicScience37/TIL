@@ -8,3 +8,4 @@ VSCode
     devcontainer-wsl-storage
     gpg-in-devcontainer
     gdb-in-devcontainer
+    non-root-user-in-devcontainer
