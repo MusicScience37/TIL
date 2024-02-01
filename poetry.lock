@@ -2760,13 +2760,13 @@ test = ["beautifulsoup4", "coverage", "myst-nb", "pytest", "pytest-cov", "pytest
 
 [[package]]
 name = "sphinx-orange-book-theme"
-version = "0.4.0"
+version = "0.5.0"
 description = "An orange version of sphinx-book-theme."
 optional = false
 python-versions = ">=3.9,<3.13"
 files = [
-    {file = "sphinx_orange_book_theme-0.4.0-py3-none-any.whl", hash = "sha256:11b71bdf98f268ad21b867eaeb6b6b4e4102c68f5c44dcf5af8b1bfc9a0bae4b"},
-    {file = "sphinx_orange_book_theme-0.4.0.tar.gz", hash = "sha256:a0fb15fd494aed2f7e44a1cd82c9f2e0c4b58d7a89ecc6e5476dda8dd9dfd956"},
+    {file = "sphinx_orange_book_theme-0.5.0-py3-none-any.whl", hash = "sha256:31701e5328d1d3128cdf04dab62f68218db64da5d400f2d75ae9322aa21dba6c"},
+    {file = "sphinx_orange_book_theme-0.5.0.tar.gz", hash = "sha256:1fba2619197cf30738cd8d56ae2461c5f1963d34c1eb1afcf78bb9902e0477da"},
 ]
 
 [package.dependencies]
@@ -3326,4 +3326,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.12"
-content-hash = "b94509a0a22de1b63996f195051401c27486c96a37364967b0493e2db8287182"
+content-hash = "2d63b733516db0f693a5e04e2044851fc9fc2bf560bec224f72347104622862d"
