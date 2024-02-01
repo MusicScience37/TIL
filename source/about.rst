@@ -31,11 +31,11 @@ Sphinx とその拡張機能を利用してソースコードや図、数式、�
     !include <logos/docker-icon.puml>
     !include <logos/gitlab.puml>
 
-    cloud "<$docker-icon>\nDocker Hub" as hub {
+    cloud "<$docker-icon,color=DodgerBlue>\nDocker Hub" as hub {
         node "musicscience37/sphinx-doxygen image" as ci_image
     }
 
-    cloud "<$gitlab>\nGitLab.com" as gitlab {
+    cloud "<$gitlab,color=OrangeRed>\nGitLab.com" as gitlab {
         database "TIL repository" as repo
         component "GitLab CI" as ci
         database "GitLab Pages" as pages
@@ -67,7 +67,7 @@ Sphinx とその拡張機能を利用してソースコードや図、数式、�
   - Restructured Text の形式で書いた文章を HTML, CSS, Javascript へ変換する。
   - ただ Markdown を書く場合に比べて環境構築は多少手間がかかるが、
     環境構築後はテキストの文章を書くだけで見た目の整ったページを作ることができ、
-    数式や UML を挿入することもできる。
+    拡張機能を用いて数式や UML などを挿入することもできる。
 
     .. csv-table:: 使用している拡張機能
         :header-rows: 1
