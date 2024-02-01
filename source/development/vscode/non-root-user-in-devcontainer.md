@@ -22,8 +22,6 @@ DevContainer を root でないユーザで起動するには、
 まず使用する Docker イメージ内に root でない作業用のユーザを 1 つ用意しておく必要がある。
 Docker イメージの中には最初から root でないユーザが UID 1000 で用意されていることがあるため、
 `cat /etc/passwd` コマンドなどでユーザの一覧を確認しておく。
-例えば、Docker Hub の ubuntu の Docker イメージでは
-UID 1000 の「ubuntu」ユーザが用意されている。
 
 ユーザがない場合は以下のように追加する。
 
@@ -70,10 +68,10 @@ Dockerfile を調整する必要があった。
 RUN chmod 0777 /root && \
     chmod -R 0777 /root/.pyenv
 
-# poetry を作業用の ubuntu ユーザにもインストールしておく。
-USER ubuntu
-WORKDIR /home/ubuntu
-ENV PATH="/home/ubuntu/.local/bin:$PATH"
+# poetry を作業用のユーザにもインストールしておく。
+USER $USERNAME
+WORKDIR /home/$USERNAME
+ENV PATH="/home/$USERNAME/.local/bin:$PATH"
 RUN pipx install poetry
 
 ```
@@ -87,7 +85,7 @@ DevContainer を使用するリポジトリの `.devcontainer/devcontainer.json`
 ```json
 {
   // Docker イメージ内に用意した作業用のユーザ名を指定する。
-  "remoteUser": "ubuntu"
+  "remoteUser": "vscode"
   // （その他既存の設定はそのまま）
 }
 ```
