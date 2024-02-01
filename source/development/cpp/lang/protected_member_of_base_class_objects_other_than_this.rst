@@ -24,7 +24,7 @@ C++ のクラスにおける protected メンバは派生クラスからアク�
         void func();
     };
 
-    class Derived {
+    class Derived : public Base {
         void process(const Base& obj) {
             obj.func();  // ←ココでアクセスできない。
         }
@@ -42,7 +42,7 @@ C++ のクラスにおける protected メンバは派生クラスからアク�
         }
     };
 
-    class Derived {
+    class Derived : public Base {
         void process(const Base& obj) {
             call_func(obj);
         }

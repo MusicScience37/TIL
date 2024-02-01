@@ -85,24 +85,11 @@ Clangd のコマンドへ渡す引数を設定する。
     {
       "clangd.arguments": [
         "--compile-commands-dir=${workspaceFolder}/build/Debug",
-        "--header-insertion=never"
       ]
     }
 
 - ``--compile-commands-dir`` で compile\_commands.json ファイルがあるディレクトリを示す。
   ワーキングディレクトリ直下に compile\_commands.json があればこのオプションは不要。
-- ``--header-insertion`` は自動で必要な ``#include`` を追加する機能の設定。
-  この機能を有効にすると、外部ライブラリを使用するソースコードを実装している際に、
-  ユーザがインクルードする想定ではない内部実装のヘッダを勝手にインクルードする
-  （たとえユーザ向けのヘッダを既にインクルードしていても、
-  その行を消してライブラリ内部のヘッダへ変更する）という問題があり、
-  今のところ無効にしている。
-
-  .. hint::
-      ``--header-insertion`` で使用される include-what-you-use の利点については
-      `Include What You Use - Fluent C++ <https://www.fluentcpp.com/2021/01/01/include-what-you-use/>`_
-      などを参照。
-      実装中でなく、リファクタリングのときに使うのであれば、便利なツールだと思う。
 
 ここまで設定が終われば、あとは C++ のソースコードを開くことで自動的に Clangd が動作し始める。
 
