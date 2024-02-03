@@ -104,6 +104,7 @@ html_theme = "sphinx_orange_book_theme"
 html_static_path = [
     "_static",
 ]
+html_css_files = ["til.css"]
 
 html_title = "MusicScience37's TIL"
 
