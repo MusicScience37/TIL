@@ -53,6 +53,7 @@ myst_enable_extensions = [
 ]
 nb_execution_mode = "cache"
 nb_execution_cache_path = "jupyter_cache"
+nb_output_stderr = "remove-warn"
 
 # setting of PlantUML
 extensions += ["sphinxcontrib.plantuml"]
