@@ -1,6 +1,7 @@
+import typing
+
 import msgpack
 import pandas
-import typing
 
 
 def parse_data(filepath: str) -> pandas.DataFrame:

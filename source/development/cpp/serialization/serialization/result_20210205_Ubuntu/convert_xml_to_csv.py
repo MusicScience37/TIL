@@ -2,9 +2,10 @@
 """
 
 import os
-import xml.etree.ElementTree as ET
-from typing import NamedTuple, List
 import re
+import xml.etree.ElementTree as ET
+from typing import List, NamedTuple
+
 import pandas as pd
 
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))

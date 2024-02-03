@@ -71,6 +71,7 @@
     "interruptible",
     "iostream",
     "ipafont",
+    "isort",
     "istreambuf",
     "janisdd",
     "jebbs",
