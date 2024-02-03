@@ -64,7 +64,7 @@ Sphinx とその拡張機能を利用してソースコードや図、数式、�
 
 - `Sphinx <https://www.sphinx-doc.org/en/master/>`_
 
-  - Restructured Text の形式で書いた文章を HTML, CSS, Javascript へ変換する。
+  - Restructured Text の形式で書いた文章を HTML, CSS, Javascript によるサイトへ変換する。
   - ただ Markdown を書く場合に比べて環境構築は多少手間がかかるが、
     環境構築後はテキストの文章を書くだけで見た目の整ったページを作ることができ、
     拡張機能を用いて数式や UML などを挿入することもできる。
@@ -80,6 +80,10 @@ Sphinx とその拡張機能を利用してソースコードや図、数式、�
         sphinxcontrib.plantuml, PlantUML による UML の描画。
         sphinxext.opengraph, Open Graph 用のメタデータの追加。
         sphinxcontrib.bibtex, BibTeX による参考文献の追加。
+
+  - Sphinx で生成するサイトの見た目を制御するテーマとして、本サイトでは
+    `sphinx-book-theme <https://sphinx-book-theme.readthedocs.io/>`_
+    をベースに配色と文字サイズを調整したものを使用している。
 
 - `Poetry <https://python-poetry.org/>`_
 
