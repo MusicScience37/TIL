@@ -8,3 +8,4 @@ Sphinx
     code
     math
     plantuml
+    plotting

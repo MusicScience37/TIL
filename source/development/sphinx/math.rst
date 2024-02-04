@@ -35,6 +35,7 @@
 
     また、Jupyter Notebook で数式込みの Plotly ライブラリのグラフを表示するために、
     使用する MathJax の URL を変更する必要があった。
+    （:ref:`グラフの追加の設定 <development-sphinx-plotting-settings>`）
 
 rst ファイル
 ------------------
