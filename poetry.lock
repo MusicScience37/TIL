@@ -2916,6 +2916,20 @@ standalone = ["Sphinx (>=5)"]
 test = ["pytest"]
 
 [[package]]
+name = "sphinxcontrib-trimblank"
+version = "1.0.3"
+description = "A Sphinx extension which trims redundant blanks"
+optional = false
+python-versions = ">=3.5.*"
+files = [
+    {file = "sphinxcontrib-trimblank-1.0.3.tar.gz", hash = "sha256:b17f6d1478d0852617b9dc662ece77b6d7276aa738084d48fa3cce1fee41f72f"},
+    {file = "sphinxcontrib_trimblank-1.0.3-py3-none-any.whl", hash = "sha256:04bcce0c4cf0410119973c7d6dccd640f3d147b55bb8c28a895a39eba41c171c"},
+]
+
+[package.dependencies]
+Sphinx = "*"
+
+[[package]]
 name = "sphinxext-opengraph"
 version = "0.9.1"
 description = "Sphinx Extension to enable OGP support"
@@ -3340,4 +3354,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.12"
-content-hash = "2d564540ae597e4f108178f4c99daf300c8b889a20158197f9a5e22e43fd8a8d"
+content-hash = "92dd76587df6ccdc76724d88a8160d5cd0b68ae39a7f4d7abedf8688eb171f86"

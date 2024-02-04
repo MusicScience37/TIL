@@ -78,6 +78,11 @@ bibtex_bibfiles = ["bibliography.bib"]
 bibtex_default_style = "plain"
 bibtex_reference_style = "super"
 
+# settings of trimblank
+# https://pypi.org/project/sphinxcontrib-trimblank/
+extensions += ["sphinxcontrib.trimblank"]
+trimblank_keep_alnum_blank = True
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
@@ -86,7 +91,7 @@ templates_path = ["_templates"]
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = "en"
+language = "ja"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
