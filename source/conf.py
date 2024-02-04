@@ -35,16 +35,6 @@ extensions = []
 extensions += ["sphinx.ext.todo"]
 todo_include_todos = True
 
-# setting of mathjax
-extensions += ["sphinx.ext.mathjax"]
-mathjax3_config = {
-    "tex": {
-        "macros": {
-            "bm": ["{\\boldsymbol{#1}}", 1],
-        },
-    },
-}
-
 # settings of myst-nb
 extensions += ["myst_nb"]  # This will automatically include myst_parser
 myst_enable_extensions = [
@@ -54,6 +44,18 @@ myst_enable_extensions = [
 nb_execution_mode = "cache"
 nb_execution_cache_path = "jupyter_cache"
 nb_output_stderr = "remove-warn"
+
+# setting of MathJax
+# Extension for MathJax is already enabled by myst_nb.
+# MathJax URL working with Plotly was written in https://www.npmjs.com/package/plotly.js/v/2.16.4#mathjax.
+mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+mathjax3_config = {
+    "tex": {
+        "macros": {
+            "bm": ["{\\boldsymbol{#1}}", 1],
+        },
+    },
+}
 
 # setting of PlantUML
 extensions += ["sphinxcontrib.plantuml"]
