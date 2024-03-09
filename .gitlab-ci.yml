@@ -4,10 +4,8 @@ stages:
   - deploy
 
 include:
-  - template: Security/Dependency-Scanning.gitlab-ci.yml
-  - template: Security/License-Scanning.gitlab-ci.yml
-variables:
-  SECURE_LOG_LEVEL: debug
+  - template: Jobs/Dependency-Scanning.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
 
 pre-commit:
   stage: test
@@ -33,23 +31,7 @@ spell check:
   image: node
   script:
     - npm install -g cspell
-    - cspell lint
-      "**/*.h"
-      "**/*.cpp"
-      "**/*.py"
-      "**/*.cmake"
-      "**/*.txt"
-      "**/*.md"
-      "**/*.rst"
-      "**/*.puml"
-      "**/*.bib"
-      "**/*.yaml"
-      "**/*.yml"
-      "**/*.json"
-      "**/*.toml"
-      "**/*.sh"
-      "**/*.bash"
-      "**/*.css"
+    - cspell lint .
   interruptible: true
 
 build:

@@ -1,6 +1,13 @@
 {
   "version": "0.2",
-  "ignorePaths": [],
+  "ignorePaths": [
+    "**/*.data",
+    "**/*.xml",
+    "**/*.png",
+    "**/*.pdf",
+    "**/*.svg",
+    "poetry.lock"
+  ],
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
