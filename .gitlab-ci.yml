@@ -62,7 +62,7 @@ build:
     - poetry config virtualenvs.in-project true
     - poetry env use 3.11
     - poetry install
-    - poetry run make html
+    - poetry run ./build.sh
   cache:
     key:
       prefix: poetry-linux
