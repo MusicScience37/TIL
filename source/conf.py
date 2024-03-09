@@ -42,7 +42,7 @@ myst_enable_extensions = [
     "dollarmath",
 ]
 nb_execution_mode = "cache"
-nb_execution_cache_path = "jupyter_cache"
+nb_execution_cache_path = "build/jupyter_cache"
 nb_output_stderr = "remove-warn"
 
 # setting of MathJax

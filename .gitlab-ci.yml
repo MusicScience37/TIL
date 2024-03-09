@@ -4,27 +4,26 @@ stages:
   - deploy
 
 include:
-  - template: Security/Dependency-Scanning.gitlab-ci.yml
-  - template: Security/License-Scanning.gitlab-ci.yml
-variables:
-  SECURE_LOG_LEVEL: debug
+  - template: Jobs/Dependency-Scanning.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
 
 pre-commit:
   stage: test
   image: musicscience37/sphinx-doxygen
+  variables:
+    POETRY_CACHE_DIR: ${CI_PROJECT_DIR}/.poetry-cache
   script:
-    - mkdir -p .venv
     - poetry config virtualenvs.in-project true
     - poetry env use 3.11
-    - poetry install
+    - poetry install --sync
     - poetry run pre-commit run --all-files
   cache:
-    key:
-      prefix: poetry-linux
-      files:
-        - poetry.lock
-    paths:
-      - .venv
+    - key:
+        prefix: poetry-${CI_JOB_NAME}
+        files:
+          - poetry.lock
+      paths:
+        - .poetry-cache
   needs: []
 
 spell check:
@@ -33,23 +32,7 @@ spell check:
   image: node
   script:
     - npm install -g cspell
-    - cspell lint
-      "**/*.h"
-      "**/*.cpp"
-      "**/*.py"
-      "**/*.cmake"
-      "**/*.txt"
-      "**/*.md"
-      "**/*.rst"
-      "**/*.puml"
-      "**/*.bib"
-      "**/*.yaml"
-      "**/*.yml"
-      "**/*.json"
-      "**/*.toml"
-      "**/*.sh"
-      "**/*.bash"
-      "**/*.css"
+    - cspell lint .
   interruptible: true
 
 build:
@@ -57,20 +40,25 @@ build:
   image: musicscience37/sphinx-doxygen
   variables:
     PYDEVD_DISABLE_FILE_VALIDATION: 1
+    POETRY_CACHE_DIR: ${CI_PROJECT_DIR}/.poetry-cache
   script:
-    - mkdir -p .venv
     - poetry config virtualenvs.in-project true
     - poetry env use 3.11
-    - poetry install
-    - poetry run make html
+    - poetry install --sync
+    - poetry run ./build.sh
   cache:
-    key:
-      prefix: poetry-linux
-      files:
-        - poetry.lock
-    paths:
-      - .venv
-      - jupyter_cache
+    - key:
+        prefix: poetry-${CI_JOB_NAME}
+        files:
+          - poetry.lock
+      paths:
+        - .poetry-cache
+    - key:
+        prefix: jupyter-${CI_JOB_NAME}
+        files:
+          - poetry.lock
+      paths:
+        - build/jupyter_cache
   artifacts:
     paths:
       - build
@@ -82,7 +70,6 @@ pages:
   image: alpine
   script:
     - mv build/html public
-    - wget -nv https://kicon.musicscience37.com/KIcon.ico -O public/favicon.ico
   artifacts:
     paths:
       - public
