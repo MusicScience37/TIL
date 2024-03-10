@@ -113,6 +113,10 @@ html_static_path = [
     "_static",
 ]
 
+html_js_files = [
+    "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"
+]
+
 html_title = "MusicScience37's TIL"
 
 html_logo = "https://kicon.musicscience37.com/KIcon80.png"

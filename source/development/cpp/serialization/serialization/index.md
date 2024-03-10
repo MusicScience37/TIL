@@ -183,8 +183,7 @@ fig = px.bar(
     title='ベンチマーク結果（文字列）',
     labels=labels,
 )
-fig.update_layout(height=500)
-go.FigureWidget(fig)
+fig.show(renderer="notebook_connected")
 ```
 
 多くの場合で
@@ -219,8 +218,7 @@ fig = px.bar(
     title='ベンチマーク結果（int のベクトル）',
     labels=labels,
 )
-fig.update_layout(height=500)
-go.FigureWidget(fig)
+fig.show(renderer="notebook_connected")
 ```
 
 今度は
@@ -249,8 +247,7 @@ fig = px.bar(
     title='ベンチマーク結果（double のベクトル）',
     labels=labels,
 )
-fig.update_layout(height=500)
-go.FigureWidget(fig)
+fig.show(renderer="notebook_connected")
 ```
 
 今度は
@@ -277,8 +274,7 @@ fig = px.bar(
     title='ベンチマーク結果（構造体）',
     labels=labels,
 )
-fig.update_layout(height=500)
-go.FigureWidget(fig)
+fig.show(renderer="notebook_connected")
 ```
 
 msgpack-c と Protocol Buffers、cereal はシリアライズとデシリアライズで順番が入れ替わっているが、

@@ -85,8 +85,7 @@ fig = px.box(
     },
     title="レイテンシの測定結果",
 )
-fig.update_layout(height=500)
-go.FigureWidget(fig)
+fig.show(renderer="notebook_connected")
 ```
 
 ## 送信時間の測定
@@ -113,8 +112,7 @@ fig = px.box(
     },
     title="送信時間の測定結果",
 )
-fig.update_layout(height=500)
-go.FigureWidget(fig)
+fig.show(renderer="notebook_connected")
 ```
 
 ## 比較
