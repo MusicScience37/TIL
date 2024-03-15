@@ -13,3 +13,4 @@ Python
     mpmath
     plotly
     aiohttp
+    cython

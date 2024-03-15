@@ -47,6 +47,7 @@
     "containerd",
     "cout",
     "cpptools",
+    "cython",
     "datetime",
     "davidanson",
     "DCMAKE",

@@ -38,5 +38,6 @@
   "isort.args": ["--profile", "black"],
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.words": ["cpdef", "Cython"]
 }
