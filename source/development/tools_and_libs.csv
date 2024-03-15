@@ -12,6 +12,7 @@
 `Conan <https://conan.io/>`_,"C, C++",パッケージマネージャ,MIT,:ref:`development-cpp-conan_cmake`
 `cpp-taskflow <https://github.com/cpp-taskflow/cpp-taskflow>`_,C++,並行処理,MIT,未使用。
 `CSpell <https://cspell.org/>`_,,ソースコード向けのスペルチェッカー,MIT,:ref:`development-cspell`
+`Cython <https://cython.org/>`_,Python,処理の高速化、C / C++ の処理の呼び出し,Apache 2.0,:ref:`development-python-cython`
 `Doxygen <http://www.doxygen.nl/>`_,"C, C++, ...",ドキュメンテーションの作成,GPL,
 `Eigen <http://eigen.tuxfamily.org/>`_,C++98,行列演算,MPL2 (+ LGPL),
 `flask <https://flask.palletsprojects.com/en/1.1.x/>`_,Python,Web サーバ用フレームワーク,BSD 3 clause,軽量な Web フレームワーク。
