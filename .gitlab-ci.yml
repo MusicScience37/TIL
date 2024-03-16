@@ -7,9 +7,12 @@ include:
   - template: Jobs/Dependency-Scanning.gitlab-ci.yml
   - template: Jobs/Secret-Detection.gitlab-ci.yml
 
+variables:
+  SPHINX_IMAGE: musicscience37/sphinx-doxygen:gcc12
+
 pre-commit:
   stage: test
-  image: musicscience37/sphinx-doxygen
+  image: ${SPHINX_IMAGE}
   variables:
     POETRY_CACHE_DIR: ${CI_PROJECT_DIR}/.poetry-cache
   script:
@@ -37,7 +40,7 @@ spell check:
 
 build:
   stage: build
-  image: musicscience37/sphinx-doxygen
+  image: ${SPHINX_IMAGE}
   variables:
     PYDEVD_DISABLE_FILE_VALIDATION: 1
     POETRY_CACHE_DIR: ${CI_PROJECT_DIR}/.poetry-cache
