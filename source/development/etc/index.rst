@@ -7,5 +7,4 @@
     response_time_limit
     cspell
     svg-to-pdf
-    ubuntu-releases
     clock-cycles-reference
