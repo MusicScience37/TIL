@@ -128,8 +128,8 @@ html_theme_options = {
     "logo": {
         "text": html_title,
     },
-    "pygment_light_style": "gruvbox-light",
-    "pygment_dark_style": "native",
+    "pygments_light_style": "gruvbox-light",
+    "pygments_dark_style": "native",
     "repository_url": "https://gitlab.com/MusicScience37/til",
     "use_repository_button": True,
     "use_source_button": True,
