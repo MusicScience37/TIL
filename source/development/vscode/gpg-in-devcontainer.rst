@@ -4,7 +4,7 @@ GPG の鍵を Dev Container 内で使用する
 ===============================================
 
 Git の gpg 鍵を使用する場合、
-`Sharing GPG Keys <https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials#_sharing-gpg-keys>`_
+`Sharing GPG Keys <https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials>`_
 に従って設定が必要になる。
 
 WSL 上の Docker コンテナの場合
