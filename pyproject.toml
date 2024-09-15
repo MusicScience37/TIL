@@ -10,36 +10,36 @@ package-mode = false
 [tool.poetry.dependencies]
 python = ">=3.11,<3.13"
 # Sphinx and its Extensions, Themes
-sphinx = "^7.3.7"
+sphinx = "^8.0.2"
 sphinxcontrib-plantuml = "^0.30"
 sphinxext-opengraph = "^0.9.1"
-sphinxcontrib-bibtex = "^2.6.2"
-sphinx-orange-book-theme = "^0.11.0"
+sphinxcontrib-bibtex = "^2.6.3"
+sphinx-orange-book-theme = "^0.12.0"
 myst-parser = "^4.0.0"
 myst-nb = "^1.1.1"
 sphinxcontrib-trimblank = "^1.0.3"
 # Plotting
-numpy = "^2.1.0"
+numpy = "^2.1.1"
 pandas = "^2.2.2"
-xarray = "^2024.7.0"
-plotly = "^5.23.0"
+xarray = "^2024.9.0"
+plotly = "^5.24.1"
 # Jupyter
-jupyterlab = "^4.2.4"
-ipywidgets = "^8.1.3"
-ipython = "^8.26.0"
+jupyterlab = "^4.2.5"
+ipywidgets = "^8.1.5"
+ipython = "^8.27.0"
 ipykernel = "^6.29.5"
 cython = "^3.0.11"
 # Others
-msgpack = "^1.0.8"
+msgpack = "^1.1.0"
 mpmath = "^1.3.0"
 # setuptools is required for sphinxcontrib-bibtex
-setuptools = "^73.0.1"
+setuptools = "^74.1.3"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.8.0"
 black = "^24.8.0"
-doc8 = "^1.1.1"
-sphinx-autobuild = "^2024.4.16"
+doc8 = "^1.1.2"
+sphinx-autobuild = "^2024.9.3"
 isort = "^5.13.2"
 
 [build-system]
