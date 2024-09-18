@@ -22,6 +22,7 @@ MusicScience37's TIL
     development/index
     security_network/index
     science/index
+    music/index
     etc/index
 
 .. toctree::
