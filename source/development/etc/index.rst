@@ -8,3 +8,4 @@
     cspell
     svg-to-pdf
     clock-cycles-reference
+    ssh-server-in-ubuntu
