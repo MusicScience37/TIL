@@ -1,6 +1,16 @@
 {
   "build": { "dockerfile": "Dockerfile" },
-  "containerEnv": { "SHELL": "/bin/bash" },
+  "mounts": [
+    {
+      "type": "volume",
+      "source": "music-science-37-cache",
+      "target": "/cache_volume/"
+    }
+  ],
+  "containerEnv": {
+    "SHELL": "/bin/bash",
+    "POETRY_CACHE_DIR": "/cache_volume/poetry/"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -20,7 +30,10 @@
         "ms-python.isort",
         "ms-toolsai.jupyter",
         "executablebookproject.myst-highlight"
-      ]
+      ],
+      "settings": {
+        "plantuml.jar": "/usr/local/plantuml/plantuml.jar"
+      }
     }
   },
   "postCreateCommand": "bash ./.devcontainer/setup.bash",
