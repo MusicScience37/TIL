@@ -8,3 +8,4 @@ Dorico
     grand_piano_config
     score_styles
     hide_pedal_marks
+    auftakt
