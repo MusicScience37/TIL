@@ -17,8 +17,8 @@ pre-commit:
     POETRY_CACHE_DIR: ${CI_PROJECT_DIR}/.poetry-cache
   script:
     - poetry config virtualenvs.in-project true
-    - poetry env use 3.12
-    - poetry install --sync
+    - poetry env use 3.13
+    - poetry sync
     - poetry run pre-commit run --all-files
   cache:
     - key:
@@ -46,8 +46,8 @@ build:
     POETRY_CACHE_DIR: ${CI_PROJECT_DIR}/.poetry-cache
   script:
     - poetry config virtualenvs.in-project true
-    - poetry env use 3.12
-    - poetry install --sync
+    - poetry env use 3.13
+    - poetry sync
     - poetry run ./build.sh
   cache:
     - key:

@@ -47,8 +47,8 @@ nb_output_stderr = "remove-warn"
 
 # setting of MathJax
 # Extension for MathJax is already enabled by myst_nb.
-# MathJax URL working with Plotly was written in https://www.npmjs.com/package/plotly.js/v/2.16.4#mathjax.
-mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+# MathJax URL working with Plotly was written in https://www.npmjs.com/package/plotly.js/v/2.35.2.
+mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"
 mathjax3_config = {
     "tex": {
         "macros": {

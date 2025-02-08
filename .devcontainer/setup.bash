@@ -1,8 +1,8 @@
 #!/bin/bash
 
 poetry config virtualenvs.in-project true
-poetry env use 3.12
-poetry install
+poetry env use 3.13
+poetry sync
 
 poetry run pre-commit install
 
