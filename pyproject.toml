@@ -8,40 +8,43 @@ packages = []
 package-mode = false
 
 [tool.poetry.dependencies]
-python = ">=3.12,<3.13"
+python = ">=3.12,<3.14"
 # Sphinx and its Extensions, Themes
 sphinx = "^8.1.3"
 sphinxcontrib-plantuml = "^0.30"
 sphinxext-opengraph = "^0.9.1"
 sphinxcontrib-bibtex = "^2.6.3"
-sphinx-orange-book-theme = "^0.14.0"
+sphinx-orange-book-theme = "^0.15.0"
 myst-parser = "^4.0.0"
-myst-nb = "^1.1.2"
+myst-nb = "^1.2.0"
 sphinxcontrib-trimblank = "^1.0.3"
 # Plotting
-numpy = "^2.2.1"
+numpy = "^2.2.2"
 pandas = "^2.2.3"
-xarray = "^2024.11.0"
+xarray = "^2025.1.2"
 plotly = "^5.24.1"
 # Jupyter
-jupyterlab = "^4.3.4"
+jupyterlab = "^4.3.5"
 ipywidgets = "^8.1.5"
-ipython = "^8.31.0"
+ipython = "^8.32.0"
 ipykernel = "^6.29.5"
 cython = "^3.0.11"
 # Others
 msgpack = "^1.1.0"
 mpmath = "^1.3.0"
 # setuptools is required for sphinxcontrib-bibtex
-setuptools = "^75.6.0"
+setuptools = "^75.8.0"
 
 [tool.poetry.group.dev.dependencies]
-pre-commit = "^4.0.1"
-black = "^24.10.0"
+pre-commit = "^4.1.0"
+black = "^25.1.0"
 doc8 = "^1.1.2"
 sphinx-autobuild = "^2024.10.3"
-isort = "^5.13.2"
+isort = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"

@@ -1,5 +1,4 @@
-"""convert XML results to CSV data
-"""
+"""convert XML results to CSV data"""
 
 import os
 import re
