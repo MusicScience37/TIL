@@ -42,6 +42,7 @@
     "clamdscan",
     "Clangd",
     "clearsign",
+    "CMDLINE",
     "COBUILD",
     "conanbuildinfo",
     "constexpr",

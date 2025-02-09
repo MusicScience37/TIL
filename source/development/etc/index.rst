@@ -9,3 +9,4 @@
     svg-to-pdf
     clock-cycles-reference
     ssh-server-in-ubuntu
+    ubuntu-kernel-low-latency-configuration
