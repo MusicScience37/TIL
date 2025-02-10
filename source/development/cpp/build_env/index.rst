@@ -11,3 +11,4 @@
     vcpkg
     vs_exception_handling
     ccache
+    precompiled_headers
