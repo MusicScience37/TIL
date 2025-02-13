@@ -32,7 +32,10 @@ author = "MusicScience37"
 extensions = []
 
 # setting of todo
-extensions += ["sphinx.ext.todo"]
+extensions += [
+    "sphinx.ext.todo",
+    "sphinx_togglebutton",
+]
 todo_include_todos = True
 
 # settings of myst-nb

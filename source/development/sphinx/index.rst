@@ -9,3 +9,4 @@ Sphinx
     math
     plantuml
     plotting
+    collapsible-blocks
