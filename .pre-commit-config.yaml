@@ -13,13 +13,13 @@ repos:
       - id: black
         name: black
         description: "Black: The uncompromising Python code formatter"
-        entry: black
-        language: python
+        entry: poetry run black
+        language: system
         require_serial: true
         types_or: [python, pyi]
       - id: isort
         name: isort
-        entry: isort
-        language: python
+        entry: poetry run isort
+        language: system
         require_serial: true
         types_or: [python, pyi]
