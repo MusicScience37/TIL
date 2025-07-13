@@ -70,7 +70,7 @@ npm コマンドを用意し、
 CSpell の設定ファイルは
 ``cspell.json``
 などのファイル名で Git リポジトリのルートディレクトリなどに配置しておく。
-（詳細は `Configuration <https://cspell.org/configuration/>`_ を参照。）
+（詳細は `Configuration <https://cspell.org/docs/Configuration>`_ を参照。）
 
 形式は以下の通り。``words`` の欄にスペルミスとして検出して欲しくない単語を記載する。
 

@@ -1,0 +1,11 @@
+DirectoryPath: build/html
+IgnoreInternalEmptyHash: true
+IgnoreAltEmpty: true
+IgnoreURLs:
+  - "https://stackoverflow.com/questions/"
+  - "https://marketplace.visualstudio.com/items"
+  - "https://www.mathjax.org/"
+  - "https://tex.stackexchange.com/questions/"
+IgnoreDirs:
+  - "_static"
+OutputDir: ".htmltest"
