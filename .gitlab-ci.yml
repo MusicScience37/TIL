@@ -49,6 +49,8 @@ build:
     - poetry env use 3.13
     - poetry sync
     - poetry run ./build.sh
+    - curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin
+    - htmltest
   cache:
     - key:
         prefix: poetry-${CI_JOB_NAME}
@@ -62,9 +64,12 @@ build:
           - poetry.lock
       paths:
         - build/jupyter_cache
+    - key: htmltest-${CI_JOB_NAME}
+      paths:
+        - .htmltest
   artifacts:
     paths:
-      - build
+      - build/html
     expire_in: "1 week"
   needs: []
 

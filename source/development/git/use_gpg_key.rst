@@ -198,6 +198,6 @@ gpg の鍵が有効かどうか確認したい場合がある。
 
 .. seealso::
 
-    - `Signing commits with GPG | GitLab <https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/index.html>`_
+    - `Sign commits with GPG | GitLab <https://docs.gitlab.com/user/project/repository/signed_commits/gpg/>`_
     - `WSL Ubuntu: git gpg signing Inappropriate ioctl for device · Issue #4029 · microsoft/WSL <https://github.com/microsoft/WSL/issues/4029>`_
     - `署名付きcommitでerror: gpg failed to sign the dataになるとき． <https://zenn.dev/taqxlow/articles/91c4da91e67a1b>`_

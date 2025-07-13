@@ -3,6 +3,7 @@ FROM musicscience37/sphinx-doxygen:gcc13
 ARG USERNAME=ubuntu
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     openssh-client \
@@ -21,6 +22,9 @@ RUN apt-get update && \
     # Allow use of pyenv from $USERNAME user.
     chmod 0777 /root && \
     chmod -R 0777 /root/.pyenv
+
+# Install htmltest
+RUN curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin
 
 # Prepare poetry for $USERNAME user.
 USER $USERNAME
