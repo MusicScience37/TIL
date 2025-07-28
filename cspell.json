@@ -137,6 +137,7 @@
     "nbsphinx",
     "ndarray",
     "nlohmann",
+    "noalias",
     "nodiscard",
     "NOPASSWD",
     "noreturn",

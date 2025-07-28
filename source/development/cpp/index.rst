@@ -13,6 +13,7 @@ C++
 
     serialization/index
     networking/index
+    eigen/index
     testing/index
     pybind11/index
     vtk/index
