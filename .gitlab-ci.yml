@@ -1,6 +1,7 @@
 stages:
-  - test
+  - test # このステージの名前は include している設定で使用されるため変更不可
   - build
+  - test after build
   - deploy
 
 include:
@@ -12,6 +13,7 @@ variables:
 
 pre-commit:
   stage: test
+  needs: []
   image: ${SPHINX_IMAGE}
   variables:
     POETRY_CACHE_DIR: ${CI_PROJECT_DIR}/.poetry-cache
@@ -27,7 +29,6 @@ pre-commit:
           - poetry.lock
       paths:
         - .poetry-cache
-  needs: []
 
 spell check:
   stage: test
@@ -40,6 +41,7 @@ spell check:
 
 build:
   stage: build
+  needs: []
   image: ${SPHINX_IMAGE}
   variables:
     PYDEVD_DISABLE_FILE_VALIDATION: 1
@@ -49,8 +51,6 @@ build:
     - poetry env use 3.13
     - poetry sync
     - poetry run ./build.sh
-    - curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin
-    - htmltest
   cache:
     - key:
         prefix: poetry-${CI_JOB_NAME}
@@ -64,17 +64,34 @@ build:
           - poetry.lock
       paths:
         - build/jupyter_cache
-    - key: htmltest-${CI_JOB_NAME}
+    - key: htmltest before build-${CI_JOB_NAME}
       paths:
-        - .htmltest
+        - .htmltest before build
   artifacts:
     paths:
       - build/html
     expire_in: "1 week"
-  needs: []
+
+check html:
+  stage: test after build
+  needs:
+    - build
+  dependencies:
+    - build
+  image: alpine
+  script:
+    - apk add curl
+    - curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin
+    - htmltest
+  # htmltest は不安定なため、失敗しても残りの処理は続ける。
+  allow_failure: true
 
 pages:
   stage: deploy
+  needs:
+    - build
+  dependencies:
+    - build
   image: alpine
   script:
     - mv build/html public
@@ -83,4 +100,3 @@ pages:
       - public
   only:
     - main
-  needs: [build]
