@@ -24,7 +24,7 @@ pre-commit:
     - poetry run pre-commit run --all-files
   cache:
     - key:
-        prefix: poetry-${CI_JOB_NAME}
+        prefix: poetry
         files:
           - poetry.lock
       paths:
@@ -41,7 +41,9 @@ spell check:
 
 build:
   stage: build
-  needs: []
+  needs:
+    - pre-commit
+  dependencies: []
   image: ${SPHINX_IMAGE}
   variables:
     PYDEVD_DISABLE_FILE_VALIDATION: 1
@@ -53,20 +55,17 @@ build:
     - poetry run ./build.sh
   cache:
     - key:
-        prefix: poetry-${CI_JOB_NAME}
+        prefix: poetry
         files:
           - poetry.lock
       paths:
         - .poetry-cache
     - key:
-        prefix: jupyter-${CI_JOB_NAME}
+        prefix: jupyter
         files:
           - poetry.lock
       paths:
         - build/jupyter_cache
-    - key: htmltest before build-${CI_JOB_NAME}
-      paths:
-        - .htmltest before build
   artifacts:
     paths:
       - build/html
@@ -85,12 +84,18 @@ check html:
     - mkdir -p /usr/local/bin
     - curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin
     - htmltest
+  cache:
+    - key: htmltest
+      paths:
+        - .htmltest
   # htmltest は不安定なため、失敗しても残りの処理は続ける。
   allow_failure: true
 
 pages:
   stage: deploy
   needs:
+    - pre-commit
+    - spell check
     - build
   dependencies:
     - build
