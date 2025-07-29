@@ -78,9 +78,11 @@ check html:
     - build
   dependencies:
     - build
-  image: alpine
+  image: ubuntu
   script:
-    - apk add curl
+    - apt-get update
+    - apt-get install -y curl
+    - mkdir -p /usr/local/bin
     - curl https://htmltest.wjdp.uk | bash -s -- -b /usr/local/bin
     - htmltest
   # htmltest は不安定なため、失敗しても残りの処理は続ける。
