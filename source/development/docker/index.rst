@@ -10,3 +10,4 @@ Docker
     remove_none
     xz_not_installed
     use_remote_daemon
+    limit_total_resource_usage
