@@ -9,6 +9,9 @@ MusicScience37's TIL
 
 *Today I Learned* ― 日々の学んだことを書き込んでいくサイト
 
+Table of Contents
+--------------------
+
 .. toctree::
     :caption: About
     :maxdepth: 1
@@ -16,7 +19,7 @@ MusicScience37's TIL
     about
 
 .. toctree::
-    :caption: Contents
+    :caption: Notes
     :maxdepth: 1
 
     development/index
