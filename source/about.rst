@@ -105,5 +105,5 @@ Sphinx とその拡張機能を利用してソースコードや図、数式、�
 `KIcon リポジトリ <https://gitlab.com/MusicScience37/kicon>`_
 で別に管理しており、別のライセンスになっている。
 
-.. image:: https://kicon.musicscience37.com/KIcon512.png
+.. image:: https://kicon.musicscience37.com/KIcon.svg
     :width: 100px
