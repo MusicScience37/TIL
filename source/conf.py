@@ -128,12 +128,13 @@ html_js_files = [
 
 html_title = "MusicScience37's TIL"
 
-html_logo = "https://kicon.musicscience37.com/KIcon80.png"
 html_favicon = "https://kicon.musicscience37.com/KIcon.ico"
 
 html_theme_options = {
     "show_prev_next": False,
     "logo": {
+        "image_light": "https://kicon.musicscience37.com/KIcon.svg",
+        "image_dark": "https://kicon.musicscience37.com/KIcon-dark.svg",
         "text": html_title,
     },
     "pygments_light_style": "gruvbox-light",
