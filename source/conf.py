@@ -133,9 +133,8 @@ html_favicon = "https://kicon.musicscience37.com/KIcon.ico"
 html_theme_options = {
     "show_prev_next": False,
     "logo": {
-        "image_light": "https://kicon.musicscience37.com/KIcon.svg",
-        "image_dark": "https://kicon.musicscience37.com/KIcon-dark.svg",
-        "text": html_title,
+        "image_light": "../logo/logo.svg",
+        "image_dark": "../logo/logo-dark.svg",
     },
     "pygments_light_style": "gruvbox-light",
     "pygments_dark_style": "native",
