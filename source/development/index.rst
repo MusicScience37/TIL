@@ -13,4 +13,5 @@
     tex/index
     vscode/index
     plantuml/index
+    security_network/index
     etc/index

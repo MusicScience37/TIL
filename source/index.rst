@@ -20,13 +20,10 @@ Table of Contents
 
 .. toctree::
     :caption: Notes
-    :maxdepth: 1
+    :maxdepth: 2
 
     development/index
-    security_network/index
-    science/index
     music/index
-    etc/index
 
 .. toctree::
     :caption: External
