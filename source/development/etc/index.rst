@@ -14,3 +14,4 @@
     hsl_color_space
     collision_of_random_integers
     too_high_cpu_temperature
+    xrdp
