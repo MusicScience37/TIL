@@ -35,5 +35,7 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "restructuredtext.pythonRecommendation.disabled": true
+  "restructuredtext.pythonRecommendation.disabled": true,
+  "python-envs.defaultEnvManager": "ms-python.python:poetry",
+  "python-envs.defaultPackageManager": "ms-python.python:poetry"
 }
