@@ -36,14 +36,18 @@ xrdp のサービスが起動していることを確認する。
 sudo systemctl status xrdp
 ```
 
-## Wayland の無効化
+## Wayland の無効化（必要な場合）
 
 最新の Ubuntu に採用されている Wayland を無効化しないと xrdp でログインできない場合がある。
-`/etc/gdm3/custom.conf` において、以下の設定を行う。
+その場合は `/etc/gdm3/custom.conf` において、以下の設定を行う。
 
 ```ini
 [daemon]
 WaylandEnable=false
+```
+
+```{warning}
+Wayland を無効化すると、一部のアプリケーションは起動できなくなる。
 ```
 
 ## GNOME の設定
