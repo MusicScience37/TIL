@@ -49,6 +49,7 @@
     "conanbuildinfo",
     "constexpr",
     "containerd",
+    "copybutton",
     "cout",
     "cpptools",
     "cython",
