@@ -146,7 +146,6 @@ simdjson と競うほどの速さを持つ。
 ### 結果
 
 - 生データ
-
   - 文字列:
     {download}`bench_string.xml <result_20250719_Ubuntu/bench_string.xml>`
   - int 型のベクトル:
@@ -157,9 +156,20 @@ simdjson と競うほどの速さを持つ。
     {download}`bench_struct.xml <result_20250719_Ubuntu/bench_struct.xml>`
 
 - まとめたデータ
-
   - まとめた CSV:
     {download}`bench.csv <result_20250719_Ubuntu/bench.csv>`
+
+```{code-cell}
+:tags: [remove-input]
+
+# 共通設定
+import plotly.io
+import ms37_designs.plotly_templates
+
+plotly.io.renderers.default = "notebook_connected"
+ms37_designs.plotly_templates.load_templates()
+plotly.io.templates.default = "ms37_white"
+```
 
 #### 文字列のベンチマーク結果
 
@@ -200,7 +210,7 @@ fig = px.line(
     title='ベンチマーク結果（文字列）',
     labels=labels,
 )
-fig.show(renderer="notebook_connected")
+fig.show()
 ```
 
 多くの場合で
@@ -240,7 +250,7 @@ fig = px.line(
     title='ベンチマーク結果（int のベクトル）',
     labels=labels,
 )
-fig.show(renderer="notebook_connected")
+fig.show()
 ```
 
 今度は多くの場合で
@@ -276,7 +286,7 @@ fig = px.line(
     title='ベンチマーク結果（double のベクトル）',
     labels=labels,
 )
-fig.show(renderer="notebook_connected")
+fig.show()
 ```
 
 今度は多くの場合で
@@ -306,7 +316,7 @@ fig = px.bar(
     title='ベンチマーク結果（構造体）',
     labels=labels,
 )
-fig.show(renderer="notebook_connected")
+fig.show()
 ```
 
 今度は多くの場合で
@@ -335,7 +345,6 @@ fig.show(renderer="notebook_connected")
 状況によってライブラリを使い分けていく必要がある。
 
 - バイナリデータ形式 vs. JSON
-
   - バイナリデータの方が効率は良い。
     特に小数のデータを多く扱う場合に差が出やすい。
   - JSON の方が人間にとってデータを読みやすい。
@@ -345,13 +354,11 @@ fig.show(renderer="notebook_connected")
     エンディアンが異なるシステム間でも問題なく使用できる。
 
 - msgpack-c vs. Protocol Buffers vs. cereal
-
   - 効率の良さは状況によるため、効率だけでは選びづらい。
   - msgpack-c は動的にパースされたデータの内部を探索することができる。
   - Protocol Buffers は他言語とのデータ共有に向いている。
   - cereal は C++ のみのサポートになる。
   - ユーザ定義のデータ型のシリアライズ・デシリアライズを行うにあたって、
-
     - msgpack-c ではパースされたデータ（`msgpack::object`）とユーザ定義のデータ型との間の変換の実装が必要。
     - Protocol Buffers では自動生成されたクラスとユーザ定義のデータ型との間の変換の実装が必要。
     - cereal ではデータ型ごとのシリアライズ・デシリアライズ用の関数の実装が必要。
@@ -360,7 +367,6 @@ fig.show(renderer="notebook_connected")
     変換処理は Protocol Buffers が書きやすい。
 
 - nlohmann/json vs. RapidJSON vs. simdjson
-
   - 性能面では yyjson と simdjson が速い。
     ただし、simdjson はシリアライズができない。
   - API は nlohmann/json が使いやすい。

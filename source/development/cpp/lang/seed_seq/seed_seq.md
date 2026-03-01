@@ -4,6 +4,18 @@ file_format: mystnb
 
 # C++ 標準ライブラリの seed_seq について
 
+```{code-cell}
+:tags: [remove-input]
+
+# 共通設定
+import plotly.io
+import ms37_designs.plotly_templates
+
+plotly.io.renderers.default = "notebook_connected"
+ms37_designs.plotly_templates.load_templates()
+plotly.io.templates.default = "ms37_white"
+```
+
 C++ 標準ライブラリに `std::seed_seq` というクラスがある。
 これは、疑似乱数生成器の初期化時に複数の整数をシードとして与えるためのクラスであり、
 以下のように使用できる。
@@ -57,7 +69,7 @@ figure = plotly.express.line(
     }
 )
 
-figure.show(renderer="notebook_connected")
+figure.show()
 ```
 
 シードの個数が 1 個でも最初からほぼ 16 になっており、十分異なる乱数が生成されている。

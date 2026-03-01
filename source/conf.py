@@ -91,6 +91,11 @@ bibtex_reference_style = "super"
 extensions += ["sphinxcontrib.trimblank"]
 trimblank_keep_alnum_blank = True
 
+# settings of sphinx-copybutton
+# https://sphinx-copybutton.readthedocs.io/
+extensions += ["sphinx_copybutton"]
+copybutton_exclude = ".linenos, .gp, .go"
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 

@@ -5,6 +5,16 @@ file_format: mystnb
 # マークダウンの動作確認
 
 ```{code-cell}
+# 共通設定
+import plotly.io
+import ms37_designs.plotly_templates
+
+plotly.io.renderers.default = "notebook_connected"
+ms37_designs.plotly_templates.load_templates()
+plotly.io.templates.default = "ms37_white"
+```
+
+```{code-cell}
 import numpy
 import plotly.express
 
@@ -16,7 +26,7 @@ fig = plotly.express.line(
     labels={"x": "$x$", "y": "$y$"},
     title=r"$\text{Sample plot} \  y = \sin{x}$",
 )
-fig.show(renderer="notebook_connected")
+fig.show()
 ```
 
 $$
