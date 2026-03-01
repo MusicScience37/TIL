@@ -69,7 +69,7 @@ figure = plotly.express.line(
     }
 )
 
-figure.show(renderer="notebook_connected")
+figure.show()
 ```
 
 シードの個数が 1 個でも最初からほぼ 16 になっており、十分異なる乱数が生成されている。

@@ -40,7 +40,6 @@ file_format: mystnb
 - 共有メモリを用いたストリーム
 
 - UDP
-
   - UDP による通信の実装には [Asio ライブラリ](https://think-async.com/Asio/) を用いた。
   - IPv4 と IPv6 の UDP の両方を対象とした。
 
@@ -60,6 +59,18 @@ file_format: mystnb
 ```{code-cell}
 :tags: [hide-cell]
 :load: shm_stream_result_parser.py
+```
+
+```{code-cell}
+:tags: [remove-input]
+
+# 共通設定
+import plotly.io
+import ms37_designs.plotly_templates
+
+plotly.io.renderers.default = "notebook_connected"
+ms37_designs.plotly_templates.load_templates()
+plotly.io.templates.default = "ms37_white"
 ```
 
 ```{code-cell}
@@ -85,7 +96,7 @@ fig = px.box(
     },
     title="レイテンシの測定結果",
 )
-fig.show(renderer="notebook_connected")
+fig.show()
 ```
 
 ## 送信時間の測定
@@ -112,7 +123,7 @@ fig = px.box(
     },
     title="送信時間の測定結果",
 )
-fig.show(renderer="notebook_connected")
+fig.show()
 ```
 
 ## 比較
