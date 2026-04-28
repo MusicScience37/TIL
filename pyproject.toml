@@ -18,17 +18,17 @@ dependencies = [
     "myst-parser (>=5.0.0,<6.0.0)",
     "myst-nb (>=1.4.0,<2.0.0)",
     "sphinxcontrib-trimblank (>=1.0.3,<2.0.0)",
-    "sphinx-togglebutton (>=0.4.4,<0.5.0)",
+    "sphinx-togglebutton (>=0.4.5,<0.5.0)",
     "sphinx-copybutton (>=0.5.2,<0.6.0)",
     # Plotting
-    "numpy (>=2.4.3,<3.0.0)",
-    "pandas (>=3.0.1,<4.0.0)",
-    "xarray (>=2026.2.0,<2027.0.0)",
-    "plotly (>=6.6.0,<7.0.0)",
+    "numpy (>=2.4.4,<3.0.0)",
+    "pandas (>=3.0.2,<4.0.0)",
+    "xarray (>=2026.4.0,<2027.0.0)",
+    "plotly (>=6.7.0,<7.0.0)",
     # Jupyter
     "jupyterlab (>=4.5.6,<5.0.0)",
     "ipywidgets (>=8.1.8,<9.0.0)",
-    "ipython (>=9.11.0,<10.0.0)",
+    "ipython (>=9.13.0,<10.0.0)",
     "ipykernel (>=7.2.0,<8.0.0)",
     "cython (>=3.2.4,<4.0.0)",
     # Others
@@ -40,7 +40,7 @@ dependencies = [
 ]
 
 [tool.poetry.group.dev.dependencies]
-pre-commit = "^4.5.1"
+pre-commit = "^4.6.0"
 black = "^26.3.1"
 doc8 = "^2.0.0"
 sphinx-autobuild = "^2025.8.25"
