@@ -75,6 +75,8 @@
     "freshclam",
     "fromhex",
     "fstream",
+    "fwupd",
+    "fwupdmgr",
     "gemnasium",
     "gmock",
     "gpgsign",
