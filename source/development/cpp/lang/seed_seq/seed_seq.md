@@ -7,13 +7,9 @@ file_format: mystnb
 ```{code-cell}
 :tags: [remove-input]
 
-# 共通設定
-import plotly.io
-import ms37_designs.plotly_templates
+from til_utils.plot_common import load_common_config
 
-plotly.io.renderers.default = "notebook_connected"
-ms37_designs.plotly_templates.load_templates()
-plotly.io.templates.default = "ms37_white"
+load_common_config()
 ```
 
 C++ 標準ライブラリに `std::seed_seq` というクラスがある。
@@ -53,6 +49,7 @@ std::mt19937 random_engine(seed_seq);
 
 import pandas
 import plotly.express
+from til_utils.plot_common import show_figure
 
 df = pandas.read_csv("test_num_seeds.csv")
 
@@ -69,7 +66,7 @@ figure = plotly.express.line(
     }
 )
 
-figure.show()
+show_figure(figure)
 ```
 
 シードの個数が 1 個でも最初からほぼ 16 になっており、十分異なる乱数が生成されている。
