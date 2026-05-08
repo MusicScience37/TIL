@@ -5,18 +5,15 @@ file_format: mystnb
 # マークダウンの動作確認
 
 ```{code-cell}
-# 共通設定
-import plotly.io
-import ms37_designs.plotly_templates
+from til_utils.plot_common import load_common_config
 
-plotly.io.renderers.default = "notebook_connected"
-ms37_designs.plotly_templates.load_templates()
-plotly.io.templates.default = "ms37_white"
+load_common_config()
 ```
 
 ```{code-cell}
 import numpy
 import plotly.express
+from til_utils.plot_common import show_figure
 
 x = numpy.linspace(0.0, 2.0, 101)
 y = numpy.sin(x)
@@ -26,7 +23,7 @@ fig = plotly.express.line(
     labels={"x": "$x$", "y": "$y$"},
     title=r"$\text{Sample plot} \  y = \sin{x}$",
 )
-fig.show()
+show_figure(fig)
 ```
 
 $$

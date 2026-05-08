@@ -64,13 +64,9 @@ file_format: mystnb
 ```{code-cell}
 :tags: [remove-input]
 
-# 共通設定
-import plotly.io
-import ms37_designs.plotly_templates
+from til_utils.plot_common import load_common_config
 
-plotly.io.renderers.default = "notebook_connected"
-ms37_designs.plotly_templates.load_templates()
-plotly.io.templates.default = "ms37_white"
+load_common_config()
 ```
 
 ```{code-cell}
@@ -79,6 +75,7 @@ plotly.io.templates.default = "ms37_white"
 import pandas
 import plotly.express as px
 import plotly.graph_objects as go
+from til_utils.plot_common import show_figure
 
 bench_results = parse_data("shm_stream_result_20230414/ping_pong.data")
 
@@ -96,7 +93,7 @@ fig = px.box(
     },
     title="レイテンシの測定結果",
 )
-fig.show()
+show_figure(fig)
 ```
 
 ## 送信時間の測定
@@ -123,7 +120,7 @@ fig = px.box(
     },
     title="送信時間の測定結果",
 )
-fig.show()
+show_figure(fig)
 ```
 
 ## 比較

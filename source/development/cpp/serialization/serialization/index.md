@@ -162,13 +162,9 @@ simdjson と競うほどの速さを持つ。
 ```{code-cell}
 :tags: [remove-input]
 
-# 共通設定
-import plotly.io
-import ms37_designs.plotly_templates
+from til_utils.plot_common import load_common_config
 
-plotly.io.renderers.default = "notebook_connected"
-ms37_designs.plotly_templates.load_templates()
-plotly.io.templates.default = "ms37_white"
+load_common_config()
 ```
 
 #### 文字列のベンチマーク結果
@@ -181,6 +177,7 @@ plotly.io.templates.default = "ms37_white"
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+from til_utils.plot_common import show_figure
 
 bench_results = pd.read_csv('result_20250719_Ubuntu/bench.csv')
 
@@ -210,7 +207,7 @@ fig = px.line(
     title='ベンチマーク結果（文字列）',
     labels=labels,
 )
-fig.show()
+show_figure(fig)
 ```
 
 多くの場合で
@@ -250,7 +247,7 @@ fig = px.line(
     title='ベンチマーク結果（int のベクトル）',
     labels=labels,
 )
-fig.show()
+show_figure(fig)
 ```
 
 今度は多くの場合で
@@ -286,7 +283,7 @@ fig = px.line(
     title='ベンチマーク結果（double のベクトル）',
     labels=labels,
 )
-fig.show()
+show_figure(fig)
 ```
 
 今度は多くの場合で
@@ -316,7 +313,7 @@ fig = px.bar(
     title='ベンチマーク結果（構造体）',
     labels=labels,
 )
-fig.show()
+show_figure(fig)
 ```
 
 今度は多くの場合で
