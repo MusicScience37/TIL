@@ -1,1 +1,4 @@
 system-git-client = true
+
+[solver]
+min-release-age = 7
