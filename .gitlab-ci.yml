@@ -9,7 +9,7 @@ include:
   - template: Jobs/Secret-Detection.gitlab-ci.yml
 
 variables:
-  SPHINX_IMAGE: musicscience37/sphinx-doxygen:gcc13
+  SPHINX_IMAGE: musicscience37/sphinx-doxygen:gcc15
 
 pre-commit:
   stage: test

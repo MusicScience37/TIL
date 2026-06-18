@@ -1,4 +1,4 @@
-FROM musicscience37/sphinx-doxygen:gcc13
+FROM musicscience37/sphinx-doxygen:gcc15
 
 ARG USERNAME=ubuntu
 ARG USER_UID=1000
