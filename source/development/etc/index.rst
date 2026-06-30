@@ -16,3 +16,4 @@
     too_high_cpu_temperature
     xrdp
     fwupd
+    free-fem
