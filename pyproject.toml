@@ -14,7 +14,7 @@ dependencies = [
     "sphinxcontrib-plantuml (>=0.31,<0.32)",
     "sphinxext-opengraph (>=0.13.0,<0.14.0)",
     "sphinxcontrib-bibtex (>=2.7.0,<3.0.0)",
-    "sphinx-orange-book-theme (>=0.19.0,<0.20.0)",
+    "sphinx-orange-book-theme (==0.21.0)",
     "myst-parser (>=5.1.0,<6.0.0)",
     "myst-nb (>=1.4.0,<2.0.0)",
     "sphinxcontrib-trimblank (>=1.0.3,<2.0.0)",
@@ -26,11 +26,11 @@ dependencies = [
     "xarray (>=2026.4.0,<2027.0.0)",
     "plotly (>=6.8.0,<7.0.0)",
     # Jupyter
-    "jupyterlab (>=4.6.0,<5.0.0)",
+    "jupyterlab (>=4.6.1,<5.0.0)",
     "ipywidgets (>=8.1.8,<9.0.0)",
-    "ipython (>=9.14.1,<10.0.0)",
+    "ipython (>=9.15.0,<10.0.0)",
     "ipykernel (>=7.3.0,<8.0.0)",
-    "cython (>=3.2.5,<4.0.0)",
+    "cython (>=3.2.8,<4.0.0)",
     # Others
     "msgpack (>=1.2.1,<2.0.0)",
     "mpmath (>=1.4.1,<2.0.0)",
