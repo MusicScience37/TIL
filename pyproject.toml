@@ -34,7 +34,7 @@ dependencies = [
     # Others
     "msgpack (>=1.2.1,<2.0.0)",
     "mpmath (>=1.4.1,<2.0.0)",
-    "ms37-designs @ git+https://gitlab.com/MusicScience37Projects/utility-libraries/ms37-designs.git@v0.3.0",
+    "ms37-designs @ git+https://gitlab.com/MusicScience37Projects/utility-libraries/ms37-designs.git@v0.4.0",
     # setuptools is required for sphinxcontrib-bibtex
     "setuptools (>=82.0.1,<83.0.0)",
 ]

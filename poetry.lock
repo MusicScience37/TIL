@@ -1768,7 +1768,7 @@ tests = ["hypothesis", "ipython", "matplotlib", "numpy", "packaging", "pexpect",
 
 [[package]]
 name = "ms37-designs"
-version = "0.3.0"
+version = "0.4.0"
 description = ""
 optional = false
 python-versions = ">=3.13,<3.15,!=3.14.1"
@@ -1778,13 +1778,13 @@ develop = false
 
 [package.dependencies]
 ok-palette-lab = ">=0.5.0,<0.6.0"
-plotly = ">=6.6.0,<7.0.0"
+plotly = ">=6.8.0,<7.0.0"
 
 [package.source]
 type = "git"
 url = "https://gitlab.com/MusicScience37Projects/utility-libraries/ms37-designs.git"
-reference = "v0.3.0"
-resolved_reference = "f1f39517a2de68e48dc5e96caa7012c24cec0f8c"
+reference = "v0.4.0"
+resolved_reference = "5166be0cf70aa6270e7d9c7f7c8baacdf2551a67"
 
 [[package]]
 name = "msgpack"
@@ -4137,4 +4137,4 @@ type = ["pytest-mypy (>=1.0.1) ; platform_python_implementation != \"PyPy\""]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13,<3.14"
-content-hash = "5af3a15ed686e390bd5cfb5085a764608abecb90fb1f4f49e0bac5532bbd3a66"
+content-hash = "09f8cc5e60e5b040a2eb20be2a407ec88296871d0a810bff6ceb365161992376"
