@@ -69,7 +69,7 @@ mathjax_options = {
 # setting of PlantUML
 extensions += ["sphinxcontrib.plantuml"]
 plantuml_jar_path = os.getenv("PLANTUML_JAR_PATH")
-plantuml = "java -jar " + plantuml_jar_path
+plantuml = "java -Djava.awt.headless=true -jar " + plantuml_jar_path
 plantuml_output_format = "svg"
 plantuml_syntax_error_image = True
 
