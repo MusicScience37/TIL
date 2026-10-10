@@ -58,6 +58,7 @@
     "datetime",
     "davidanson",
     "DCMAKE",
+    "deque",
     "Devcontainer",
     "Diffie",
     "distro",

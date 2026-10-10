@@ -1,0 +1,7 @@
+bench_clang_20261011.data
+----------------------------
+
+- CPU: Intel(R) Core(TM) Ultra 5 125H
+- OS: Ubuntu 26:04
+- コンパイラ: Clang 22.1.2
+- 実行コマンド: ./build/Release/bin/list_perf --compressed-msgpack bench.data
