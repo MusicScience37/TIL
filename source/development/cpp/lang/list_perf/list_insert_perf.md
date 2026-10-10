@@ -13,6 +13,7 @@ C++ 標準ライブラリの `std::list` は途中への要素の挿入が計算
 ```{code-cell}
 :tags: [remove-input]
 
+import pandas
 from til_utils.plot_common import load_common_config
 
 load_common_config()
@@ -26,14 +27,25 @@ load_common_config()
 ```{code-cell}
 :tags: [remove-input]
 
-results = parse_data("bench_clang_20261011.data")
+clang_results = parse_data("bench_clang_20261011.data")
+msvc_results = parse_data("bench_msvc_20261011.data")
+clang_results["env"] = "Clang"
+msvc_results["env"] = "MSVC"
+results = pandas.concat([clang_results, msvc_results], ignore_index=True)
 ```
 
 ## ベンチマーク環境
 
-- CPU: Intel(R) Core(TM) Ultra 5 125H
-- OS: Ubuntu 26:04
-- コンパイラ: Clang 22.1.2
+2 種類の環境でベンチマークを行った。
+
+- Clang 環境
+  - CPU: Intel(R) Core(TM) Ultra 5 125H
+  - OS: Ubuntu 26:04
+  - コンパイラ: Clang 22.1.2
+- MSVC 環境
+  - CPU: Intel(R) Core(TM) i7-1195G7
+  - OS: Windows 11
+  - コンパイラ: Visual Studio 2026 (2026/10/11 時点の最新)
 
 ## 普通に list を使用した場合
 
@@ -106,17 +118,21 @@ labels = {
     "count": "要素数",
     "mean_time": "時間 [s]",
     "impl_type": "実装",
+    "env": "環境",
 }
+figure_height = 800
 fig = px.line(
     results[(results["bench_type"] == "insert") & (results["impl_type"].isin(impl_types))],
     x="count",
     y="mean_time",
     color="impl_type",
     line_dash="impl_type",
+    facet_row="env",
     log_x=True,
     log_y=True,
     labels=labels,
 )
+fig.update_layout(height=figure_height)
 show_figure(fig)
 ```
 
@@ -196,21 +212,18 @@ impl_types = [
     "list_monotonic",
     "list_monotonic_with_static_buffer",
 ]
-labels = {
-    "count": "要素数",
-    "mean_time": "時間 [s]",
-    "impl_type": "実装",
-}
 fig = px.line(
     results[(results["bench_type"] == "insert") & (results["impl_type"].isin(impl_types))],
     x="count",
     y="mean_time",
     color="impl_type",
     line_dash="impl_type",
+    facet_row="env",
     log_x=True,
     log_y=True,
     labels=labels,
 )
+fig.update_layout(height=figure_height)
 show_figure(fig)
 ```
 
@@ -299,21 +312,18 @@ impl_types = [
     "forward_list_monotonic",
     "forward_list_monotonic_with_static_buffer",
 ]
-labels = {
-    "count": "要素数",
-    "mean_time": "時間 [s]",
-    "impl_type": "実装",
-}
 fig = px.line(
     results[(results["bench_type"] == "insert") & (results["impl_type"].isin(impl_types))],
     x="count",
     y="mean_time",
     color="impl_type",
     line_dash="impl_type",
+    facet_row="env",
     log_x=True,
     log_y=True,
     labels=labels,
 )
+fig.update_layout(height=figure_height)
 show_figure(fig)
 ```
 
@@ -321,4 +331,4 @@ show_figure(fig)
 ただし、 `std::vector` や `std::list` にある普通の `push_back` 関数や `insert` 関数がなく、
 少し特殊な実装が要求された。
 
-制約が強めなデータ構造でも問題がない場合は `std::forward_list` で高速化を図ることも可能である。
+以上から、制約が強めなデータ構造でも問題がない場合は `std::forward_list` で高速化を図ることも可能である。

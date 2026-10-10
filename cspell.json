@@ -147,6 +147,7 @@
     "MPFR",
     "mpmath",
     "msgpack",
+    "msvc",
     "multiscan",
     "MusicScience37",
     "mystnb",

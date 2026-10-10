@@ -4,4 +4,16 @@ bench_clang_20261011.data
 - CPU: Intel(R) Core(TM) Ultra 5 125H
 - OS: Ubuntu 26:04
 - コンパイラ: Clang 22.1.2
+- リポジトリ: https://gitlab.com/MusicScience37Projects/experiments/cpp-lang-bench
+- コミット: 7ba694aeb8a8e7e59d57f9d0388c7e56e732c16c
 - 実行コマンド: ./build/Release/bin/list_perf --compressed-msgpack bench.data
+
+bench_msvc_20261011.data
+----------------------------
+
+- CPU: Intel(R) Core(TM) i7-1195G7
+- OS: Windows 11
+- コンパイラ: Visual Studio 2026 (2026/10/11 時点の最新)
+- リポジトリ: https://gitlab.com/MusicScience37Projects/experiments/cpp-lang-bench
+- コミット: 7ba694aeb8a8e7e59d57f9d0388c7e56e732c16c
+- 実行コマンド: .\build\Release\bin\list_perf.exe --plot plot --compressed-msgpack bench.data
