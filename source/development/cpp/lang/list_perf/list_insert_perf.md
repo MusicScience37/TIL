@@ -169,6 +169,7 @@ C++ 17 では、メモリ管理を改善する polymorphic memory resource（PMR
 - `list_monotonic_with_static_buffer` （あらかじめ用意した静的バッファを `std::pmr::monotonic_buffer_resource` に渡して使用した `std::pmr::list`）
 
   ```cpp
+  const std::size_t static_buffer_size = 65536;
   std::array<char, static_buffer_size> buffer;
   std::pmr::monotonic_buffer_resource monotonic_buffer_resource{
       buffer.data(), buffer.size()};
@@ -215,7 +216,7 @@ show_figure(fig)
 
 `std::list` をそのまま使用する場合よりも性能が良くなり、
 要素数 100 以上なら `std::vector` よりも高速になった。
-要素数 100 以下でも `std::vector` より 2 倍程度までの処理時間で済んでいるため、
+要素数が少ない場合でも `std::vector` より 2 倍程度までの処理時間で済むところまで高速化できた。
 これなら利用の幅が広がりそうだ。
 
 ## まとめ
@@ -225,3 +226,99 @@ show_figure(fig)
 メモリ管理を工夫することで `std::vector` よりも性能を出せる場合がある。
 性能のために `std::list` を使用する場合は、
 計算量を見るだけでなく、実際の処理時間を計測して判断する必要がある。
+
+## （付録）forward_list の場合
+
+`std::list` よりも単純なデータ構造として `std::forward_list` がある。
+その `std::forward_list` も試してみた。
+
+追加した実装パターンは以下の通り。
+
+- `forward_list` （そのまま使用した `std::forward_list`）
+
+  ```cpp
+  std::forward_list<std::uint64_t> list;
+  auto iter = list.before_begin();
+  for (std::size_t i = 0; i < count; ++i) {
+      iter = list.insert_after(iter, 0);
+  }
+  iter = list.before_begin();
+  for (std::size_t i = 0; i < count; ++i) {
+      iter = list.insert_after(iter, 0);
+      ++iter;
+  }
+  ```
+
+- `forward_list_monotonic` （`std::pmr::monotonic_buffer_resource` を使用した `std::forward_list`）
+
+  ```cpp
+  std::pmr::monotonic_buffer_resource monotonic_buffer_resource;
+  std::pmr::forward_list<std::uint64_t> list{&monotonic_buffer_resource};
+  auto iter = list.before_begin();
+  for (std::size_t i = 0; i < count; ++i) {
+      iter = list.insert_after(iter, 0);
+  }
+  iter = list.before_begin();
+  for (std::size_t i = 0; i < count; ++i) {
+      iter = list.insert_after(iter, 0);
+      ++iter;
+  }
+  ```
+
+- `forward_list_monotonic_with_static_buffer` （`std::pmr::monotonic_buffer_resource` と静的バッファを使用した `std::forward_list`）
+
+  ```cpp
+  const std::size_t static_buffer_size = 65536;
+  std::array<char, static_buffer_size> buffer;
+  std::pmr::monotonic_buffer_resource monotonic_buffer_resource{
+      buffer.data(), buffer.size()};
+  std::pmr::forward_list<std::uint64_t> list{&monotonic_buffer_resource};
+  auto iter = list.before_begin();
+  for (std::size_t i = 0; i < count; ++i) {
+      iter = list.insert_after(iter, 0);
+  }
+  iter = list.before_begin();
+  for (std::size_t i = 0; i < count; ++i) {
+      iter = list.insert_after(iter, 0);
+      ++iter;
+  }
+  ```
+
+処理時間は以下の通り。
+
+```{code-cell}
+:tags: [remove-input]
+
+impl_types = [
+    "vector",
+    "vector_reserved",
+    "list",
+    "list_monotonic",
+    "list_monotonic_with_static_buffer",
+    "forward_list",
+    "forward_list_monotonic",
+    "forward_list_monotonic_with_static_buffer",
+]
+labels = {
+    "count": "要素数",
+    "mean_time": "時間 [s]",
+    "impl_type": "実装",
+}
+fig = px.line(
+    results[(results["bench_type"] == "insert") & (results["impl_type"].isin(impl_types))],
+    x="count",
+    y="mean_time",
+    color="impl_type",
+    line_dash="impl_type",
+    log_x=True,
+    log_y=True,
+    labels=labels,
+)
+show_figure(fig)
+```
+
+`std::forward_list` は `std::list` よりも少し速かった。
+ただし、 `std::vector` や `std::list` にある普通の `push_back` 関数や `insert` 関数がなく、
+少し特殊な実装が要求された。
+
+制約が強めなデータ構造でも問題がない場合は `std::forward_list` で高速化を図ることも可能である。
