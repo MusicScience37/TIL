@@ -10,33 +10,33 @@ requires-python = ">=3.13,<3.15,!=3.14.1"
 
 dependencies = [
     # Sphinx and its Extensions, Themes
-    "sphinx (>=9.1.0,<10.0.0)",
+    "sphinx (>=9.1.0,<10)",
     "sphinxcontrib-plantuml (>=0.31,<0.32)",
     "sphinxext-opengraph (>=0.13.0,<0.14.0)",
-    "sphinxcontrib-bibtex (>=2.7.0,<3.0.0)",
+    "sphinxcontrib-bibtex (>=2.7.0,<3)",
     "sphinx-orange-book-theme (>=0.21.0,<0.22.0)",
-    "myst-parser (>=5.1.0,<6.0.0)",
-    "myst-nb (>=1.4.0,<2.0.0)",
-    "sphinxcontrib-trimblank (>=1.0.3,<2.0.0)",
+    "myst-parser (>=5.1.0,<6)",
+    "myst-nb (>=1.4.0,<2)",
+    "sphinxcontrib-trimblank (>=1.0.3,<2)",
     "sphinx-togglebutton (>=0.4.5,<0.5.0)",
     "sphinx-copybutton (>=0.5.2,<0.6.0)",
     # Plotting
-    "numpy (>=2.5.3,<3.0.0)",
-    "pandas (>=3.0.6,<4.0.0)",
-    "xarray (>=2026.9.0,<2027.0.0)",
-    "plotly (>=7.1.0,<8.0.0)",
+    "numpy (>=2.5.3,<3)",
+    "pandas (>=3.0.6,<4)",
+    "xarray (>=2026.9.0,<2027)",
+    "plotly (>=7.1.0,<8)",
     # Jupyter
-    "jupyterlab (>=4.6.4,<5.0.0)",
-    "ipywidgets (>=8.1.9,<9.0.0)",
-    "ipython (>=9.17.1,<10.0.0)",
-    "ipykernel (>=7.4.0,<8.0.0)",
-    "cython (>=3.3.0,<4.0.0)",
+    "jupyterlab (>=4.6.4,<5)",
+    "ipywidgets (>=8.1.9,<9)",
+    "ipython (>=9.17.1,<10)",
+    "ipykernel (>=7.4.0,<8)",
+    "cython (>=3.3.0,<4)",
     # Others
-    "msgpack (>=1.2.3,<2.0.0)",
-    "mpmath (>=1.4.1,<2.0.0)",
+    "msgpack (>=1.2.3,<2)",
+    "mpmath (>=1.4.1,<2)",
     "ms37-designs @ git+https://gitlab.com/MusicScience37Projects/utility-libraries/ms37-designs.git@v0.6.0",
     # setuptools is required for sphinxcontrib-bibtex
-    "setuptools (>=84.0.0,<85.0.0)",
+    "setuptools (>=84.0.0,<85)",
 ]
 
 [tool.poetry.group.dev.dependencies]

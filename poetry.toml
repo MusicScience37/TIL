@@ -1,4 +1,4 @@
 system-git-client = true
 
 [solver]
-min-release-age = 7
+min-release-age = 3
